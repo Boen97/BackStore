@@ -3,7 +3,6 @@
 - 具体 Internet 的组成角度来理解
 - 抽象 互联网提供的 服务
 ### 具体
-- 概念
   - **Host/End System**
   - End System are connected together by a network of **communication links** and **package switches**
     - communication links
@@ -65,3 +64,6 @@
   > 协议必须有一套标准，才能让不同的人参与进来
 
     - 互联网标准由IETF制定（Internet Enginnering Task Force）
+    - RFCs(request for comments) 征求意见，IETF的标准文档
+    - 其他机构也参与制定了标准
+    - The IEEE 802 LAN Standards Committee [IEEE 802 2020] 制定了 **the Ethernet and wireless WiFi standards.**
