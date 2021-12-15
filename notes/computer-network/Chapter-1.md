@@ -67,3 +67,11 @@
     - RFCs(request for comments) 征求意见，IETF的标准文档
     - 其他机构也参与制定了标准
     - The IEEE 802 LAN Standards Committee [IEEE 802 2020] 制定了 **the Ethernet and wireless WiFi standards.**
+
+### 作为一项服务
+
+> 作为一项基础设施，为应用提供**服务**
+
+  - 分布式应用，在多个终端间交换传输数据
+  - **网络应用运行在终端，而不是在互联网的中心**
+  - package switches 负责在多个终端间传输数据，但是他们并不关心应用本身，因此分组交换机是一项隐形的基础设施
