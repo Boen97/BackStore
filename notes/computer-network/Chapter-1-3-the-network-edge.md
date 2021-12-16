@@ -71,7 +71,29 @@
         > 上下游通道是共用的
 
           - 当多个用户在同时在下游通道下载东西时，分配到每个人的实际速率将会显著降低
+          - 当很少的用户在浏览网页时，很少会同时请求网页，这个时候基本上能完全利用通道的速率
 
+        > 由于上传通道也是共用的，a distributed multiple access protocol is needed to coordinate transmissions and avoid collisions.
+          需要一个分布式的多址访问协议来避免冲突。局域网内发送到外网时，如何能够让外网精确地区分每个用户的每个请求。
 
+    3. FTTH (fibel to the home) 光纤到户，一种速率更高，较为新颖的互联网接入技术
+
+      > 提供一条从 CO 直接到家的光纤链路，可以提供 gigabits per second range
+
+      - optical-distribution network architectures 常见的光纤分布网络
+
+        > 通常 CO 先通过共享的光纤网络将数据传输到距离 Home 足够近的地方，
+          然后再采用光纤网络分布技术将数据传送到Home
+
+        1. active optical networks 主动光网络 （AONs）, 本质上是交换式以太网 （switched ethernet）
+
+        2. passive optical networks 被动光网络 （PONs）
+
+      - 每户人家有一个 **ONT（optical netwrok terminator）**,通过专用的光纤链路，连接到就近的 Optical Splitter
+
+        > Optical Splitter 将多家的光网络信号整合到一条共享的高速光纤链路
+        >
+        > 这条共享的光纤链路会连接到 CO 的 OLT (optical line terminator)
+        > OLT 主要负责将光信号转化为数字信号
 
 
