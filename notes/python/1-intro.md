@@ -16,3 +16,40 @@
 ```python
 5 ** 2 # 5 的 2 次
 ```
+
+- In interactive mode, the last printed expression is assigned to the variable _
+
+```python
+width = 10
+height = 20
+width * height # 200
+width * _ # 2000
+```
+
+- row string
+
+```python
+print(r'C: \some\name') # row string
+```
+
+- tripe quotes """...""" or '''...'''
+
+- three times
+
+```python
+3 * 'he' # hehehe
+```
+
+- string 自动合并
+
+```python
+'hello' 'world' # helloworld
+```
+
+- break long strings 会自动合并
+
+```python
+text = ('sjdfhjshdfhsjfhsdhjfhsdf'
+        'hjshdjfhjsdhfjhfhsd')
+```
+
