@@ -5,5 +5,14 @@
 # -*- coding: cp1252 -*- 指定编码
 ```
 
+- Division (/) always returns a float.
 
+- floor division and integer result //
 
+```python
+17 // 3 # 5
+```
+
+```python
+5 ** 2 # 5 的 2 次
+```
