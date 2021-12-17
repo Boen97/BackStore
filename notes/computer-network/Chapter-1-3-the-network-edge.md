@@ -71,7 +71,41 @@
         > 上下游通道是共用的
 
           - 当多个用户在同时在下游通道下载东西时，分配到每个人的实际速率将会显著降低
+          - 当很少的用户在浏览网页时，很少会同时请求网页，这个时候基本上能完全利用通道的速率
 
+        > 由于上传通道也是共用的，a distributed multiple access protocol is needed to coordinate transmissions and avoid collisions.
+          需要一个分布式的多址访问协议来避免冲突。局域网内发送到外网时，如何能够让外网精确地区分每个用户的每个请求。
 
+    3. FTTH (fibel to the home) 光纤到户，一种速率更高，较为新颖的互联网接入技术
 
+      > 提供一条从 CO 直接到家的光纤链路，可以提供 gigabits per second range
+
+      - optical-distribution network architectures 常见的光纤分布网络
+
+        > 通常 CO 先通过共享的光纤网络将数据传输到距离 Home 足够近的地方，
+          然后再采用光纤网络分布技术将数据传送到Home
+
+        1. active optical networks 主动光网络 （AONs）, 本质上是交换式以太网 （switched ethernet）
+
+        2. passive optical networks 被动光网络 （PONs）
+
+      - 每户人家有一个 **ONT（optical netwrok terminator）**,通过专用的光纤链路，连接到就近的 Optical Splitter
+
+        > Optical Splitter 将多家的光网络信号整合到一条共享的高速光纤链路
+        >
+        > 这条共享的光纤链路会连接到 CO 的 OLT (optical line terminator)
+        > OLT 主要负责将光信号转化为数字信号
+
+      > 通常家中需要一个 router 连接到 ONT 来实现上网。
+      > 因为很简单，ONT 就类似于 modem 只是负责将信号进行转化，例如 ONT 将家中的数字信号转化为光信号进行传输
+      > 对于别的类似十字路口的包转发功能在路由器上进行实现
+      > 这也就是我们常见的有了猫(modem),还需要一个路由器的原因
+
+      - 所有从 OLT 到 Splitter 的包，都会在 Splitter 上被复制
+
+    4.  5G fixed wireless 5G固定无线网络
+
+        > 新技术，不仅能够提供高速稳定的网络，而且不必安装 从 CO 到 Home 之间的物理链路
+        > 这些链路昂贵且易故障
+        > 信号从基站发送到 5G modem，再连接路由器就可以访问网络了
 
