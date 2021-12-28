@@ -20,3 +20,9 @@
     - proper order
 
   - congestion-control 用塞控制
+
+- UDP
+
+  > 提供最基础的服务，在发送消息之前不需要握手建立连接，不可靠
+  >
+  > 到达的消息可能是无序的
