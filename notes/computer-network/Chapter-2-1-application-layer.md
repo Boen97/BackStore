@@ -12,3 +12,13 @@
 
   - 应用程序之间的交流实际上是进程 process 之间的交流
   - 不管是同一主机还是不同主机上的进程都是通过交换 message 来互相交流的
+
+
+- The Interface bewteen Process and the Computer Network
+
+  - **socket** 进程通过socker接口，获取底层的网络基础上设施，来传输 message
+  - socket 也被称为 API between application and network
+  - 软件开发人员主要负责应用层端，很少需要介入socket的网络传出端
+  - 软件开发人员在socket的传输端仅仅操作以下内容：
+    1. 传输协议的选择
+    2. 控制传输协议的一些参数，例如最大缓冲区大小，报文段segment的最大大小
