@@ -22,3 +22,7 @@
   - 软件开发人员在socket的传输端仅仅操作以下内容：
     1. 传输协议的选择
     2. 控制传输协议的一些参数，例如最大缓冲区大小，报文段segment的最大大小
+
+- Addressing Processing 寻址过程
+  - Host IP Address + Process port number
+  - 要进行进程之间的通信，需要两个基本的信息，一是主机的地址，二是目标主机上的进程标识，通过端口来标识
