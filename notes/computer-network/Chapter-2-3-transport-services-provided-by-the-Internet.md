@@ -26,3 +26,11 @@
   > 提供最基础的服务，在发送消息之前不需要握手建立连接，不可靠
   >
   > 到达的消息可能是无序的
+
+- Securing TCP
+
+  - TCP 和 UDP 都没有提供任何的加密，仅传输最原始的数据
+  - TLS（Transport Layer security）是 TCP 协议的增强，增强部分在应用层实现
+  - 在实际使用的时候需要在客户端和服务端包含TLS的代码
+  - TLS 能够提供加密、数据一致性(data integrity)、端点校验（end-point authentication）
+  - TLS 就相当于官方在应用层提供一个的安全工具，在进入TCP socket 之前先得经过这个安全工具的处理
