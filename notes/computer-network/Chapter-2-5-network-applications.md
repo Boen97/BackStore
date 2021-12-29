@@ -19,3 +19,13 @@
   - URI（Uniform resource indentifier）统一资源标识符，主要在于标识
   - URL 是 URI 的子集
   - 一个网页有很多对象组成，每个对象，例如base html, js, 图片，css 文件 都有自己的 URI
+  - 互联网协议分层的好处之一：
+    - HTTP 协议依赖于传输层TCP提供的协议，将可靠传输、用塞控制等功能都交给了TCP
+  - 最早的HTTP协议为HTTP1.0,可以追溯到1970年，现在大部分的HTTP协议都为HTTP1.1, HTTP2正在慢慢发展中
+
+  - Non-persistent and persistent connetctions 非持久化连接和持久化连接
+
+    > 由于TCP协议是面向连接的，当我们在使用HTTP协议交换信息的时候，必须考虑一个问题，那就是我要采用持久化的连接还是非持久化的连接，
+    > 也就是在一个TCP连接里，客户端是否可以发送多次请求
+
+    - HTTP 协议即可以实现非持久化连接,也可以实现持久化连接,默认采用的是持久化连接
