@@ -57,3 +57,22 @@
      而 pipelining 流水线和工厂的流水线原理相似,是一直在运转的,不会因为中途的某个物件而停止流水线的运转
      因此不会因为pending 的request而导致其他请求处于等待的状态
   3. 通常来说,TCP连接在不使用后的一定时间会自动关闭,这个关闭可以自行配置
+
+- HTTP Message Format
+  - HTTP Message 分为 request message 和 response message
+  - requeset message 由以下部分组成
+    1. request line 请求行
+       GET /dir/resource HTTP/1.1
+       协议 URL HTTP协议版本
+    2. header line 标题行
+       HOST: www.baidu.com
+       Connection: close 非持久化连接
+       User-agent: Mozilla/5.0
+       Accept-language: fr 希望返回fr语言版本的对象
+    3. entity body 消息体
+       GET 请求的消息体为空, 消息体主要用于 PUT 请求
+    - HEAD 主要用于调试,不返回实际的请求对象
+    - PUT 主要用于 web publishing tools
+      上传对象到指定的服务器目录
+      也可在应用程序中用于上传文件到指定的服务器目录
+    - DELETE 删除服务器上的对象
