@@ -76,3 +76,21 @@
       上传对象到指定的服务器目录
       也可在应用程序中用于上传文件到指定的服务器目录
     - DELETE 删除服务器上的对象
+
+  - response message
+    1. status line
+      - HTTP/1.1 200 OK
+      1. 200 请求正常
+      2. 301 Moved Permanently
+         - 资源永久移动，新URL在Location字段中
+      3. 400 Bad request the request can't be understood by the server
+      4. 404 not found 请求的资源在服务器中找不到
+      5. 505 HTTP version not supported
+    2. header lines
+      - Connection: close
+      - Date: Tue, 18 Aug 2015 15:44:04 GMT 该response message被生成并且发送出来的时间
+      - Server: Server: Apache/2.2.3 (CentOS)
+      - Last-Modified: Tue, 18 Aug 2015 15:11:03 GMT 资源上次被修改的时间 该字段在缓存中经常被使用
+      - Content-Length: 6821
+      - Content-Type: text/html
+    3. entity body
