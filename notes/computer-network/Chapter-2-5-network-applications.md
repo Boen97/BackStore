@@ -86,6 +86,7 @@
       3. 400 Bad request the request can't be understood by the server
       4. 404 not found 请求的资源在服务器中找不到
       5. 505 HTTP version not supported
+      6. 304 Not modified 在 web cache conditional get 中经常使用
     2. header lines
       - Connection: close
       - Date: Tue, 18 Aug 2015 15:44:04 GMT 该response message被生成并且发送出来的时间
