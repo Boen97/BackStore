@@ -29,3 +29,18 @@ d delete operator 操作符
 dw until the start of the next word.
 d$ delete to the end of the line
 de to the end of the current word, INCLUDING the last character.
+
+## count motion
+w move word forward
+e move to the end of word
+0 move to the start of line
+2w
+3e
+
+## d number motion
+d2w 删除两个单词
+
+## operating on lines
+dd 删除行
+2dd 删除2行
+
