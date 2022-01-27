@@ -127,10 +127,33 @@ R 可以连续替换一个字符
 ## copy and paste text
 y copy select vition
 yy copy the line
-$ move to the end of line
+'$' move to the end of line
 yw copy the word
 p put that copy text
 
+## set option
+:set ic (ignore case)忽略大小写
+/ignore\c 搜索ignore并忽略大小写
+:set hls (high light the search)
+:set is incsearch 部分匹配搜索
+:set nois 取消部分匹配搜索
+:set nohls 取消高亮显示
+:set noic 取消大小写匹配
+
+## on-line help system
+:help
+Ctrl-w Ctrl-w move to another window
+:q close window
+
+## vim startup script
+:e ~/.vimrc
+:r $VIMRUNTIME/vimrc_example.vim
+:w
+:help vimrc-intro
+
+## completion
+Ctrl+d see possible completions
+Tab 命令补全
 
 
 
