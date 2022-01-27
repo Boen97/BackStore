@@ -95,6 +95,45 @@ zb put the line to the bottom of screen
 :%s/thee/the/g 替换整个文件
 :%s/thee/the/gc substitude the whole file with a prompt
 
+## execute an external command
+:!ls
+
+
+## save file
+:w filename save current buffer to the target file
+
+## select text to write
+v press v
+then move the cursor to select text
+:w TEST save the select text to TEST
+
+## retrieving and merge files
+:r filename 将文件中的内容添加到光标所在位置
+:r !ls 将命令执行结果添加到光标所在处
+
+## open command
+o open a line below the cursor
+O open a line above the cursor
+
+## the append command
+a insert text after the cursor
+i insert text before the cursor
+A append text after the end of line
+
+## another to replace
+R 可以连续替换一个字符
+
+
+## copy and paste text
+y copy select vition
+yy copy the line
+$ move to the end of line
+yw copy the word
+p put that copy text
+
+
+
+
 
 
 
