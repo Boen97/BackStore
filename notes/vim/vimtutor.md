@@ -44,3 +44,20 @@ d2w 删除两个单词
 dd 删除行
 2dd 删除2行
 
+## the undo command
+x delete a word
+u undo
+U return the line to its original state
+C-R undo the undo's
+
+## the put command
+p put the pre deleted line after the cursor
+
+## the replace command
+r replace the character at the cursor
+
+## the change command
+ce to change until the end of the word
+cc chang the whole line
+cw change the word
+c$ change to the end of line
