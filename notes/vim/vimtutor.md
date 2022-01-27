@@ -74,4 +74,27 @@ gg to the head of the file
 n next find
 N next find in the opposite direction
 ?errror search backwards
+Ctrl-o go back to you came from before search
+
+## matching parentheses search
+% to to match parenttheses
+
+## page up down
+Ctrl + d
+Ctrl + u
+
+## put the line of screen
+z-enter put the line to top of screen
+zz put the line to the center of screen
+zb put the line to the bottom of screen
+
+## the substitute command
+:s/thee/the change the first occurence of 'thee' in the line
+:s/thee/the/g sucstitude globally in the line
+:485,487s/thee/the/g 替换指定行内
+:%s/thee/the/g 替换整个文件
+:%s/thee/the/gc substitude the whole file with a prompt
+
+
+
 
