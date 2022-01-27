@@ -36,6 +36,7 @@ e move to the end of word
 0 move to the start of line
 2w
 3e
+b back a word
 
 ## d number motion
 d2w 删除两个单词
@@ -61,3 +62,16 @@ ce to change until the end of the word
 cc chang the whole line
 cw change the word
 c$ change to the end of line
+
+## cursor location and file status
+C-g show your location in the file and file status
+G to the bottom of the file
+gg to the head of the file
+485 G return to the 485 line
+
+## the search command
+/errroor
+n next find
+N next find in the opposite direction
+?errror search backwards
+
