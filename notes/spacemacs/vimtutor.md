@@ -42,3 +42,24 @@ SPC h d f
 SPC h d k see a for key binding and show what it is bound
 SPC h d v search variables
 
+
+## exploring
+SPC h SPC list all layers and view files from the layer
+SPC ? list all key bindings
+
+## regular expression syntax
+
+## customization
+
+### .spacemacs file
+ - four top level functions in the file
+  1. /layers
+  2. /init
+  3. /user-init
+  4. /user-config
+
+- SPC f e d open .spacemacs
+- SPC f e D update .spacemacs
+
+## clear high light search
+SPC s c
