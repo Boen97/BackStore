@@ -36,3 +36,9 @@ SPC f r search recent open files
 SPC f s save file
 :x save and quit file
 :e <file> open file
+
+## the help system
+SPC h d f
+SPC h d k see a for key binding and show what it is bound
+SPC h d v search variables
+
