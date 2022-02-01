@@ -29,3 +29,10 @@ SPC w s horizontal split
 SPC w h/j/k/l navigate among windows
 SPC w H/J/K/L move current window
 SPC w . window transient state
+
+## Files
+SPC f f search files in the current directory
+SPC f r search recent open files
+SPC f s save file
+:x save and quit file
+:e <file> open file
