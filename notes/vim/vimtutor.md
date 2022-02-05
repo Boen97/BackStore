@@ -155,7 +155,10 @@ Ctrl-w Ctrl-w move to another window
 Ctrl+d see possible completions
 Tab 命令补全
 
-
+## search 
+- * search current word forward
+- # search current word backword
+- \<word\> search whole word
 
 
 
