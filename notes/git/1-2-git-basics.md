@@ -51,3 +51,13 @@
 - git log --pretty=oneline
 - git log --pretty=format:"%h - %an, %ar"
 - git log --graph
+## limiting log output
+- git log -2
+- git log --since=2.weeks
+- git log --since="2008-10-01"
+- git log --before="2008-10-11"
+- git log --author="Jake Ress"
+- git log --grep="Hellp"
+- git log -S function-name
+- git log -- dev/rhymechiang
+- git log --no-merges
