@@ -33,4 +33,8 @@
 
 - the root gitignore applies recursively to the entire repository
 - subdirectory .gitignore applies to its scope location
-
+## commit your changes
+- git commit -m ""
+## skipping the stage area
+- git commit -a ""
+  stage all tracked files and commit
