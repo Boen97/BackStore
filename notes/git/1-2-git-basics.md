@@ -59,5 +59,20 @@
 - git log --author="Jake Ress"
 - git log --grep="Hellp"
 - git log -S function-name
-- git log -- dev/rhymechiang
+- git log -- dev/rhymechiangs
 - git log --no-merges
+## commit amend
+- git commit -m "balabal"
+- git add forgottern_file
+- git commit --amend
+## unstage
+- git reset HEAD <file>
+## unmodifying
+- git checkout -- <file>
+
+> 凡是commit之后的数据都可以根据.git来进行回复，但是如果没有commit的revert，就没办法恢复了
+
+## undo things with git restore
+> git restore is a alternative of git reset
+- git restore --staged file
+- git restore file revert file
