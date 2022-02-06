@@ -38,3 +38,16 @@
 ## skipping the stage area
 - git commit -a ""
   stage all tracked files and commit
+## removing files
+- git rm README
+- git rm --cached README
+- git rm log/\*.log
+- git rm \*~
+## viewing the commit history
+- git log
+- git log -p show diffs
+- git log -p -2 limit length
+- git log --state
+- git log --pretty=oneline
+- git log --pretty=format:"%h - %an, %ar"
+- git log --graph
