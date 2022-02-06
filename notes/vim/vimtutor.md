@@ -99,7 +99,7 @@ zb put the line to the bottom of screen
 :!ls
 
 
-## save file
+## save filrre
 :w filename save current buffer to the target file
 
 ## select text to write
