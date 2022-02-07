@@ -10,3 +10,9 @@ SPC + ? search key bindings
 narrow search key bindings SPC\ b
 SPC + h + d describe functions
 emacs -nw open emacs on terminal
+
+## process
+- SPC a p list process
+- j k navigate
+- d delete process
+- q quit process and close the buffer
