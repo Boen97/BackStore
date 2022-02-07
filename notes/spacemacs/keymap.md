@@ -9,3 +9,4 @@ SPC + m major mode leader key
 SPC + ? search key bindings
 narrow search key bindings SPC\ b
 SPC + h + d describe functions
+emacs -nw open emacs on terminal
