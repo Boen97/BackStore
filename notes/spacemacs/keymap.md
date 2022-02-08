@@ -19,3 +19,5 @@ emacs -nw open emacs on terminal
 ## treemacs
 - M-0 toggle treemacs
 - SPC 0 toggle treemacs
+## undo
+Ctrl-/ hybrid mode undo
