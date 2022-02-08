@@ -17,4 +17,5 @@ emacs -nw open emacs on terminal
 - d delete process
 - q quit process and close the buffer
 ## treemacs
+- M-0 toggle treemacs
 - SPC 0 toggle treemacs
