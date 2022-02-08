@@ -35,3 +35,6 @@
 - :set nonumber
 ## where am I
 - Ctrl G
+## scroll line up or down
+Ctrl Y
+Ctrl E
