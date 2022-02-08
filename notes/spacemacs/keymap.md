@@ -24,3 +24,7 @@ Ctrl-/ hybrid mode undo
 ## formate code
 SPC m =
 , = = 
+## multi-term
+SPC a t s m
+- next multi-term SPC m n
+- SPC m p
