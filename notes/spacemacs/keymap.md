@@ -21,3 +21,6 @@ emacs -nw open emacs on terminal
 - SPC 0 toggle treemacs
 ## undo
 Ctrl-/ hybrid mode undo
+## formate code
+SPC m =
+, = = 
