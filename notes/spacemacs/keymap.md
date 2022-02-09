@@ -33,3 +33,5 @@ SPC a t s m
 SPC e x
 ## uncomment
 SPC c l
+## paste kill ring
+SPC r y
