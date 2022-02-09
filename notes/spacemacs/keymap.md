@@ -35,3 +35,7 @@ SPC e x
 SPC c l
 ## paste kill ring
 SPC r y
+## working with big project with multi sub projects
+go to the sub project path , and touch .projectile
+M-x projectile-add-known-project
+M-x projectile-remove-known-project
