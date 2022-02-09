@@ -29,3 +29,5 @@ SPC a t s m
 - next multi-term SPC m n
 - SPC m p
 ## 在window select时，使用 tab 可以实现预览的效果
+## show errors at point
+SPC e x
