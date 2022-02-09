@@ -38,3 +38,8 @@
 ## scroll line up or down
 Ctrl Y
 Ctrl E
+## delete whole function block
+1. cursor on the line with the function name d}
+2. within the functon body itself d a p
+3. delete a curly brack block d a }
+4. ]] [[ move to the next or previous first-column curly brace

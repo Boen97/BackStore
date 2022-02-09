@@ -31,3 +31,5 @@ SPC a t s m
 ## 在window select时，使用 tab 可以实现预览的效果
 ## show errors at point
 SPC e x
+## uncomment
+SPC c l
