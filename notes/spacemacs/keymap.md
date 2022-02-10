@@ -39,3 +39,10 @@ SPC r y
 go to the sub project path , and touch .projectile
 M-x projectile-add-known-project
 M-x projectile-remove-known-project
+## treemacs create file dir
+c f 
+c d
+d delete node
+q hide treemacs
+R rename
+## M-x custmize group doom-mode-line / monokai
