@@ -61,3 +61,6 @@ SPC s s 能够实现在该文件中搜索 symbol 的效果
 C-c C-e s
 ## next error
 SPC e n
+## evil jump
+C-o backward
+C-i forward
