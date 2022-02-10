@@ -48,3 +48,5 @@ R rename
 ## M-x custmize group doom-mode-line / monokai
 ## treemacs copy file
 yf
+## toggle fold
+za
