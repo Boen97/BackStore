@@ -50,3 +50,5 @@ R rename
 yf
 ## toggle fold
 za
+zo
+## tab 不管是在后面还是前面，都会自动对齐 tab
