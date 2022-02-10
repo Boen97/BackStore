@@ -59,3 +59,5 @@ SPC m z
 SPC s s 能够实现在该文件中搜索 symbol 的效果
 ## web mode element select
 C-c C-e s
+## next error
+SPC e n
