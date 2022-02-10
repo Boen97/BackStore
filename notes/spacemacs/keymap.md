@@ -46,3 +46,5 @@ d delete node
 q hide treemacs
 R rename
 ## M-x custmize group doom-mode-line / monokai
+## treemacs copy file
+yf
