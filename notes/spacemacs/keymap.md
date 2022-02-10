@@ -64,3 +64,5 @@ SPC e n
 ## evil jump
 C-o backward
 C-i forward
+## html css emmet expand snippet
+C-return
