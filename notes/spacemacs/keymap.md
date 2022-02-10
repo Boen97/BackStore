@@ -57,3 +57,5 @@ SPC m z
 ## dd 能够直接删除 flod 的内容
 ## ivy swiper search 
 SPC s s 能够实现在该文件中搜索 symbol 的效果
+## web mode element select
+C-c C-e s
