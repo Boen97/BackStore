@@ -52,3 +52,6 @@ yf
 za
 zo
 ## tab 不管是在后面还是前面，都会自动对齐 tab
+## html tag fold unflod
+SPC m z
+## dd 能够直接删除 flod 的内容
