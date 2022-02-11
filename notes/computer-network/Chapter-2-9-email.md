@@ -12,3 +12,5 @@
    > 假设用户A要给用户B发送邮件，用户A首先在她的邮件客户端（user agent）编辑邮件，编辑完成点击提交之后
    > user agent 将邮件提交到 mail server 的 outgoing message queue
    > 最终邮件投递到用户B的 mail server, B想看的时候只要去 mail server 获取就行了
+   
+### SMTP 协议是email在应用层最主要的协议
