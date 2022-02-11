@@ -25,4 +25,18 @@
   2. smaller frame
   3. less error-prone
 
+- Response Message Prioritization and Server Push
+  1. Response Message Prioritization
+     
+     当一个网站同时发起很多请求时，可以给每个请求添加对应的权重值，server 根据对应的权重值返回 response message
+     
+  2. Server Push
+  
+     Server 可以在客户端还没有请求资源的时候，自动将客户端所需要的对象 Push 到客户端
+     能够大大减少 waiting for request 所带来的延迟，这个功能完全可以在网页上实现，因为一个网页在一开始需要什么对象，完全可以在 server 端进行分析
+
 ## HTTP/3
+
+- HTTP/3 主要是为了支持运行 QUIC 协议，HTTP/2中的功能也都有
+- QUIC 是一个全新的协议，运行在 应用层，使用UDP 协议实现，具有
+  message multiplexing (interleaving), per-stream flow control, and low-latency connection establishment.
