@@ -1,2 +1,2 @@
 ## esc key
-Ctrl + [ 
+Ctrl + [ or Cmd + .
