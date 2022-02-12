@@ -9,3 +9,6 @@
     From: A@gmail.com
     To: B@gmail.com
     Subject: sdjfhjdshfjsd.
+- SMTP is a push protocol not a pull protocol
+- user agent use HTTP or SMTP deliver the mail to the mail server
+- between the mail server, then use SMTP to communicat
