@@ -4,3 +4,8 @@
      when we need to send a img, we need encode and decode by 7-bit ASCII
      
 - **SMTP no intermediate server for sending mail**
+- Mail Message Formats
+  - Header Lines
+    From: A@gmail.com
+    To: B@gmail.com
+    Subject: sdjfhjdshfjsd.
