@@ -13,3 +13,17 @@
   - a distributed database
   - a application layer protocal, use UDP, run on port 53
   - allow user to query the database
+  
+- The services provided by DNS
+  1. translate hostname to IP addresses
+  2. Host Alias
+  - alias canonical hostname
+  3. Mail Server Alias
+  - alias mail server hostname
+  - use MX record, mail server and web server could be identical alias hostname
+  4. Load distribution
+  - for replicated servers
+  - a set of ip addreses alias to one hostname
+  
+> the much of complexity in the Internet is located in the edges of the Internet
+> DNS is a example
