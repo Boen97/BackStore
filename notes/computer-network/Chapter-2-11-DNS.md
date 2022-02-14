@@ -106,4 +106,15 @@ for example:
      records of other authoritative servers
   5. Additional information
      
+ - nslookup program
+   send dns query message directly to dns server
+
+- Insert Records into the DNS Database
+1. first register a hostname, such as networkutopia.com
+2. provide the register the name and ip addresses of your primary and secondary authoritative dns servers
+   such as dns1.networkutopia.com and dns2.networkutopia.com, with ip address 212.2.212.1 and 212.2.212.2
+3. insert a NS record and A record into TLD servers
+4. insert MX record for mail server alias
+
+> more recently, UPDATE option has been added to the DNS protocal, which alow data to be dynamic added or deleted from database via dns messages
      
