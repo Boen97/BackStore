@@ -27,3 +27,47 @@
   
 > the much of complexity in the Internet is located in the edges of the Internet
 > DNS is a example
+
+- How DNS works
+  1. All DNS query and replay message are send within UDP on port 53
+- Why DNS design in distributed
+  1. single point of failure
+  2. traffic volume
+  3. distant centralized database
+  4. maintenance
+> DNS is a example of a distributed database implemented in the Internet
+
+- Three classed of DNS servers
+1. root DNS servers
+2. top-level domain(TLD) servers
+3. authoritative servers
+
+Local DNS
+
+> a proxy of local client to request DNS service
+for example:
+1. request www.amazon.com
+2. request local DNS server
+3. local DNS server request root dns get the IP address of TLD servers for www
+4. then reqeust TLD server to get the id addresses of authoritative servers
+
+- recursive query and iterative query
+  1. recursive query
+     client -> local dns server
+     local dns server -> root dns server
+     local dns server -> TLD dns server
+     local dns server -> authoritative dns server
+     local dns server -> client
+ 2. iterative query
+    client -> local dns server
+    local dns server -> root dns server
+    root dns server -> TLD dns server
+    TLD dns server -> authoritative server
+    authoritative server -> TLD dns server
+    TLD dns server -> root dns server
+    ...
+
+- DNS Caching
+1. the mapping between ip addressed and hostname are cached
+2. the expired time of the cache are often 2 days
+3. the ip addresses of TLD servers are also cached, so bypass the root dns server
