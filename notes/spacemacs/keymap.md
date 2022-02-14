@@ -67,4 +67,6 @@ C-i forward
 ## html css emmet expand snippet
 C-return
 ## quick toggle major mode
+## emacs paste style
+Ctrl + y
 ,
