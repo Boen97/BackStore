@@ -71,3 +71,19 @@ for example:
 1. the mapping between ip addressed and hostname are cached
 2. the expired time of the cache are often 2 days
 3. the ip addresses of TLD servers are also cached, so bypass the root dns server
+
+- DNS Records and Messages
+
+1. RRs(resource records)
+(Name, Value, Type, TTL)
+    1. Type = A
+       mapping of hostname and ip address
+    2. Type = NS
+       Name = domain(foo.com)
+       Value = authoritative DNS server
+    3. Type = CNAME
+       Name = hostname alias
+       Value = canonical hostname
+    4. Type = MX
+       Name = email hostname alias
+       Value = email canonical hostname
