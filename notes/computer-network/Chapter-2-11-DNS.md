@@ -87,3 +87,23 @@ for example:
     4. Type = MX
        Name = email hostname alias
        Value = email canonical hostname
+       
+- DNS Messages
+  1. just like HTTP request and response messages
+  2. DNS request and reply messages has the same format
+  Format
+  1. Header section
+     - identification
+     - Flags
+       - recursive desired flag
+       - authoritative flag
+       ...
+  2. Question section
+     request hostname and resource type
+  3. Answers section
+     response RRs
+  4. Authority section
+     records of other authoritative servers
+  5. Additional information
+     
+     
