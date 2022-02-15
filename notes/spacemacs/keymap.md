@@ -69,4 +69,6 @@ C-return
 ## quick toggle major mode
 ## emacs paste style
 Ctrl + y
-,
+## backtab shift tab
+<
+>
