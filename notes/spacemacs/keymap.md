@@ -72,3 +72,8 @@ Ctrl + y
 ## backtab shift tab
 <
 >
+## copy multi lines
+4Y
+## comment operation
+gc
+SPC c l
