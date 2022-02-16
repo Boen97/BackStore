@@ -77,3 +77,6 @@ Ctrl + y
 ## comment operation
 gc
 SPC c l
+SPC ;
+## quick go to last buffer
+SPC TAB
