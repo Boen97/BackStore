@@ -36,5 +36,18 @@
 - Pull not Push
   CDN 不会在每一个集群上都存储备份，而是采用 Pull 的策略，当有 client 请求资源时再进行资源的缓存，这样资源将会尽可能得用在最需要缓存的资源上
   另外在缓存资源满的时候，优先删除最少使用的资源
+  
+#### CDN Operation
+- how CDN intercepting and redirecting a request?
+> A: use DNS
+假设一个视频网站NetCinema 和 一个提供 CDN 服务的第三方机构 KingCDN
+1. NetCinema 的每一个视频的URL为 http://video.netcinema.com/6Y7B23V
+2. 用户首先访问 http://video.netcinema.com/6Y7B23V，向 Local DNS 查询 http:://video.netcinema.com 的域名信息
+3. NetCinema 的 authorative DNS server 收到查询请求后，不直接返回 IP 地址，而是返回 KingCDN 的域名 例如 a1105.kingcdn.com
+4. 用户向 a1105.kingcdn.com 发送DNS请求，最终得到了 CDN 服务提供的 IP 地址
+5. 用户直接与CDN服务器建立连接，使用 DASH 和 manifest file 获取视频 KingCDN 的域名 例如 a1105.kingcdn.com
+6. 因此用 a1105.kingc.com 发送DNS请求，最终得到了 CDN 服务提供的 IP 地址
+   用户直接与CDN服务器建立连接，使用DASH  和 manifest file 获取视频数据
+
 
 
