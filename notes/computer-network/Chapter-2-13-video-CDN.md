@@ -18,3 +18,23 @@
 5. DASH (Dynamic Adaptive Streaming over HTTP) 协议因此出现
    1. manifest file
       该文件记录了一个视频不同版本的列表信息，客户端获取到该文件后，能够自动选择适应它的视频版本
+      
+### Content Distribution Newworks
+- the challenges of vido distribution
+  1. distance to client
+  2. a popular movie could be sent many times over same link, whick waste bandwidth
+  3. single point of failure
+
+> CDN 管理着位于世界各地的服务器，每个服务器存储着数据的副本，并且能够主动将用户的请求转发到最适合用户的服务器
+
+- there could be private CDN and third-party CDN
+
+- CDN server place ways:
+  1. Enter Deep 在每一个ISP附近架设服务器，优点是离用户足够近，缺点是高度分散，不容易管理
+  2. Bring Home 在 IXP 架设服务器，IXP 是多个 ISP 交换数据的地方，较第一种方式更为集中，管理起来更加方便，但是会有更高的延迟和更低的带宽
+  
+- Pull not Push
+  CDN 不会在每一个集群上都存储备份，而是采用 Pull 的策略，当有 client 请求资源时再进行资源的缓存，这样资源将会尽可能得用在最需要缓存的资源上
+  另外在缓存资源满的时候，优先删除最少使用的资源
+
+
