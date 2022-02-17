@@ -49,5 +49,22 @@
 6. 因此用 a1105.kingc.com 发送DNS请求，最终得到了 CDN 服务提供的 IP 地址
    用户直接与CDN服务器建立连接，使用DASH  和 manifest file 获取视频数据
 
+- Cluster Selection Strategies
+
+1. CDN learns the IP addresses of client's LDNS server
+- method 1
+     地理位置优先，挑选距离client LDNS最近的CDN集群
+     缺点：
+     1. 所谓的最近，其实离客户并没有这么近
+     2. client 有时候会配置一个远方的 DNS 服务器
+     3. 没有考虑实际的网络环境
+     优点：
+     简单
+ - method 2
+ real-time measurements,根据实时的网络质量，来选择对应的CDN集群
+ 具体采用的方式为：
+ 让CDN的每个集群定期地向世界各地的LDNS发送probes探测包，但是很多LDNS设置了不对探测包作出回应
+ 
+
 
 
