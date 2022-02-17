@@ -80,3 +80,6 @@ SPC c l
 SPC ;
 ## quick go to last buffer
 SPC TAB
+## go to last change on the current buffer
+g ;
+g , go to last change reverse
