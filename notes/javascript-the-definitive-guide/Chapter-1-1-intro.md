@@ -15,3 +15,45 @@ a phrase of JavaScript that produce a value.
 
 - an expression is something that computes a value but doesn’t do anything: it doesn’t alter the program state in any way. 
 - Statements, on the other hand, don’t have a value, but they do alter the state.
+
+- Types
+1. primitive types
+   1. number
+   2. string
+   3. boolean
+   4. null
+   5. undefined
+   6. Symbol
+2. object types
+   - a object is a collection of properties
+   - global object is a special object
+   - array
+   > ordered collection of numbered values
+   > 而普通的对象是由一组 unordered collection of named values
+   - Set
+   - Map
+   - RegExp
+   - Error
+   - functions and classes are a special kind of object
+   
+- The JavaScript interpreter **performs automatic garbage collection** for memory management.
+
+- In JavaScript, null and undefined are the only values that methods cannot be invoked on.
+
+- JavaScript’s object types are mutable and its primitive types are immutable. 
+
+- **strict equality operator ===, which does no type conversions.**
+
+### Numbers
+
+- JavaScript 采用 64-bit floating-point formate to represents numbers
+
+- JavaScript Integer represent range
+  2^-53 到 2^53
+  
+- array indexing and bitwise operator 采用 32-bit 整数
+
+
+     
+
+
