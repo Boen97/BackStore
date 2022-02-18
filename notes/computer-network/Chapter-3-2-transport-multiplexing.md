@@ -44,3 +44,9 @@ If a host is found to be running an application with a known security flaw (e.g.
 hacker first figout out whick port are accept TCP or UDP, and whick application are running, then use the application security flaw to attack.
 
 the nmap are just sequentially scan ports, both TCP and UDP are sequentially scaned
+
+## Web server and TCP
+
+socket and process are not always one-to-one
+
+in web server, there is only one process, and use thread to create socket for each HTTP TCP connection, which could improve the performance of the server
