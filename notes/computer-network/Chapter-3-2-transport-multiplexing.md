@@ -35,3 +35,12 @@ the source address in UDP segament are used as return address, where the server 
 ## Connection-Oriented MultiPlexing and Demultiplexing
 
 TCP socket are identified by source IP address, source port number, desitination IP address, desitination port number
+
+## port scanning
+
+nmap most free and popular port scanning application.
+
+If a host is found to be running an application with a known security flaw (e.g., a SQL server listening on port 1434 was subject to a buffer overflow, allowing a remote user to execute arbitrary code on the vulnerable host, a flaw exploited by the Slammer worm [CERT 2003–04]), then that host is ripe for attack.
+hacker first figout out whick port are accept TCP or UDP, and whick application are running, then use the application security flaw to attack.
+
+the nmap are just sequentially scan ports, both TCP and UDP are sequentially scaned
