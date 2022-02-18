@@ -19,3 +19,19 @@ each socket in the host are be assigned a port number.
 in the segament header files, has source port number and destination port number, whick are be used to demultiplexing.
 
 0 to 1023 are called well-known port numbers.
+
+## Connectionless MultiPlexing and Demultiplexing
+
+UDP socket are identified by desitination IP address and destination port.
+
+UDP segament are composed by source address and desitination address.
+
+two segaments with different source address but has the same desitination address will be delived to the same distination socket.
+
+address are composed by id address and port number.
+
+the source address in UDP segament are used as return address, where the server socket use it to return msg back.
+
+## Connection-Oriented MultiPlexing and Demultiplexing
+
+TCP socket are identified by source IP address, source port number, desitination IP address, desitination port number
