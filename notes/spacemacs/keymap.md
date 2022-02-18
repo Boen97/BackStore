@@ -83,3 +83,6 @@ SPC TAB
 ## go to last change on the current buffer
 g ;
 g , go to last change reverse
+
+## find file at point
+g f
