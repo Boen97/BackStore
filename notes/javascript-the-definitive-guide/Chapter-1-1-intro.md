@@ -9,4 +9,9 @@
   1. web browser
   2. Node
      Node gives JavaScript access to the entire operating system, allowing JavaScript to read or write files
-     
+
+- expression
+a phrase of JavaScript that produce a value.
+
+- an expression is something that computes a value but doesn’t do anything: it doesn’t alter the program state in any way. 
+- Statements, on the other hand, don’t have a value, but they do alter the state.

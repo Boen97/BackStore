@@ -86,3 +86,8 @@ g , go to last change reverse
 
 ## find file at point
 g f
+
+## window resize
+SPC w .
+{ }
+[ ]
