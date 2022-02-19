@@ -61,5 +61,11 @@ based on rdt2.0, with sequence number, we could clearly reslove the duplicate pa
 
 based on rdt2.1, instead respones NAK, send an ACK for the last corretly received packet
 
+## reliable data transfer over a lossy channel with bit errors: rdt3.0
 
+how to detect packet loss and what to do when packet loss occurs.
+
+sender judiciously choose a time value such that packet loss, when times out just retransmit.
+
+rdt3.0 also called alternating-bit protocol because packet sequence number alternate between 0 and 1.
        
