@@ -45,7 +45,25 @@ four fields + application data
       every UDP segament could have different size
    4. Checksum
       used by the receiving host to check whether has errors during the transfer
+      
+every field are 16 bits long
+
 2. application data
 
 ### UDP Checksum
 > provides for error detection. determine whether bits within the UDP segament have been altered.
+
+1. get the sum of the top three 16-bits field
+2. 1s complement the sum
+3. at the receiver, get the sum of the four field, include the checksum field
+4. if no error, then the sum in the receiver are 111111111111, if has one 0, then the segament has error
+
+- why UDP provide checksum service, because lower link protocal also provide error checking?
+
+end-to-end principle, certain functions must be implemented on the end, lower levels may be redundant.
+
+there is no promise that lower service would provide errro checking
+
+- UDP provides error checking, but does nothing to recover from an error.
+
+- some implentations of UDP may discard the damaged segament, others pass to the application with a warning
