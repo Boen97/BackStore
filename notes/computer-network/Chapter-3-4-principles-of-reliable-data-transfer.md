@@ -61,7 +61,7 @@ based on rdt2.0, with sequence number, we could clearly reslove the duplicate pa
 
 based on rdt2.1, instead respones NAK, send an ACK for the last corretly received packet
 
-## reliable data transfer over a lossy channel with bit errors: rdt3.0
+### reliable data transfer over a lossy channel with bit errors: rdt3.0
 
 how to detect packet loss and what to do when packet loss occurs.
 
@@ -69,3 +69,15 @@ sender judiciously choose a time value such that packet loss, when times out jus
 
 rdt3.0 also called alternating-bit protocol because packet sequence number alternate between 0 and 1.
        
+### pipelined reliable data transfer protocals
+
+rdt3.0 has bad performance because its stop-and-wait protocal.
+the wait time are slow down the transimit rate.
+
+the sender is allowed to transmit multiple packets without waiting for ACK
+
+1. the range of sequence number increased
+2. both side have to buffer more than one packet
+3. new approaches are need to error recover with a range of sequence number
+   1. Go-Back-N
+   2. selective repeat
