@@ -19,3 +19,47 @@ with a reliable channel, no transferred data bits are corrupted or lost, and all
 
 - rdt1.0 no need any feedback from the receiver side
 - rdt1.0 are assumed that receiver is able to receive data as fast as possible, so there is no need to ask the sender to slow down.
+
+### reliable data transfer over a channel with bit errors: rdt2.0
+
+with bit errors but no packet loss
+
+- feeback
+
+feedback are needed when receive a bit error packet
+1. positive acknowledgments
+2. negative acknowledgments
+
+- ARQ protocals (Automatic Repeat reQuest) 
+1. error detection
+2. receiver feedback
+3. retransmission
+
+- stop-and-wait protol
+  - the sender has two states, one wait call from above, one wait for ACK or NAK
+  - the receiver has one state, wait for call from below
+  - when the sender in the wait-for-ACK-or-NAK state, it cannot get more data from the upper layer
+
+- fatal flaw of rdt2.0
+  - the ACK or NAK packet could be corrupted
+
+- solve the corrupted ACK or NAK packet
+  - first, we need add checksum to detect errors
+  - ways for handle corrupted ACKs or NAKs
+    1. add a new type of packect, "what did you say"
+    2. add enough checksum bits allow the sender not only to detect, but also to recover from bit errors.
+       in rdt2.0 no packect loss, so it would work
+    3. resend
+       when sender receiver garbled ACK or NAK.
+       This brings a new problem: duplicate packets
+
+### rdt2.1 add sequence number field
+
+based on rdt2.0, with sequence number, we could clearly reslove the duplicate packets problem
+
+### rdt2.2 NAK-free 
+
+based on rdt2.1, instead respones NAK, send an ACK for the last corretly received packet
+
+
+       
