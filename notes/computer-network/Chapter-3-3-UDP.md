@@ -34,3 +34,18 @@ QUIC (Quick UDP Internet Connection) which use UDP as underlying transport layer
 - when packet loss are low, and some organizations bloking UDP traffic for security reasons, 
   TCP becomes more and more popular.
 - because UDP has no congestion control, which are bad for network enviroment, and will crowding out TCP sessions.
+
+### UDP Segment Structure
+
+four fields + application data
+1. four fields
+   1. Source Port
+   2. Desc.Port
+   3. Length (header + data)
+      every UDP segament could have different size
+   4. Checksum
+      used by the receiving host to check whether has errors during the transfer
+2. application data
+
+### UDP Checksum
+> provides for error detection. determine whether bits within the UDP segament have been altered.
