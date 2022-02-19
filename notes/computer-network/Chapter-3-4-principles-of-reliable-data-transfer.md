@@ -81,3 +81,55 @@ the sender is allowed to transmit multiple packets without waiting for ACK
 3. new approaches are need to error recover with a range of sequence number
    1. Go-Back-N
    2. selective repeat
+   
+#### Go-Back-N(GBN) also called sliding-window protocal
+
+maximun allowed number N, of unacknowledged packtes in the pipeline
+
+just like a send window size N
+
+- base 
+  the sequence number of the oldest unacknowledged packet
+
+- nextseqnum
+  smallest unused sequence number
+  
+- [0 - base - 1]
+  packets that have been acknowledged
+  
+- [base - nextseqnum - 1]
+  packect that have been sent but not yes acknowledged
+  
+- [nextseqnum - base + N - 1]
+  can be used for packects send immediately
+
+- [base + N - ...]
+  cannot be used 
+
+- k
+  is the number of bits in the packet sequence number field
+  so its a ring of size z^k
+
+- TCP has a 32-bit sequence number field
+
+- The GBN sender respond events
+
+1. Invocation from above
+   
+   if the window is not full, then a packet will be send
+   otherwise put it to a buffer or use a semaphore or a flag to control the access of send window
+   
+2. Receipt of ACK
+   - cumulative acknowledgment
+     all packects with a sequence number up to and include n have been corretly received.
+
+3. a timeout event
+   a timer for the oldest transmitted but not yet acknowledged
+   when a ACK received
+   1. there still additional wait ACK packets, then timer restarted
+   2. no other waiting, then stopped.
+  
+
+
+
+#### Selective Repeat(SR)
