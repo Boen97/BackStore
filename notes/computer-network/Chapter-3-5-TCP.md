@@ -52,6 +52,31 @@ the intermediate network do not main TCP connection states. they see datagrams n
         Urgent data field
         the location of last byte of this urgent data
      (PSH, URG, Urgent data field are not used)
+
+- sequence numbers and acknowledgment numbers
+  
+  - sequence number
+    
+    1. TCP views data as an ordered, stream of bytes, and the sequence number is a byte stream number
+       for example, a data of stream are 50000 bytes, MSS are 1000 bytes
+       the first segment sequence number are 0
+       the second are 1000
+       the third are 2000 ...
+    
+   - acknowledgment numbers
+     the acknowledgment number that Host A puts in its segament is the sequence number of the next byte Host is expecting from Host B
+ 
+- TCP provides cumulative acknowledgment   
+   TCP only acknowledgment bytes up to first missing byte in the stream
+
+- What does a host do when it received out-of-order segaments in a TCP connection?
+> TCP RFCs do not impose any rules about this, and leave it to the progammers
+1. immediately discard the out-of-order segaments
+2. keep the out-of-order bytes and waits for the missing bytes to fill in the gap.
+   this is the approach taken in practice
+
+
+    
      
 
 
