@@ -128,8 +128,18 @@ just like a send window size N
    when a ACK received
    1. there still additional wait ACK packets, then timer restarted
    2. no other waiting, then stopped.
+   
+- The receiver's actions in GBN:
+  1. if a packet received with sequence number is in order, then  the receiver sends a ACK for that packect, and deliver that data to the upper layer
+  2. in other cases, the receiver discards the packet, and resend the ACK for the most recently in-order packet.
+  3. thus the use of cumulative acknowledgments is a naturak choise for GBN
   
-
-
+- why GBN discards out-of-order packets?
+1. the receiver must deliver data in order to the upper layer
+2. if packect n is lost, both it and packet n + 1 will be retransmitted, thus the receiver can simple discard packet n + 1
+3. simplicity of receiver buffer design
+   1. the receiver only maintain is the sequence number of the next in-order packet expectedseqnum
+   2. while the sender must main the upper and lower bounds of the window, and the postion of nextseqnum
+4. the disadvantage of throwing away a corrtly packet is that the retransmission of that packet might loss, and thus even more retransmission would be required.
 
 #### Selective Repeat(SR)
