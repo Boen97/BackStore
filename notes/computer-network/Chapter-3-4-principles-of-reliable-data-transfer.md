@@ -143,3 +143,53 @@ just like a send window size N
 4. the disadvantage of throwing away a corrtly packet is that the retransmission of that packet might loss, and thus even more retransmission would be required.
 
 #### Selective Repeat(SR)
+- GBN has performance problems in some scenarios
+  1. when the window size and bandwidth delay are large, many packects can be in the pipeline
+  2. a single packet error can cause GBN to retransmit a large number of packtes
+  3. as the probability of channel error increases, the pipeline can become filled with these unnecessary retransmissions
+  
+- SR avoid unnecessary retransmission by having the sender retransmit only those packets that it suspects error (lost or corrupted)  
+
+- the SR receiver will acknowledge a corretly received packet whether or not it is in order.
+  out-of-order packets are buffered until any missing packet with slower sequence number are received, at which point a batch of packects can be delivered in order to the upper layer.
+
+- SR sender events and actions
+
+1. data received from above
+   check the next available sequence number, if within the window size, then transmit it , if not buffer it or return to the upper layer
+2. timeout
+   not like GBN, use a single timer, SR requires each packet have its own logical timer, only one packet will be transmitted on timeout.
+   a single hardware timer can be used to mimic the operation of multiple logical timers.
+3. ACK received
+   if a ACK packet are received, the SR sender marks that packet are received, and provide it to the window, 
+   if n is equal to the send_base, the window base is move forward to the unacknowledged packet with smallest sequence number
+
+- SR receiver events and actions
+
+1. packet with sequence number in [rcv_base, rcv_base + N - 1]
+   
+   if the received packet sequence number equals to rcv_base, then this packet with its consecutively numbered packets are delivered together to the upper layer
+   and the rcv_window move forward by the number of packects delivered to the upper layer
+
+2. packet with sequence number in [rcv_base - N, rcv_base - 1]
+   
+   an ACK must be generated, even though this is a packet that the receiver has previsouly acknowledged. because SR no cumulative acknowledgment.
+   if the receiver were not to acknowledge this packet, the sender's window would never move forward.
+   
+   the sender and receiver will not always have an identical view of what has been received corretly and what has not.
+   
+3. otherwise ignore the packet
+
+- tht lack of synchronization between sender and receiver windows has important consequnces with the reality of a finite range of sequence number
+
+- since the receiver cannot see the actions taken by the sender
+
+- there is no way to distinguishing a packet is retransmitted or a new send packet
+
+- **the window size muse be less than or equal to half the size of sequence number space**
+
+- the SR protocal also need to consider packer reorder problem
+  this could be avoid by sequence number and maximun amount of live time in the network
+
+
+  
