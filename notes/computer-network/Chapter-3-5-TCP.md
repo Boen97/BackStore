@@ -75,6 +75,19 @@ the intermediate network do not main TCP connection states. they see datagrams n
 2. keep the out-of-order bytes and waits for the missing bytes to fill in the gap.
    this is the approach taken in practice
 
+- both sides of TCP connection randomly choose a initial sequence number
+  This is done to minimize the possibility that a segment that is still present in the network from an earlier, already-terminated connection between two hosts is mistaken for a valid segment in a later connection between these same two hosts (which also happen to be using the same port numbers as the old connection) 
+  
+- a example of sequence number and acknowledgment number
+
+1. first client A random choose a sequence number 42, and the server side random init sequence number 79
+2. client send a packet with sequence number 42, and acknowledgment number 79, and data is c
+3. the server received this packet, and respond with a packet with sequence number 79, acknowledgment mumber 42 + 1
+4. the client received this packet, and send a packet with sequence number 43, and acknowledgment number 80
+...
+
+### Round-Trip Time Estimation and Timeout
+
 
     
      
