@@ -88,6 +88,35 @@ the intermediate network do not main TCP connection states. they see datagrams n
 
 ### Round-Trip Time Estimation and Timeout
 
+1. the length of the timeout intervals 
+   should be larger than the connection's round-trip time(RTT)
+   the time from when a segament is send until it is acknowledged.
+   
+2. should a timer be associated with each and every unacknowledged segment
+
+#### estimating the Round-Trip Time
+
+- SampleRTT
+  at any point of time, the SampleRTT is being estimated for only one of the transimitted but unacknowledged, leading to a new value of SampleRTT every RTT
+
+- EstimatedRTT
+  - EstimatedRTT = (1 - a) * EstimatedRTT + a * SampleRTT 
+  - a often is 1/8
+  - EWMA (exponential weighted moving average)
+  
+- DevRTT
+  DevRTT is an EWMA of the difference between SampleRTT and EstimatedRTT
+
+- TimeoutInterval
+  TimeoutInterval = EstimatedRTT + 4 * DevRTT
+  
+- initial TimeoutInterval value is 1 second recommended.
+
+- when a timeout occurs, the value of TimeoutInterval is doubled to avoid  permature timeout occurring for a segament that will soon be acknowledged.
+
+- as soon as the segament are received, EstimatedRTT is Updated, and TimeoutInterval was recomputed by the formula above.
+  
+
 
     
      
