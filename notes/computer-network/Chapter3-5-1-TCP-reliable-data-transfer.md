@@ -11,4 +11,12 @@ because timer management can require considerable overhead.
 
 - TCP is cumulative acknowledgments, so sequence number Y is ACK, then before Y are all ACK.
 
+### Doubling the Timeout Interval
 
+when timeout event occurs, TCP restrasimits the not-yet-acknowledged segament with the smalles sequence number.
+
+- each time TCP retransmits, set the next timeout interval to twice as previous value.
+
+-  when data received from application above, or ACK received, the TimeoutInterval is derived from the most recent values of EstimatedRTT and DevRTT.
+
+- doubling the timeout interval provide a limited form of congestion control.
