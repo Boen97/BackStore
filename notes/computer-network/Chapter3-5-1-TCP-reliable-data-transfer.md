@@ -20,3 +20,11 @@ when timeout event occurs, TCP restrasimits the not-yet-acknowledged segament wi
 -  when data received from application above, or ACK received, the TimeoutInterval is derived from the most recent values of EstimatedRTT and DevRTT.
 
 - doubling the timeout interval provide a limited form of congestion control.
+
+### Fase Retransmit
+
+one of the problems with timeout-triggered retranmissions is that the timeout period can be relatively long.
+
+- three duplicate ACKs are received, the TCP sender performs a fast retransmit before that segament's timer expiration.
+
+### TCP's error-recovery mechanism is a hybrid of GBN and SR protocols.
