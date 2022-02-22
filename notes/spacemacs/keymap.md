@@ -91,3 +91,7 @@ g f
 SPC w .
 { }
 [ ]
+
+## vterm
+2 SPC ' open a send default shell
+SPC u SPC ' open the terminal in the current buffer
