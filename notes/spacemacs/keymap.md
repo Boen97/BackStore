@@ -100,3 +100,8 @@ SPC p ' open terminal start with project root
 ## layouts
 SPC l l switch or create layout
 SPC l x delete layout
+
+## evil forward backward
+{ evil-backward paragragh
+}
+[ [ evil-backward section beginning
