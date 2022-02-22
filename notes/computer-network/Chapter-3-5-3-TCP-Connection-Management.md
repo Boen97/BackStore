@@ -65,3 +65,28 @@ support client wants to close the connection.
    > why need time wait?
    > because the last ACK from client-to-server may be lost and corrupt, in which case, the client need retranmissted the ACK, enable the server could successfuly deallocated the resources
    - the time spend in the TIME_WAIT state is implementation-dependent, typical values are 30 seconds, 1 minute, 2 minute.
+
+#### the server side TCP states
+> assuming the client begins connection teardown, only shown how a TCP connection is normally established and shut down
+> We have not described what hap- pens in certain pathological scenarios, for example, when both sides of a connection want to initiate or shut down at the same time.
+
+1. CLOSED
+   receive last ACK.
+2. LISTEN
+   server application creates a listen socket
+3. SYN_RCVD
+   Receive SYN
+   send SYN & ACK
+4. ESTABLISHED
+   Receive ACK
+5. CLOSE_WAIT
+   Receive FIN
+   send ACK
+6. LAST_ACK
+   send FIN
+   
+#### when host receive a TCP segment whost port number or source IP address do not match with any of the ongoing sockets in the host
+the host send a special reset segment has `RST` flag = 1, told the client do not resend the segment.
+
+#### when a host receives a UDP packet whose destination port number not match with an ongoing UDP socket.
+the host send a special ICMP datagram.
