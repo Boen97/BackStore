@@ -32,3 +32,18 @@
    2. SYN field = 0, because the connection is established
    3. could carry client-to-service data in the segment payload.
    
+> three-way handshake just like a rock climber and a belayer, ensure both sides are ready.
+
+### End of TCP connetion
+
+support client wants to close the connection.
+1. client send a FIN segment to the server
+   - FIN segment
+     FIN flag bit = 1
+2. the server send an acknowledgment segment in return 
+3. when server's running job are finished
+   the server sends its own shutdown segment that FIN = 1
+4. the client acknowledges the server's shutdown segment
+5. at this point, all resources in the two hosts are now deallocated.
+
+
