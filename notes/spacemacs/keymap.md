@@ -96,3 +96,7 @@ SPC w .
 2 SPC ' open a send default shell
 SPC u SPC ' open the terminal in the current buffer
 SPC p ' open terminal start with project root
+
+## layouts
+SPC l l switch or create layout
+SPC l x delete layout
