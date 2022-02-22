@@ -105,3 +105,8 @@ SPC l x delete layout
 { evil-backward paragragh
 }
 [ [ evil-backward section beginning
+
+## narrow defun / page
+in search and big file, its very useful
+SPC n f
+SPC n g
