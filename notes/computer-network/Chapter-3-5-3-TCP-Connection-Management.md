@@ -44,6 +44,24 @@ support client wants to close the connection.
 3. when server's running job are finished
    the server sends its own shutdown segment that FIN = 1
 4. the client acknowledges the server's shutdown segment
-5. at this point, all resources in the two hosts are now deallocated.
+5. at this point, all resources in the two hosts are now deallocated.(after the Time-Wait state, which is CLOSED state)
 
-
+### TCP states
+#### client TCP states
+1. CLOSED
+2. SYN_SENT
+   after send the SYN segment, the client TCP enters SYN_SENT state, waiting for SYNACK segment
+3. ESTABLISHED
+   after receive the SYNACK segment from server, the client TCP enters ESTABLISHED state.
+   while in the ESTABLISHED state, the TCP client can send and receive TCP segments containing payload.
+4. FIN_WAIT_1
+   after the client send FIN segment, it enters FIN_WAIT_1 state, waiting for a acknowledgment for this FIN segment
+5. FIN_WAIT_2
+   after receive an ACK segment for the first FIN segment, the client enters FIN_WAIT_2 state
+   the client waits for another FIN segment from server
+6. TIME_WAIT
+   after receive the FIN segment from server, the client send a ACK segment back, and enters TIME_WAIT state.
+   after time wait, the connection formally closed, all resources including the port number on the client side all all closed.
+   > why need time wait?
+   > because the last ACK from client-to-server may be lost and corrupt, in which case, the client need retranmissted the ACK, enable the server could successfuly deallocated the resources
+   - the time spend in the TIME_WAIT state is implementation-dependent, typical values are 30 seconds, 1 minute, 2 minute.
