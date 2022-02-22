@@ -90,3 +90,46 @@ the host send a special reset segment has `RST` flag = 1, told the client do not
 
 #### when a host receives a UDP packet whose destination port number not match with an ongoing UDP socket.
 the host send a special ICMP datagram.
+
+### nmap
+> nmap is a port-scanning tool
+> nmap can 'case the joint' not only for open TCP ports, but also for open UDP ports, for firewalls and their configurations
+> even for the versions of applications and operating systems.
+
+suppose nmap want to explore a TCP port 6789
+1. nmap send a TCP SYN segment with desitination port 6789 to that host
+   1. the source host receive a TCP SYNACK segment from the target host
+      means the TCP port 6789 is running on the target host
+   2. the source host receives a TCP RST segment from the target host
+      means the target host is not running an application with TCP port 6789
+      > but the attaker at least knows that the segments destined to the host at port 6789 are not blocked by an firewall on the path between source and target hosuts
+   3. the source host receives nothing.
+      likely means the SYN segment was bloked by an intervening firwall and never reached the target host.
+      
+### The SYN FLOOD Attack      
+
+> a server allocates and initializes connection varaibles and buffers in response to receive SYN.
+
+> the server then sends a SYNACK in response, awaits an ACK segment from the client.
+> if the client dose not send an ACK to completed the third step of three-way handshake,
+> eventually(after a minute or more) the server will terminate the half-open connection and reclaim the allocated resouces.
+
+#### Dos attack also known as the SYN Flood Attack
+- the attacker(s) send a large number of TCP SYN segments, without completing the third handshake step.
+  the server's connection resources become exhausted as they allocated for half-open connections.
+  and legitimate clients are then denied service.
+  
+- SYN cookies
+> an effective defense are deployed in most major operating systems.
+
+1. when the server receives a SYN segment, instead of creating a half-open connection for this SYN, 
+   the server creates an initial TCP sequence number that is a complicated function(hash function) of source and
+   destination IP addresses and port numbers of the SYN segment, **as well as a secret number only known to the server**
+   > this carefully crafted inital sequence number is the so-called "cookie"
+   
+2. the server then sends the client a SYNACK packet with this special sequence number.
+   > Importantly, the server does not remember the cookie or any other state information corresponding to the SYN.
+
+3. Legitimate client will return an ACK segment with this special sequence number + 1
+   > The server use the hash function could compute the right acknowledgment field value
+
