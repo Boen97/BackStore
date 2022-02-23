@@ -93,6 +93,22 @@ In fast recovery, the value of cwnd is increased by 1 MSS for every duplicate AC
 when an ACK arrives for the missing segment, TCP enters the congestion-avoidence state.
 
 when comes into fast recovery cwnd = ssthresh + 3MSS(which by fast retransmit)
+
+#### TCP Splitting: Optimizing the performance of cloud services
+
+> beaking the TCP connection at the front-end server which is close to user
+
+- the client establishes a TCP connection to the nearby front-end
+- the front-end server maintains a persistent TCP connection to the data center with a very large TCP congestion window
+- the time without TCP Splitting
+  4*RTT(one RTT to set up the connection, three for three windows of data)
+- the time with TCP SPlitting
+  - 4*RTT(front-end) + RTT(back-end server)
+  - if the front-end server are close to client, then the front-end RTT are so small
+  - and RTT(back-end server) is approximately RTT.
+  > so TCP Splitting can reduce the network delay roughly from 4 * RTT to RTT
+- TCP splitting also helps reduce TCP retransmission delays caused by losses in access networks.
+  
    
 
 
