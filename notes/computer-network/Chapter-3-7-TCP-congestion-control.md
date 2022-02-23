@@ -88,7 +88,11 @@ Given ACKs indicating a congestion-free source-to-destination path and loss even
 
 ##### fast Recovery
 
+In fast recovery, the value of cwnd is increased by 1 MSS for every duplicate ACK received for the missing segment that caused TCP to enter the fast-recovery state. 
 
+when an ACK arrives for the missing segment, TCP enters the congestion-avoidence state.
+
+when comes into fast recovery cwnd = ssthresh + 3MSS(which by fast retransmit)
    
 
 
