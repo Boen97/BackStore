@@ -37,7 +37,43 @@ By adjusting the value of cwnd, the sender can therefore adjust the rate at whic
 - that is, the TCP senders could send at a higher rate without congest- ing the network.
 
 - algorithms
-1. 
+
+> Bandwidth probing
+Given ACKs indicating a congestion-free source-to-destination path and loss events indicating a congested path.
+- loss evensts
+  1. timeout
+  2. an original ACK and then three duplicate ACKs
+> The TCP sender's behaviour is like a child who requets (and gets) more and more goodies until finally he is finally told no.
+> but then begins making request again shortly afterward.
+
+- ACKs and loss events serve as implicit signals
+
+- each TCP sender acts on local information asynchronously from other TCP senders.
+
+#### TCP congestion-control algorithm
+
+- three major components
+1. slow start
+2. congestion avoidence
+3. fast recovery (recommend, not required)
+
+##### slow start
+1. `cwnd` is initialized to a small value of 1 MSS(maximum segment size)
+2. increase by 1 MSS every time a transimitted segment is first acknowledged
+   - first 1 MSS
+   - then 2 MSS
+   - then 4 MSS
+   - starts slow but grows exponentially
+3. when a loss event indicated by a timeout
+   - set the value of `cwnd` to 1 and begins the slow start anew
+   - aslo set the `ssthresh`(shorthand for (slow start threshold)) to `cwnd / 2`
+4. since `ssthresh` is half the value of `cwnd` when congestion was last detected, it might be a bit reckless to keep 
+   doubling `cwnd` when it reaches or surpasses the value of `ssthresh`
+5. thus when `cwn` equals `ssthresh`, slow start ends and TCP transitions into **congestion avoidence mode**
+6. if three duplicate ACKs are detected, TCP performs fast retransmit, and enters the fast recovery state.
+
+
+   
 
 
 
