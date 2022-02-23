@@ -97,6 +97,8 @@ when comes into fast recovery cwnd = ssthresh + 3MSS(which by fast retransmit)
 #### TCP Splitting: Optimizing the performance of cloud services
 
 > beaking the TCP connection at the front-end server which is close to user
+> and the front-end maintains a persistent TCP connection to the data center with a very large TCP congestion window.
+> remmber, the connection between front-end and back-end are early inited and maintained
 
 - the client establishes a TCP connection to the nearby front-end
 - the front-end server maintains a persistent TCP connection to the data center with a very large TCP congestion window
