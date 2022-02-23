@@ -72,6 +72,22 @@ Given ACKs indicating a congestion-free source-to-destination path and loss even
 5. thus when `cwn` equals `ssthresh`, slow start ends and TCP transitions into **congestion avoidence mode**
 6. if three duplicate ACKs are detected, TCP performs fast retransmit, and enters the fast recovery state.
 
+##### congestion avoidence
+1. the value `cwnd` is approximately equal to `ssthresh`, the congestion is around corner
+2. increase the value of `cwnd` by just a single MSS every RTT
+   - the TCP sender increase `cwnd` by MSS bytes (MSS/cwnd) when every acknowledgement arrives.
+     for example, if MSS is 1460 bytes and cwnd is 14600 bytes, then 10 segments are sent within an RTT
+     each arriving ACK increase cwnd by MSS/cwnd (1/10) MSS
+3. when timeout occurs, behave the same as slow start encounter timeout
+   1. cwnd = 1
+   2. ssthresh = last cwnd / 2
+4. triple duplicate ACKs
+   1. TCP halves the value of cwnd
+   2. records the value of ssthresh to be half the value of cwnd
+   3. enter fast-recovery
+
+##### fast Recovery
+
 
    
 
