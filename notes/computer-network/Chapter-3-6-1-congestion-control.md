@@ -11,7 +11,7 @@
 > focus on the simpler issue of undertanding what happens as the host increase their transmission rate and the network becomes congested.
 
 1. Scenario 1: Two Senders, a Router with Infinite Buffers.
-> larget queuing delays are experienced as the packet-arrival rate nears the link capacity.
+> one of the cose of congestion: larget queuing delays are experienced as the packet-arrival rate nears the link capacity.
 
 - suppose Host A, and Host B share a outgoing link of capacity R
 - Host A and Host B is sending data to the connection at an average rate of a bytes/sec
@@ -21,3 +21,14 @@
 
 2. Scenario 2: Two Senders and a Router with Finite Buffers.
 
+> packets will be droped when arriving to an already-full buffer. and the sender will eventually retransmit it.
+
+> the retransmitted segment will taken the link capacity
+
+> cost of congestion: unneeded retranmissions by the sender in the face of large delays may cause a router to use its link bandwidth to forward
+> unneeded copies of a packet.
+
+3. Four Senders, Routers with Finite Buffers, and Multihop paths.
+
+> another cost of congestion: dropping a packet due to congestion, when a packet is dropped along the path, the transmission capacity that
+> was used at each of the upstream links to forward that packet to the point at whick it is dropped ends up having been wasted.
