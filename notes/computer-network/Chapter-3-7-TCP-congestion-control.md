@@ -112,7 +112,8 @@ when comes into fast recovery cwnd = ssthresh + 3MSS(which by fast retransmit)
 - TCP splitting also helps reduce TCP retransmission delays caused by losses in access networks.
   
    
-
+- AIMD(additive-increase, multiplicative-decrease) congestion control 
+> TCP congestion control also referred to as an AIMD form of congestion control.
 
 
 
