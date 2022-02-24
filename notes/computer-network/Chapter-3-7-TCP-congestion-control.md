@@ -127,6 +127,15 @@ when comes into fast recovery cwnd = ssthresh + 3MSS(which by fast retransmit)
   - when at the start of congestion avoidence phase, the cube of distance between t and K are large, so the congestion window will grow quickly
   - when t close to K whether or not if proceed K, the congestion window will grow slowly.
 - TCP Cubic is the default version of TCP used in the linux operating system.
+- Old version are alled TCP Reno, which in congestion avoidence phase, the congestion window are grow slow then TCP Cubic
+
+#### TCP Reno throughput
+> the average throughput of a lone-lived TCP Reno connection.
+
+average throughput of a connection = 0.75 * W / RTT
+
+W: the value of window size when loss event occurs.
 
 
 
+    
