@@ -115,6 +115,18 @@ when comes into fast recovery cwnd = ssthresh + 3MSS(which by fast retransmit)
 - AIMD(additive-increase, multiplicative-decrease) congestion control 
 > TCP congestion control also referred to as an AIMD form of congestion control.
 
+#### TCP Cubic
+
+> TCP Cubic only changes the congestion avoidence phase
+
+- `Wmax` be the size of congestion window when loss was last detected.
+- `K` be the funture point in time when TCP CUBIC' window size will again reach Wmax, **assuming no losses**
+- `t` the current time
+- Cubic increase the congestion window as a function of **cube of the distance between current time t and K**
+  - so the time more close to K, grow more slow
+  - when at the start of congestion avoidence phase, the cube of distance between t and K are large, so the congestion window will grow quickly
+  - when t close to K whether or not if proceed K, the congestion window will grow slowly.
+- TCP Cubic is the default version of TCP used in the linux operating system.
 
 
 
