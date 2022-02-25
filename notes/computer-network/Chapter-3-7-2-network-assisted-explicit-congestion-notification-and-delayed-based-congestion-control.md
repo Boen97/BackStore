@@ -20,4 +20,20 @@
 
 #### Fairness
 
+> consider K TCP connections, each with a different end-to-end path, but all passing through a bottleneck link with transmission rate R bps.
 
+- if congestion control is said to be fair
+  - average transmission rate of each connection is R/K, each connection gets an equal share of link bandwidth.
+  
+- Is TCP's AIMD algorithm fair, particularly given that different TCP connec- tions may start at different times and thus may have different window sizes at a given point in time?
+
+- multiple connections share a common bottleneck, those sessions with a smaller RTT are able to grab the available bandwidth at that link more quickly as it becomes free (that is, open their congestion windows faster) and thus will enjoy higher throughput than those connections with larger RTTs 
+
+##### Fairness and UDP
+the multimedia applications running over UDP are not being fair—they do not cooperate with the other connections nor adjust their transmission rates appropriately. Because TCP congestion control will decrease its transmission rate in the face of increasing congestion (loss)
+
+##### Fairness and Parallel TCP Connections
+
+there is nothing to stop a TCP-based application from using multiple parallel connections. 
+
+When an application uses multiple parallel connections, it gets a larger fraction of the bandwidth in a congested link.
