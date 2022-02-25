@@ -64,6 +64,24 @@
 > software-defined networking (SDN)
 - where the network is “software-defined” because the controller that computes forwarding tables and interacts with routers is implemented in software
 
+#### Network Service Model
+- the services provided by Network Layer.
+1. best-effort service.
+   The Internet’s network layer provides a single service, known as best-effort service. 
+
+
+#### Terms
+- packet switch
+> a general packet-switching device that transfer a packet from input link interface to output link interface.
+
+- link-layer switches
+> base their forwarding decision on values in the fields of the link-layer frame;
+- link-layer(layer 2) devices
+
+- routers
+> base their forwarding decision on header field values in the network-layer datagram.
+- routers are network layer(layer 3) devices.
+
 
 
 
