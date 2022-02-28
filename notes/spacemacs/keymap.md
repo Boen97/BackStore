@@ -110,3 +110,6 @@ SPC l x delete layout
 in search and big file, its very useful
 SPC n f
 SPC n g
+
+## focus on minibuffer
+C-x o
