@@ -120,3 +120,6 @@ in the new file and click TAB
 
 ## call yank ring in insert mode
 M-y
+
+## yank the current word
+yiw
