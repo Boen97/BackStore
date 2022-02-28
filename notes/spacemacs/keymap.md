@@ -117,3 +117,6 @@ C-x o
 ## new vue template
 
 in the new file and click TAB
+
+## call yank ring in insert mode
+M-y
