@@ -113,3 +113,7 @@ SPC n g
 
 ## focus on minibuffer
 C-x o
+
+## new vue template
+
+in the new file and click TAB
