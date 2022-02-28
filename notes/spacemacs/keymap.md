@@ -123,3 +123,6 @@ M-y
 
 ## yank the current word
 yiw
+
+##  Yank (copy) to the matching character
+y%
