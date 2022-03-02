@@ -126,3 +126,6 @@ yiw
 
 ##  Yank (copy) to the matching character
 y%
+
+## consult bookmark
+C-c b
