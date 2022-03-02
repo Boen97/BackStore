@@ -22,4 +22,11 @@
   
 ### switching via an interconnection network.
 
-1. 
+1. a single, shared bus has bandwidth limitation problem
+2. crossbar switch
+   - is an interconnection network consisting of 2N buses that connect N input ports to N output ports
+3. crosspoint
+   - each verical bus intersects each horizontal bus
+   - crosspoint can be open and closed by the switch fabric controller
+4. crossbar switch is non-blocking with different path of buses
+5. a router's switching capacity can be scaled by running multiple swithcing fabric in parallel.
