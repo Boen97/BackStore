@@ -49,3 +49,7 @@
     1. longer queuing delays
        -  Increasing the amount of per-hop buffer by a factor of 10 to decrease packet loss could increase the end-end delay by a factor of 10
     2. increased RTTs make TCP sender less responsive and slower to response to congestion and packet loss
+
+- bufferbloat
+  - long delay due to persistent buffering
+  - not only is throughput important, but also minimal delay is important as well
