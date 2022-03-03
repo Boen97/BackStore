@@ -54,3 +54,11 @@
   - the message is delived to all hosts on the same subnet
   - routers optinally forward the message into neighboring subnets as well (although usually don't)
   
+- the route using longest prefix mathcing when has two or more matching items in the forward table.
+
+- address aggregation (also route aggregation or route summarization)
+  - Organization 1 200.23.16.0/23
+  - Organization 2 200.23.18.0/23
+  - Organization 3 200.23.20.0/23
+  - the address beginning with 200.23.16.0/20 all match organization 1, 2, 3
+  
