@@ -40,3 +40,5 @@
    - value 17 indicates UDP
    - protocal number is the glue that binds the network and transport layer together.
    - the port number is the glue that binds the transport and applicaton layers together.
+
+8. 
