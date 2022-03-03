@@ -99,12 +99,24 @@
 - For a newly arriving host, the DHCP protocal is a four-step process:
   > yiaddr (your Internet address)
 
-  1. DHCP server discovery
-     1. first task for a newly arriving host is to find a DHCP server with which to interact
-     2. DHCP discover message 
-        1. the client send a DHCP discover message within a UDP packet to port 67
-        2. the client create an IP datagram
-           1. IP address was 255.255.255.255
-           2. this host source IP address of 0.0.0.0
-           3. this message will be broadcast to all nodes in the subnet
+1. DHCP server discovery
+   1. first task for a newly arriving host is to find a DHCP server with which to interact
+   2. DHCP discover message 
+      1. the client send a DHCP discover message within a UDP packet to port 67
+      2. the client create an IP datagram
+         1. IP address was 255.255.255.255
+         2. this host source IP address of 0.0.0.0
+         3. this message will be broadcast to all nodes in the subnet
 
+2. DHCP server offer(s)
+   1. a DHCP server receiving a DHCP discover message reponds to the client with a DHCP offer message
+   2. broadcast to all nodes on the subnet using the IP broadcast address of 255.255.255.255
+   3. why this server reply must also be broadcast
+      1. since serveral DHCP servers can be present on the subnet, the client may find itself in the enviable position of being able to choose from among several offers.
+   4. each DHCP offer message contains: 
+      1. transation ID of the received discover message
+      2. the proposed IP address for the client
+      3. the network mask
+      4. an IP address lease time
+         - the amount of time for which the IP address will be valid
+      
