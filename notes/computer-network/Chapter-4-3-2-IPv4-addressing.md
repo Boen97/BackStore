@@ -36,3 +36,21 @@
 - an organization is typically assigned a block of contiguous addresses, a range of addresses with a common prefix
   - only the leading x bits of the address are need to be considered in routers.
   - reduce the size of the forwaring table in these routers.
+  
+> the lower order bits may (or may not) have an additional subnetting structure.
+
+#### classful addressing
+> Before CIDR was adopted, the network portions of an IP address were constrained to be 8, 16, or 24 bits in length
+> since subnets with 8-, 16-, and 24-bit subnet addresses were known as class A, B, and C networks, respectively. 
+- The requirement that the subnet portion of an IP address be exactly 1, 2, or 3 bytes long turned out to be problematic for supporting the rapidly growing number of organizations with small and medium-sized subnets. 
+
+- A class C (/24) subnet could accommodate only up to 2^8 - 2 = 254 hosts (two of the 2^8 = 256 addresses are reserved for special use)
+  - too small for many organizations
+
+- class B (/16) subnet, which supports up to 65,634 hosts, was too large.
+- This led to a rapid depletion of the class B address space and poor utilization of the assigned address space.
+
+- IP broadcast address 255.255.255.255
+  - the message is delived to all hosts on the same subnet
+  - routers optinally forward the message into neighboring subnets as well (although usually don't)
+  
