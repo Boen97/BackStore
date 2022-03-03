@@ -26,3 +26,13 @@
   - leftmost 24 bits of the 32-bit quantity defines the subnet address.
   - host address 223.1.1.1, 223.1.1.2, 223.1.1.3
   - and host address 223.1.1.4
+
+### The Internet's address assignment strategy
+> Classless Interdomain Routing (CIDR - pronounced cider)
+- CIDR generalizes the notion of subnet addressing.
+- a.b.c.d/x
+  - network portion of the IP address or prefix (or network prefix) of the address
+    leftmost x bits of the address
+- an organization is typically assigned a block of contiguous addresses, a range of addresses with a common prefix
+  - only the leading x bits of the address are need to be considered in routers.
+  - reduce the size of the forwaring table in these routers.
