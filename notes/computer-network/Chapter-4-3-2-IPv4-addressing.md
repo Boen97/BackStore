@@ -89,5 +89,22 @@
   2. the address of its **first-hop router (often called the default gateway)**
   3. the address of its local DNS server
   
+- DHCP also called **plug-and-play** or **zeroconf (zero configuration)** protocal.
 
+- DHCP is a client-server protocal
+  
+- relay agent
+  If no server is present on the subnet, a DHCP relay agent (typically a router) that knows the address of a DHCP server for that network is needed
+
+- For a newly arriving host, the DHCP protocal is a four-step process:
+  > yiaddr (your Internet address)
+
+  1. DHCP server discovery
+     1. first task for a newly arriving host is to find a DHCP server with which to interact
+     2. DHCP discover message 
+        1. the client send a DHCP discover message within a UDP packet to port 67
+        2. the client create an IP datagram
+           1. IP address was 255.255.255.255
+           2. this host source IP address of 0.0.0.0
+           3. this message will be broadcast to all nodes in the subnet
 
