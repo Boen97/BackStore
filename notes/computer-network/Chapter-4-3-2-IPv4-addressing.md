@@ -15,3 +15,14 @@
   - 11000001 00100000 11011000 00001001
 
 - each interface in the global Internet must have an IP address that is global unique. (except for interfaces behind NATs)
+
+### subnet
+> this network interconnecting three host interfaces and one router interface forms a subnet.
+> a subnet also called an IP network
+
+### subnet mask
+> Ip addressing assigns an address to this subnet.
+- 223.1.1.0/24
+  - leftmost 24 bits of the 32-bit quantity defines the subnet address.
+  - host address 223.1.1.1, 223.1.1.2, 223.1.1.3
+  - and host address 223.1.1.4
