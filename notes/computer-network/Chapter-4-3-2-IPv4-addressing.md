@@ -61,4 +61,33 @@
   - Organization 2 200.23.18.0/23
   - Organization 3 200.23.20.0/23
   - the address beginning with 200.23.16.0/20 all match organization 1, 2, 3
+
+### Obtaining a Block of Addresses
+- ISP's block: 200.23.16.0/20 11001000 00010111 0001/0000 00000000
+- Organization 0: 200.23.16.0/23 11001000 00010111 0001000/0 00000000
+- Organization 1: 200.23.16.0/23 11001000 00010111 0001001/0 00000000
+- Organization 2: 200.23.16.0/23 11001000 00010111 0001010/0 00000000
+......
+
+- IP addresses are managed under the authority of the Internet Corporation for Assigned Names and Numbers (ICANN)
+
+### Obtaining a Host Address: The Dynamic Host Configuration Protocal
+
+> once obtained a block of addresses, it can assign individual IP addresses to the host and router interfaces in its organization.
+
+- IP addresses of the router are typically manually configed by system manager.
+
+> Host address can also be configured manually, but typically is done using DHCP (Dynamic Host Configuration Protocal)
+
+#### DHCP (Dynamic Host Configuration Protocal)
+> DHCP allows a host to obtain (be allocated) an IP address automatically.
+
+- DHCP could be configured so that each time a given host receives the same IP address or a temporary IP address
+
+- DHCP allow host to learn additional information
+  1. subnet mask
+  2. the address of its **first-hop router (often called the default gateway)**
+  3. the address of its local DNS server
   
+
+
