@@ -120,3 +120,17 @@
       4. an IP address lease time
          - the amount of time for which the IP address will be valid
       
+3. DHCP request
+   1. the client will choose from one or more server offers
+   2. respond to its selected offer with a DHCP request message
+
+4. DHCP ACK
+   1. the server responds to the DHCP request message with a DHCP ACK message
+   2. confiming the requested params
+  
+- DHCP also provides a mechanism that allows a client to renew its lease on an IP address.
+
+> DHCP does have one very significant shortcoming.
+  > a TCP connection to a remote application cannot be maintained as a mobile node moves between subnets.
+  - In Chapter 7, we will learn how mobile cel- lular networks allow a host to retain its IP address and
+  - ongoing TCP connections as it moves between base stations in a provider’s cellular network
