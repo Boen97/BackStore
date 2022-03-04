@@ -97,5 +97,11 @@
 - The IPv6 node on the receiving side of the tunnel eventually receives the IPv4 datagram ((it is the destination of the IPv4 datagram)
 - determines that the IPv4 datagram contains an IPv6 datagram (by observing that the protocol number field in the IPv4 datagram is 41
 
+- One important lesson that we can learn from the IPv6 experience is that it is enormously difficult to change network-layer protocols.
+- introducing new protocols into the network layer is like replac- ing the foundation of a house
+
+- the Internet has witnessed rapid deployment of new protocols at the application layer.
+- Introducing new application- layer protocols is like adding a new layer of paint to a house—it is relatively easy to do
+
 
 
