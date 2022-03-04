@@ -50,5 +50,5 @@
 - An IDS has a database of packet signatures that are known to be part of attacks.
 
 3. IPS
-- An intrusion prevention system (IPS) is similar to an IDS, except that it actually blocks packets in addition to creating alerts. 
+- An intrusion prevention system (IPS) is similar to an IDS, except that it actually blocks packets in addition to creating alerts.
      
