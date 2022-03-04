@@ -57,3 +57,45 @@
     - payload portion of the IPv6 datagram.
     
 
+### fields appearing in the IPv4 datagram and no longer present in the IPv6 datagram.
+
+1. Fragmentation/reassembly
+   - if an IPv6 datagram received by a router is too large to be forwarded over the outgoing link.
+   - the router simply drops the datagram and sends a "packet too big" ICMP error message.
+   - the sender can then resend the data, using a smaller IP datagram size.
+   - Fragmentation and reassembly is a time-consuming operation.
+   - removing this functionality from the routers and placing it squarely in the end systems speeds up IP forwaring within the network.
+
+2. Header checksum.
+   - since IPv4 header contains a TTL field, the header checksum needed to be recomputed at every router.
+   - the recomputed is a costly operation.
+   - the transport-layer and link-layer protocals performs checksumming.
+
+3. Options.
+   - the options field has not gone away in the IPv6
+   - the options field is one of the possible next headers pointed to from within the IPv6 header.
+   - just as TCP or UDP protocol headers can be the next header within an IP packet, so too can an options field.
+   
+
+### Transitioning from IPv4 to IPv6
+
+> new IPv6 capable systems can be made backward-compatible, can send, route, and receive IPv4 datagrams.
+> already deployed IPv4-capable systems are not capable of handling IPv6 datagrams.
+
+1. One option would be to declare a flag day
+- a given time and date when all Internet machines would be turned off and upgraded from IPv4 to IPv6.
+- A flag day involving billions of devices is even more unthinkable today.
+
+2. tunneling
+> The approach to IPv4-to-IPv6 transition that has been most widely adopted in practice involves tunneling
+
+- tunnel
+> the interventing set of IPv4 routers between two Ipv6 routers as a tunnel.
+- with tunneling, the IPv6 node on the sending side of the tunnel 
+- takes the entire IPv6 datagram and puts it in the data (payload) field of an IPv4 datagram
+- This IPv4 datagram is then addressed to the IPv6 node on the receiving side of the tunnel 
+- The IPv6 node on the receiving side of the tunnel eventually receives the IPv4 datagram ((it is the destination of the IPv4 datagram)
+- determines that the IPv4 datagram contains an IPv6 datagram (by observing that the protocol number field in the IPv4 datagram is 41
+
+
+
