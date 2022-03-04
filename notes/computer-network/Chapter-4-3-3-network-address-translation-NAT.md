@@ -36,4 +36,19 @@
 3. the router are meant to be layer 3 (network layer) devices, should process packets only up to the network layer
 4. host should be talking directly with each other, without interfering nodes modifying IP addresses, much less port numbers.
 
+#### Inspecting datagrams: firewalls and intrusion detection systems(IDSs)
+
+1. firewalls
+- most access routers today has firewall capability
+- firewall inspect the datagram and segment header fields, denying suspicious datagrams
+- a firewall could be configured to block all ICMP echo request packets, preventing port scan
+- firewalls can also block packets based on source and destination IP addresses and port numbers
+- firewalls can be configured to track TCP connections, granting entry only to datagrams that belong to approved connections.
+
+2. IDS
+- “deep packet inspection,” examining not only head- er fields but also the payloads in the datagram
+- An IDS has a database of packet signatures that are known to be part of attacks.
+
+3. IPS
+- An intrusion prevention system (IPS) is similar to an IDS, except that it actually blocks packets in addition to creating alerts. 
      
