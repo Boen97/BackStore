@@ -28,4 +28,12 @@
        3. makes copies of the packet, and send them to multiple output ports
        4. rewrite selected header fields.
     
-    
+- Open Flow - generalized forwarding can do 
+> use flow table entry. 
+1. load balancing
+2. firewall
+3. virtual networks
+   - two or more logically separate networks - that use the same physical set of packet switches and links.
+4. programmability
+   - custom match-plus-action flow tables show a limited form of programmability.
+   - or use a programming language with higher-level features for datagram processing at line rate.
