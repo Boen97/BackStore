@@ -51,4 +51,56 @@
 2. Docker is perfect for high density environments and for small and medium deployments where your need to do more with fewer resouces.
 
 ### Docker architecture
+- client-server architecture
+- The Docker client talks to the Docker daemon
+- Docker daemon
+  - do the heavy lifting of building, running and distributing your Docker containers.
+- The Docker client and daemon can run on the same system, or you can connect a Docker client to a remote Docker daemon.
+- The Docker client and daemon communicat using a REST API
+- Docker Compose
+  - another Docker client that lets you work with applications consisting of a set of containers.
 
+#### The Docker daemon
+- The Docker daemon (dockerd) listens for Docker API requests and manage Docker objects such as images, containers, networks and volumns.
+- A daemon can also communicat with other daemons to manage Docker services.
+
+#### The Docker client
+- The Docker client (docker) is the primary way that many Docker users interact with Docker.
+- When you use commands such as `docker run`, the client sends this commands to `dockerd`, which carries them out.
+- The `docker` command uses the Docker API
+- The Docker client can communicat with more than on daemon.
+
+#### The Docker Desktop
+- is an easy-to-install application that enables you to build and share containerized applications and microservices.
+- includes `dockerd`, `docker`, Docker Compose, Docker Content Trust, Kubernates, and Credential Help.
+
+#### Docker registries
+- A Docker registry stores Docker images.
+- Docker Hub is a public registry that anyone can use.
+- Docker is configured to look for images on Docker Hub by default.
+- You can run your own private registry.
+- When you use `docker run`, `docker pull` commands, the required images are pulled from your congigured registry.
+- When you use `docker push`, your images is pushed to your configured registry.
+
+#### Docker objects
+
+> when you using Docker, you are creating and using images, containers, netwroks, volumns, plugins, and other objects.
+
+##### Images.
+> An image is read-only template with instructions for creating a Docker container.
+- Often, an image is based on other image, with some additional customization.
+- For example, you may build an image which is based on `ubuntu` image, but installs the Apache web server and your application,
+- as well as the configuration details needed to run make your application run.
+- to build your own image, you create a Dockerfile with a simple syntax for defining the steps needed to create the image and run it.
+- Each instruction in a Dockerfile creates a layer in the image.
+- When you change the Dockerfile and rebuild the image, only those layers which have changed are rebuilt.
+- This is part of what makes images so lightweight, small and fast, when compared to other virtualization technologies.
+
+##### Containers.
+> a container is a runnable instance of an image.
+- you can create, start, stop, remove, or delete a container using the Docker API or CLI.
+- you can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state.
+- by default, a container is relatively well isolated from other containers and its host machine.
+- you can control how isolated a container's network, storage, or other underlying subsystems are from other containers or from the host machine.
+- a container is defined by its image as well as any configuration options you provided to it when you create or start it.
+- When a container removed, any changes to its state that are not stored in persistent storage disappear.
