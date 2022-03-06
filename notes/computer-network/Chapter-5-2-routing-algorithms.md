@@ -24,3 +24,11 @@
 - least-cost path
 - if all edges in the graph have the same cose. the least-cost path is also the **shortest path**
 
+### centralized routing algorithms
+> compute the least-cost path between a source and destination using complete, global knowledge about the network.
+- This then requires that the algorithm somehow obtain this information before actually performing the calculation.
+> the algorithm has complete information about connectivity and link costs.
+> LS (link-state algorithm)
+- algorithm with global state information are often referred to as link-state (LS) algorithms
+- since the algorithm must be aware of the cost of each link in the network.
+
