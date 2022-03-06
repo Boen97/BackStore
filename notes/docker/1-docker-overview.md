@@ -104,3 +104,28 @@
 - you can control how isolated a container's network, storage, or other underlying subsystems are from other containers or from the host machine.
 - a container is defined by its image as well as any configuration options you provided to it when you create or start it.
 - When a container removed, any changes to its state that are not stored in persistent storage disappear.
+
+
+### Example `docker run` command
+- the following command runs and `ubuntu` container, attaches interactively to your local command-line session, and runs `/bin/bash`
+`docker run -i -t ubuntu /bin/bash`
+
+- when you run this command, the fllowing happens (using the default registry configuration)
+1. If you do not have the `ubuntu` image locally, Docker pulls it from your congigured registry, as though you had run `docker pull ubuntu` manually.
+2. Docker create a new container, as though you had run a `docker container create`  command manually.
+3. Docker allocates a read-write filesystem to the container, as its final layer.
+   This allows the container to create or modify files and directories in its local filesystem.
+4. Docker creates a network interface to connect the container to the default network.
+   since you did not specify any networking options. This includes assigning an IP address to the container.
+   By default, containers can connect to external networks using the host machine's network connection.
+5. Docker starts the container and executes `/bin/bash`. Because the container is running interactively and attached to your terminal (due to the `-i`, `-t` flags)
+   you can provide input using your keyboard while the output is logged to your terminal.
+6. When you type `exit` to terminate the `/bin/bash` command, the container stops but is not removed. you can start it again or remove it.
+
+### The underlying technology
+
+- writting in `Go`
+- Docker uses a technology called `namespace` to provide the isolated workspace called the container.
+- When you run a container, Docker creates a set of namepsace for that container.
+
+> These namespaces provide a layer of isolation. Each aspect of a container runs in a separate namespace and its access is limited to that namespace.
