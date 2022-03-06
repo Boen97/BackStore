@@ -32,3 +32,18 @@
 - algorithm with global state information are often referred to as link-state (LS) algorithms
 - since the algorithm must be aware of the cost of each link in the network.
 
+### decentralized routing algorithm
+> the calculation of the least-cost path is carried out in an iterative, distributed manner by the routers.
+> No node has complete information about the costs of all network links.
+- each node begins with only the knowledge of the costs of its own directly attacked links.
+- then through an iterative process of calculation and exchange information with its neighboring nodes
+- a node gradually calculates the least-cost path.
+> DV (distance vector) algorithm
+- because each node maintains a vector of estimates of the costs (distances) to all other nodes in the network.
+
+### static / dynamic routing algorithms
+> a second broad way to classify routing algorithms
+
+### load-sensitive or load-insensitive.
+> Today’s Internet routing algorithms (such as RIP, OSPF, and BGP) are load-insensitive,
+> as a link's cost does not explicitly reflect its current level of congestion.
