@@ -27,4 +27,15 @@
    - both a forwaring and routing functions are contained within each router.
    - each router has a routing component that communicat with other routing components in other routers to compute the values for its forwaring table.
    - the OSPF and BGP protocols are based on this per-router approach to control.
+   
+2. Logically centralized control.
+   - a logically centralized controller computes and distribute the forwarding tables to be used by each and every router.
+   - the generalized match-plus-action abstraction allows the router to perform traditional IP forwarding as well as a rich set of other functions
+   - such as load sharing, firewalling, and NAT that had been previously implemented in separate middleboxes.
+   - CA (control agent)
+   - the controller interacts with a control agent (CA) in each of the routers via a well-defined protocol to configure and manage the flow table.
+   - the CA's job is to communicat with the controller and to do as the controller commands.
+   - CAs does not directly interact with each other nor do they actively take part in computing the forwaring table.
+   - this is a key distinction between per-router control and logically centralized control.
 
+- 75% of our network functions will be fully virtualized and software-controlled.
