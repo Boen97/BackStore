@@ -36,3 +36,8 @@
        D(v) = min(D(v), D(w) + c(w, v))
    ```
 3. until N' = N
+
+> in the intial routing state of LS algorithm, oscillations could happen.
+- The next time the LS algorithm is run, x, y, and z all then route their traffic to the clockwise routes.
+
+> One way to avoid such self-synchronization is for each router to randomize the time it sends out a link advertisement
