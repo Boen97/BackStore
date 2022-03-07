@@ -24,4 +24,25 @@
 
 - they are two main types of volumes. we start with names volumes.
 
+#### named volume.
+> Think of a named volume as simply a bucket of data.
+> Docker maintains the physical location on the disk and you only need to remember the name of the volume.
 
+- create a volume by using the `docker volume create` command.
+  `docker volume create todo-db`
+- start the app with a volume
+  `docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started`
+  - `-v` flag to specify a volume amount.
+  - we will use the named volume and mount it to `/etc/todos`, which will capature all files created at the path.
+  
+> while named volumes and bind mountes are the two main types of volumes supported by a default docker engine installation,
+> these are many volume driver plugins avaliable to support NFS, SFTP, NetApp, and more!
+> This will be especially important once you start running containers on multiple hosts in a clustered environment with Swarm, Kubernates, etc.
+
+#### dive into the volume.
+> Where is Docker actually storeing my data when I use named volume.
+`docker volume inspect todo-db`
+- The `Mountpoint` is the actual location on the disk where data is stored.
+
+> rebuilding images for every changes takes quite a bit of time.
+> There is a better way to make changes.
