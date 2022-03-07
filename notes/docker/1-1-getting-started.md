@@ -47,3 +47,8 @@ EXPOSE 3000
   - `-t` flag tags our image. think of this simply as a human-readable name for the final image.
   - `.` tells the Docker should look for `Dockerfile` in the current directory.
 
+### start an app container
+`docker run -dp 3000:3000 getting-started`
+- `-d` running the new container in detached mode (in the background)
+- `-p` creating a mapping between the host's port 3000 to the container's port 3000.
+  - without the port mapping, we wouldn't be able to access the application.
