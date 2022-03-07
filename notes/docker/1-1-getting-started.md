@@ -52,3 +52,39 @@ EXPOSE 3000
 - `-d` running the new container in detached mode (in the background)
 - `-p` creating a mapping between the host's port 3000 to the container's port 3000.
   - without the port mapping, we wouldn't be able to access the application.
+
+### replace the old container
+- ro remove a container, it first needs to be stopped.
+#### remove a container using the CLI
+1. get the ID of the container using the `docker ps` command
+   `docker ps`
+   
+2. use the `docker stop` command to stop the container.
+   `docker stop <the-container-id>`
+
+3. once the container is stopped, you can remove the container using `docker rm` command
+   `docker rm <the-container-id>`
+   
+4. or you can stop and remove a container in a single command by adding the 'force' flag to the `docker rm` command.
+   `docker rm -f <the-container-id>`
+
+### update the source code.
+
+- when you finished edit your code, you need to stop or remove the old container, and rebuild the image, then start the new container.
+1. `docker rm -f <the-container-id>`
+2. `docker build -t getting-started .`
+3. `docker run -dp 3000:3000 getting-started`
+
+### Share the application.
+- to share Docker images, you have to use a Docker registry.
+- the default registry is Docker Hub.
+
+#### Create a repo
+1. Sign in Docker Hub
+2. create a repository
+
+#### Push the image to the repository
+1. `docker image ls`
+2. `docker login -u rhymechiang`
+3. `docker tag getting-started rhymechiang/getting-started`
+4. `docker push rhymechiang/getting-started`
