@@ -49,3 +49,43 @@ CMD ["node", "src/index.js"]
 - in this case, the `node-modules` should be omitted in the sencon `COPY` step.
 
 - `docker build -t getting-stared .`
+
+### Multi-stage builds
+
+> separate build-time dependencies from runtime dependencies
+
+> reduce overall image size by shipping only what your app needs to run.
+
+#### Maven/Tomcat Example
+
+- when building Java-based applications, a JDK is needed to compile the source code to Java bytecode.
+- However, the JDK isn't needed in production.
+- you might use Maven or Gradle to help build the app. they also aren't needed in our final image.
+
+```Dockerfile
+FROM maven AS build
+WORKDIR /app
+COPY . .
+RUN mvn package
+
+FROM tomcat
+COPY --from=build /app/target/file.war /usr/local/tomcat/webapps
+```
+- stage called `build` to perform actual Java build using Maven.
+- second stage (starting at FROM tomcat), we copy in files from the `build` stage.
+- the final image is only the last stage being created(which can be overridden using the `--target` flag)
+
+#### React Example
+
+```Dockerfile
+FROM node:12 AS build
+WORKDIR /app
+COPY package* yarn.lock ./
+RUN yarn install
+COPY public ./public
+COPY src ./src
+RUN yarn run build
+
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+```
