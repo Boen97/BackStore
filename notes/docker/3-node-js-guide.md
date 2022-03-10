@@ -56,3 +56,17 @@
 - `docker images`
 
 ### Tag images.
+
+- an image name is made up of slash-seperated name components.
+- name components may contain lowercase letters, digits, and separators.
+- a separator is defined as a period, one or two underscores, or one or more dashes.
+- a name component may not start or end with a separator.
+- an image is made up a manifest and a list of layers.
+- a tag points to a combination of thest artifacts.
+- you can have multiple tags for an image.
+
+- `docker tag node-docker:latest node-docker:v1.0.0`
+- thest two images have the same image id, different image tag.
+
+- remove tag
+  `docker rmi node-docker:v1.0.0`
