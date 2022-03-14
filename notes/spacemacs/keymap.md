@@ -129,3 +129,6 @@ y%
 
 ## consult bookmark
 C-c b
+
+## undo tree visualize
+SPC a u
