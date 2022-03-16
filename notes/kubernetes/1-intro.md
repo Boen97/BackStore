@@ -91,3 +91,9 @@
    - Kubernetes lets you store and manage sensitive information, such as passwords, OAuth tokens, and SSH keys.
    - you can deploy and update secrets and application configuration without rebuilding your container images
    - and without exposing secrets in you stack configuration
+
+- Kubernetes is not a mere orchestration system. 
+- In fact, it eliminates the need for orchestration. 
+- The technical definition of orchestration is execution of a defined workflow: first do A, then B, then C.
+- In contrast, Kubernetes comprises a set of independent, composable control processes that continuously drive the current state towards the provided desired state.
+- It shouldn't matter how you get from A to C. Centralized control is also not required.
