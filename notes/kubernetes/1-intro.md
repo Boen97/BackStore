@@ -84,4 +84,10 @@
    - Kubernetes can fit containers onto your nodes to make the best use of your resources.
 
 5. Self-healing
-   - Kubernetes restarts containers that fail
+   - Kubernetes restarts containers that fail, replaces containers, kill containers that don't respond to your user-defined health check
+   - and doesn't advertise them to clients until they are ready to serve
+
+6. Secret and configuration management
+   - Kubernetes lets you store and manage sensitive information, such as passwords, OAuth tokens, and SSH keys.
+   - you can deploy and update secrets and application configuration without rebuilding your container images
+   - and without exposing secrets in you stack configuration
