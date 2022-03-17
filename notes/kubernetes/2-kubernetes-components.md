@@ -47,3 +47,13 @@ Control Plane
 : data locality
 : inter-workload interference
 : deadlines
+
+#### kube-controller-manager
+> that runs controller processes
+- logically, each controller is a separate process
+- but to reduce complexity, they are all compiled into a single binary and run in a single process.
+- some types of these controllers are:
+: Node controller - responsible for noticing and responding when nodes goes down.
+: Job controller - watches for Job objects that responsible one-off tasks, then creates Pods to run those tasks to completion
+: Endpoints controller - populates the Endpoints objects (that is, joins Services & Pods)
+: service Account & Token controllers - create default accounts and API access tokens for new namespaces
