@@ -81,3 +81,115 @@ Portability
 > the same application code must work on all computers.
 - some means of generating portable executable code was needed.
 > the same mechanism that helps ensure security also helps create portability.
+
+## Java's Magic: The ByteCode
+
+> the key that Java to solve both the security and portability problems is that the output of a Java compiler is not executable code.
+> Rather, it is bytecode.
+> ByteCode is a highly optimized set of instructions designed to be executed by JVM, which is part of JRE (Java Runtime Environment)
+- The original JVM was designed as an interpreter for bytecode
+- many modern languages are designed to be compiled into executable code because of performance concerns.
+- once a JRE exists for a given system, any Java program can run on it.
+- If a Java program were compiled to native code, then different version of the same program would have to exist for each type of CPU.
+
+> The fact that a Java program is executed by the JVM also helps to make it secure.
+> because JVM is in control, it manages program execution.
+> it is possible for the JVM to create a sandbox.
+
+> because bytecode has been highly optimized, JVM could run the program much faster than you expected.
+
+> JIT (Just-In-Time) compiler
+- Hotspot provides a JIT compiler for bytecode.
+- With JIT, selected portions of bytecode are compiled into executable code in real time.
+- a JIT compiler compiles code as it is needed, during execution.
+- even when dynamic compilation is applied to bytecode, the portability and safety features still apply
+- because the JVM is still in charge of the execution environment.
+
+> ahead-of-time compiler for Java
+- such a compiler compile bytecode into native code prior to execution by the JVM, rather than **on-the-fly**
+
+## Moving Beyond Applets.
+However, applets rely on a Java browser plug-in. 
+Thus, for an applet to work, the browser must support it. Over the past few years, support for the Java browser plug-in has been waning.
+beginning with JDK 9, the phase-out of applets was begun, with support for applets being deprecated. 
+In the language of Java, deprecated means that a feature is still available but flagged as obsolete. 
+Beginning with JDK 17, the entire Applet API was deprecated for removal.
+
+> jlink
+- added by JDK9
+- It can create a complete run-time image that includes all necessary support for your program, including the JRE
+
+> jpackage
+- added by JDK16
+- can be used to create a ready-to-install application
+
+## A Faster Release Schedule
+- in the past, major Java releases were separated by two or more years.
+- after realease of JDK9, just six months.
+
+> feature release
+- each six-month release, now called a **feature release**, will include those features ready at the time of the release.
+
+> LTS (long-term support) release
+- three-year intervals, will have a LTS release
+- An LTS release will be supported (and thus remain viable) for a period of time longer than six months.
+- The first LTS release was JDK 11.
+- The second LTS release was JDK 17.
+- Currently, feature releases are scheduled for March and September of each year.
+
+## Servlets: Java on the Server Side
+
+> a servlet is a small program that executes on the server.
+> servlet are used to create dynamically generated content to client.
+> the only requirements to run a servlet are that the server support the **JVM and a servlet container**.
+
+## The Java Buzzwords
+
+> the invention of Java are portability and security.
+1. Simple
+2. Secure
+3. Portable
+4. Object-oriented
+5. Robust
+6. Multithreaded
+7. architecture-netural
+8. Interpreted
+9. High performance
+10. Distributed
+11. Dynamic
+
+### Object-Oriented
+- Java managed to strike a balance between the purist’s “everything is an object” paradigm and the pragmatist’s “stay out of my way” model.
+- In Java, The Object model is simple and easy to extend
+- while primitive types such as Integers were kept as high-performance
+
+### Robust
+- in Java, a program must execute well in a variety of systems.
+- Java helps you to write a robust program.
+- Java is strictly type language, checks your code at compile time.
+- Java also checks your code at run time.
+- Java let you write programe in a predictable way.
+
+- two main reasons for program failure:
+1. memory management mistakes.
+   > Java manage memory for you
+2. mishanlded exceptional conditions (run-time errors)
+   > Java providing object-oriented exception handling
+   > all run-time errors can-and-should be managed by your program.
+
+### Architecture-Neutral
+> write once, run anywhere, any time, forever.
+> no matter about how the architecture are changed or upgrade, your program will work well all the time.
+
+### Distributed
+- handle TCP/IP protocols.
+- accessing a URL is not much different from accessing a file.
+- Java also support **RMI(remote method invocation)**
+
+### Dynamic
+> Java programs carry with them substantial amounts of run-time type information that is used to verify and resolve access to objects at run time.
+> it makes it possible to dynamically link code in a safe and expedient manner.
+> small fragments of bytecode may be dynamically updated on a running system which is crucial to the robustness of Java.
+
+## The Evolution of Java.
+
