@@ -55,3 +55,29 @@ To solve this problem, **OOP (object-oriented programming)** was intruduced.
 > C++ was invented in 1979, first was called "C with Classes", then changed to "C++", extends C by adding object-oriented features.
 
 ## The Creation of Java
+- Java was conceived in 1991, first was called 'Oak', renamed "Java" in 1995
+- the public announcement of Java in the spring of 1995
+> Java's creation was the need for a platform-independent (architecture-neutral) language
+
+- the trouble with C and C++ is that they are desinged to be compiled for a specific target.
+- to compile a C++ program for any type of CPU, requires a full C++ compiler targeted for that CPU.
+- compilers are expensive and time-consuming to create.
+
+> World Wide Web demand portable programs.
+
+## How Java Impacted the Internet
+
+### Java Applets
+> An applet is special kind of Java program that is designed to be transimitted over the Internet and automatically executed inside a Java-compatible browser.
+- applet will download and run in the browser
+- applet support was removed by JDK 11.
+
+Security
+- a program that download and executes on client computer must be prevented from doing harm.
+> Java enables you to confine an application to the Java execution environment and prevent it from accessing other parts of the computer.
+> The ability to download programs with a degree of confidence that no harm will be done may have been the single most innovative aspect of Java.
+
+Portability
+> the same application code must work on all computers.
+- some means of generating portable executable code was needed.
+> the same mechanism that helps ensure security also helps create portability.
