@@ -193,3 +193,85 @@ Beginning with JDK 17, the entire Applet API was deprecated for removal.
 
 ## The Evolution of Java.
 
+- Java2
+: first release of Java 2 used the 1.2 version number. 
+: mark the beginning of Java's modern age
+: With Java 2 , Sun repackaged the Java product as J2SE (Java 2 Platform Standard Edition)
+
+- J2SE 1.3
+: J2SE 1.3 was the first major upgrade to the original Java 2 release. 
+
+- J2SE 1.4 The release of J2SE 1.4 further enhanced Java. 
+
+- J2SE 5
+: it was revolutionary.
+: Generics
+: Generics
+: Autoboxing and auto-unboxing
+: Enumerations
+: Enhanced, for-each style for loop
+: Variable-length arguments (varargs)
+: Static import
+: Formatted I/O
+: Concurrency utilities
+: the developer’s kit was called JDK 5
+> in order to maintain consistency, Sun decided to use 1.5 as its internal version number, as **developer version number**
+> The “5” in J2SE 5 is called the **product version number**.
+
+- Java SE 6 ( Java Platform, Standard Edition 6.)
+: JDK 6
+: As with J2SE 5, the 6 in Java SE 6 is the product version number. The internal, developer version number is 1.6.
+
+- Java SE 7
+: A String can now control a switch statement.
+: Binary integer literals
+: Underscores in numeric literals.
+: An expanded try statement, called try-with-resources, that supports automatic resource management.
+: Type inference (via the diamond operator)
+: Java SE 7 made several additions to the Java API library. 
+  1. enhancements to the NIO Framework
+  2. the addition of the Fork/Join Framework
+
+- Java SE 8
+: the lambda expression, add functional programming features to Java.
+: new stream API, which is packaged in java.util.stream
+: java.util.function. It defines a number of functional interfaces
+: define a default implementation for a method specified by an interface.
+
+- Java SE 9
+: modules
+: a tool called jlink was added to the JDK
+: A new file type, called JMOD, was created
+: JShell
+: support for private interface methods.
+
+- Java SE 10 (JDK 10)
+: local variable type inference. 
+: sensitive keyword var
+
+-  Java SE 11 (JDK 11)
+: was an LTS release. 
+: HTTP Client API - provides enhanced, updated, and improved networking support for HTTP clients
+
+- JDK 12 and JDK 13 did not add any new language features.
+
+- JDK 14
+: switch that produces a value 
+
+- JDK 15
+: Text blocks, which are essentially string literals that can span more than one line,
+
+- JDK 16
+: enhanced instanceof with pattern matching
+: added a new type of class called a record 
+: A record provides a convenient means of aggregating data
+: jpackage - a new application packaging tool
+
+- Java SE 17 (JDK 17)
+: second LTS Java release
+: seal classes and interfaces.
+
+
+
+
+
