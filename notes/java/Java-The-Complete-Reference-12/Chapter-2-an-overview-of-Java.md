@@ -37,4 +37,11 @@
    : and without fear of unexpected side effect.
    : 相同的封装，让不同的实现和迭代更为简单方便
 2. inheritence
+   : inheritence support the concept of hierarchical classification
+   : without the use of hierarchies, each object would need to define all of its characteristics explicityly.
 3. polymorphism
+   : polymorphism (from Greek, meaning 'many forms')
+   : allow one interface to be used for a general class of actions.
+   : one interface, multiple methods
+   : the same interface to be used to specify a **general class of actions**
+   : it is the compiler's job to select the specific action.
