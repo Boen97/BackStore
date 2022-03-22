@@ -132,3 +132,6 @@ C-c b
 
 ## undo tree visualize
 SPC a u
+
+## update lsp server
+lsp-update-server
