@@ -45,3 +45,76 @@
    : one interface, multiple methods
    : the same interface to be used to specify a **general class of actions**
    : it is the compiler's job to select the specific action.
+
+### First Java Program
+
+1. source file name
+   : in Java, a source file is called **compilation unit**
+   : all code must reside inside a class
+   : the name of the main class should match the name of the file that holds the program.
+   : Java is case-sensitive
+   : this convention makes it easier to maintain and organize your program.
+
+### compiling the Program
+
+1. `javac` the java compiler
+   : `$> javac Example.java`
+   : `javac` creates a file called `Example.class` that contains the bytecode version of the program.
+
+2. `java` run the program
+   : `$> java Example`
+
+### comment style
+1. multiline comment
+   ```java
+   /*
+   */
+   ```
+2. singleline comment
+   `//`
+3. documentation comment
+   ```java
+   /**
+   */
+   ```
+
+### for
+1. i = 0
+2. check if i < 10
+3. execute the code
+4. i++
+```java
+int i;
+for (i = 0; i < 10; i++) {
+    code
+}
+```
+
+### Lexical Issues
+
+1. Whitespace
+   : In Java, whitspace includes a space, tab, newline, or form feed.
+   : form feed 换页符
+
+2. Identifiers
+   : uppercase and lowercase, numbers or the underscore and dollar-sign character.
+   : dollar-sign character is not intended for general use.
+   : Identifiers must not start with numbers.
+   : `$test`, `this_is_ok`, `a4` are valid names.
+   : **beginning with JDK 9, the underscore cannot be used by itself as an identifier**
+
+3. Separators
+   : most commonly used separator are **semicolon**.
+   : () parenthese
+   : {} braces
+   : [] brackets
+   : ;  semicolon
+   : ,  comma
+   : .  period separate package name
+   : :: colons create method or constructor reference
+   : ... ellipsis variable-arity parameter
+   : @ At-sign begins an anotation
+   
+### The Java Class Libraries
+
+- Java is a combination of the Java language itself, plus its standard classes.
