@@ -9,5 +9,5 @@
    : OpenFlow is a specify protocol that provides this communication functionality 
 2. **A network-wide state-management layer**
    : the controller have up-to-date information about the state of the network's hosts, links, switches, and other SDN-controlled devices.
-
+   : the ultimate control decisions made by the SDN control plane
 3. **the interface to the network-control**
