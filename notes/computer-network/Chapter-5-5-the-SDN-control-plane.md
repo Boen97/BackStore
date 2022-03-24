@@ -22,3 +22,10 @@
    : the network is programmable throught the network-control applications running in the control plane.
    : these applications represents the brains of the SDN control plane.
    : using the APIs provided by the SDN controller to specify and control the data plane in the network devices.
+
+> SDN represents a significant unbundling of network functionality
+> date plane switches, SDN controllers, and network-control applications are separate entites that may each be provided by different vendors and organizations
+
+> this unbundling of network functionality in SDN just like the earlier evolution from mainframe computers to personal computers.
+> The unbundling of computing hardware, system software, and applications has led to a rich, open ecosystem driven by innovation in all areas.
+> one hope for SDN is that is will continue to drive and enable such rich innovation.
