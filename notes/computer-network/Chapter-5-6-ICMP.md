@@ -33,3 +33,27 @@
 11. 10 0 router discovery
 12. 11 0 TTL expired
 13. 12 0 IP header bad
+
+> the ping program sends an ICMP type 8 code 0 message to the specified host
+> the destination host, send back a type 0 code 0 ICMP echo reply.
+
+> traceroute is implemented with ICMP messages
+> Traceroute in the source sends a series of ordinary IP datagrams to the destination.
+> Each of these datagrams carries a UDP segment with an unlikely UDP port number.
+> the first datagram has a TTL of 1, the second of 2, third of 3, and so on
+> when the nth datagram arrives at the nth router, the nth router observes that the TTL just expired
+> according to the rules of the IP protocol, the router discard the datagram
+> and sends an ICMP warning message to the source, which includes the name of the router and its IP address.
+
+- how does a traceroute source know when to stop sending UDP segments?
+  : the source increments the TTL fiels for each datagram it sends.
+  : one of the datagrams will eventually make it all the way to the desination host.
+  : because the datagram contains a UDP segment with an unlikely prot number.
+  : the desination host sends a port unreachable ICMP messages (type 3 code 3) back to the source
+  : when the source receives this particulaer ICMP message, it knows its end, and no need to send probe packets.
+  : The standard Traceroute program actually sends sets of three packets with the same TTL;
+  : thus, the Traceroute output provides three results for each TTL.
+
+- a new version of ICMP has been defined for IPv6
+- ICMPv6 also added new types and codes required by the new IPv6 functionality. 
+- ICMPv6 also added new types and codes required by the new IPv6 functionality. 
