@@ -38,3 +38,38 @@
 ### Integers.
 
 - all of interger types are signed, positive and negative values.
+> **Java does not support unsiged, positive-only integers.**
+- Java's designers felt that unsiged intergers were unnecessary.
+
+> the width of an integer type should not be thought of as the amount of storage it consumes.
+> 
+> but rather as the behavior it defines for variables and expressions of that type.
+> 
+> The Java run-time environment is free to use whatever size it wants, as long as the types behave as you declared them.
+
+#### byte.
+- the smallest integer type is byte
+- signed 8-bit type, range from -128 to 127
+- useful when working with a stream of data from a network or file.
+- useful when working with raw binary data.
+
+#### short.
+- signed 16-bit type, range from -32768 to 32767
+- the least-used Java type.
+
+#### int.
+- signed 32-bit type, range from -2^31 to 2^31 - 1
+> when byte and short values are used in a expression, they are promoted to int when expression is evaluated.
+> **therefore, int is often the best choise when an interger is needed**
+
+#### long.
+- signed 64-bit type
+- useful for those occasions where an int type is not large enough.
+
+### Floating-Point Types.
+
+- floating-point numbers, also known as real numbers, are used when evaluating expressions that require fractinal precision.
+
+#### float
+
+#### double
