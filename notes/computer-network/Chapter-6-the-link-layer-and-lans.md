@@ -37,3 +37,26 @@
 > three transpotation segments are managed by three different companies and use entirely different transpotation modes.
 
 ## the services provided by the link layer.
+
+1. Framing
+2. Link access (**medium access(MAC) protocol**)
+   : specifies the rules by which a frame is transimitted onto the link.
+   : for point-to-point link, the MAC protocol is simple
+   : the sender can send a frame whenever the link is idle.
+   : for broadcast link, the MAC protocol is used to coordinate the frame transimittion.
+   
+3. Reliable delivery.
+   : a link-layer delivery service is often used for links that prone to high error rates, such as a wireless link.
+   : many wired link-layer protocols do not provide a reliable delivery service.
+
+4. Error detection and correction.
+   : bit errors often occured in signal attenuaton and electromagetic noise.
+   : having transimitting node inclued error-detection bits in the frame.
+   : having the receiving node perform an error check.
+   : error detection in the link layer is implemented in hardware.
+
+## where is link layer implemented?
+
+: for the most part, the link layer is implemented on a chip called the **network adapter**
+: **network adapter** somtimes known as **network interface controller (NIC)**
+: much of a link-layer controller's functionallity is implemented in hardware.
