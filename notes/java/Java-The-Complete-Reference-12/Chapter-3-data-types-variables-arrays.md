@@ -71,5 +71,14 @@
 - floating-point numbers, also known as real numbers, are used when evaluating expressions that require fractinal precision.
 
 #### float
+- the type float specifies a single-precision value that uses 32 bits of storage.
+- single precision is faster on some processors and takes half as much space as double precision.
+- but will become imprecise when the values are either very large or vert small.
 
 #### double
+- use 64 bits to store a value
+- double precision is actually faster than single precision on some modern processors that have been optimized for high-speed mathematical calculations.
+- all transcendental math functions such as sin(), cos(), and sqrt(), return double values.
+
+### Characters
+- 
