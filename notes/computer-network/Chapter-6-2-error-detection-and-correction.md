@@ -35,3 +35,11 @@
 - the receiver knows that at least one bit error has occurred.
 
 > **errors are often clustered together in bursts**
+
+- **two-dimensional parity** schema
+- the parity of both the column and the row containing the flipped bit will be in error.
+- use the column and row indices of the column and row with parity errors to actually identify the bit and correct that error.
+
+- **FEC (forward error correction)**
+> the ability of the receiver to both detect and correct errors is known as FEC
+- FEC can decrease the number of sender retransmissions required.
