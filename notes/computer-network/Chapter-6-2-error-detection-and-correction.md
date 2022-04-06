@@ -43,3 +43,33 @@
 - **FEC (forward error correction)**
 > the ability of the receiver to both detect and correct errors is known as FEC
 - FEC can decrease the number of sender retransmissions required.
+
+#### Checksumming Methods
+> in checksumming methods, the d bits of data are treated as a sequence of k-bit integers.
+- the Internet checksum
+  : bytes of data are treated as 16-bit integers and summed.
+  : the 1s complement of this sum then forms the Internet checksum that is carried in the segment header.
+- checksumming methods require relatively little packet overhead.
+  : the checksums in TCP and UDP use only 16 bits
+  
+> why is checksumming used at the transport layer and cyclic redundancy check used at the link layer?
+: transport layer is typically implemented in software in a host as part of host's operating system.
+: Because transport-layer error detection is implemented in software, it is important to have a simple and fast error-detection scheme such as checksumming. 
+: error detection at the link layer is implemented in dedicated hardware in adapters
+
+#### Cyclic Redundancy Check (CRC)
+- **CRC codes (Cyclic Redundancy Check) codes**
+: widely used in today's computer network
+
+- **CRC codes** also known as **polynomial codes**
+: since it is possible to view the bit string to be sent as a polynomial whose coefficients are the 0 and 1 value in the bit string.
+: with operations on the bit string interpreted as polynomial arithmetic.
+
+> The sender and receiver must first agree on an **r + 1** bit pattern, known as a **generator**, which we will denote as **G**.
+> the most significat (leftmost) bit of G is 1.
+> for a given piece of data, D, the sender will choosed **r additional bits R**, and append them to D
+> **such that the resulting d + r bit pattern is exactly divisible by G** using modulo-2 arithmetic
+
+> The receiver divides the d + r received bits by G
+> If the reminder is nonzero, the receiver knowns that an error has occurred.
+> otherwise the data is accepted as being correct.
