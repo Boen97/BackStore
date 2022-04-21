@@ -35,3 +35,26 @@
 2. random access protocols
 3. taking-turns protocols
 
+#### Channel Partitioning Protocols
+
+- TDM (Time Division Multiplexing)
+  - TDM divides time into **time frames** and further divides each time frame into N **time slots**
+  - when a node has a packet to send, it transimits the packet's bits during its assigned time slot
+  - **fair, each node gets R/N bps transmission rates during each time frame**
+  - **drawbacks**
+    1. a node is limited to an average rate of R/N bps even when it is the only node with packets to send.
+    2. node must always wait for its turn in the transimission sequence, even when it is the only node with a frame to send.
+  
+- FDM (Frequency division multiplexing)
+  - FDM divides the Rbps channel into different frequencies (each with a bandwidth of R/N) and assigns each frequency to one of the N nodes.
+  - a node is limited to a bandwidth of R/N, even when it is the only node with packet to send.
+  
+- **CDMA (code division multiple access)**
+  - assigns a different code to each node.
+  - each node then uses its unique code to encode the data bits it sends.
+  - if the codes are chosen carefully, CDMA network have the wonderful property
+  - that different nodes can transmit simultaneously yet have their respective receivers.
+  - **CDMA has been used in military systems for some time (due to its anti-jamming properties)**
+  - **now CDMA has wide-spread used in cellular telephony**
+
+#### Random Access Protocols
