@@ -58,3 +58,20 @@
   - **now CDMA has wide-spread used in cellular telephony**
 
 #### Random Access Protocols
+
+- in a random access protocol, a transmitting node always transmit at full rate of the channel.
+- when there is a collision, each node involved in the collision repeatedly retranmits its frame until its frame gets through without a collision.
+- **when a node experiences a collision, it don't retransmit right away, it waits a random delay before retransmit the frame**
+
+- **most commonly used random access protocols**
+1. ALOHA protocols
+2. CSMA protocols (the carrier sense multiple access protocol)
+   **Ethernet is a popular and widely deployed CSMA protocol**
+
+##### Slotted ALOHA
+
+- **retransmitting with probability p**
+- the event heads corresponds to “retransmit,” which occurs with prob- ability p.
+- **Slotted ALOHA allows a node to transimit continuously at the full rate, R, when the node is the only active node.**
+- **Slotted ALOHA is highly decentralized, because each node detects collisions and independently decides when to retransmit**
+- **Slotted ALOHA requires the slots to be synchronized in the nodes**
