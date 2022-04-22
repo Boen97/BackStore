@@ -16,6 +16,16 @@ a phrase of JavaScript that produce a value.
 - an expression is something that computes a value but doesn’t do anything: it doesn’t alter the program state in any way. 
 - Statements, on the other hand, don’t have a value, but they do alter the state.
 
+- expression 重在表达，computes a value
+- statements 重在语句, 是一句完整的话，对实际的代码会产生影响
+- the other broad category of statement is control structures, such as conditionals and loops.
+
+- methods
+  : when we use functions with objects, we get methods
+
+- Metaprogramming
+  : writing libraries of code for other JavaScript programmers to use.
+
 - Types
 1. primitive types
    1. number
