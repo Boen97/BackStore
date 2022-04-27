@@ -89,3 +89,21 @@
 
 ### Boolean
 - println display true or false
+
+### Interger Literals
+- all whole number value is an integer literal
+- base 10 
+- base 8 (octal) leading zero
+- base 16 (hexadecimal) leading zero-x (0x or 0X)
+  : 0 - 15
+  : A - F (10 - 15)
+- when an integer literal assign to `char` or `byte` or `short`, no error if range are valid
+- `long a = 123L`
+
+- binary literal (0b or 0B)
+  : int x = ob101010
+  : the binary literal makes it easier to enter values used as bitmasks
+
+- `int x = 123_456_789;`
+- `int x = 123__456__789;`
+- `int x = ob1101_1011_1111;`
