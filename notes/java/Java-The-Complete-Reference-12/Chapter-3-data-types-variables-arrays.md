@@ -81,4 +81,11 @@
 - all transcendental math functions such as sin(), cos(), and sqrt(), return double values.
 
 ### Characters
-- 
+- `char` - `16-bit`
+- Unicode
+- the range of a char is 0 - 65535, there is no negative chars
+- ASCII still ranges from 0 to 127
+- char its principle use is for representing unicode charaters, also it referred to as an integer type.
+
+### Boolean
+- println display true or false
