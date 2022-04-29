@@ -43,4 +43,26 @@
 
 ### ARP (Address Resolution Protocol)
 
+> translate IP addresses to link-layer addresses
 
+> why need ARP?
+
+- an ARP module in the sending host takes any IP address on the same LAN as input, and returns the corresponding MAC address
+
+> DNS resolves host names for hosts anywhere in the Internet
+> **whereas ARP resolves IP addresses only for hosts and router interfaces on the same subnet**
+
+> How ARP works?
+- each host and router has an ARP table in its memory, which contains mappings of IP addresses to MAC addresses
+- a table does not necessarily contain an entry for every host and router on the subnet.
+- some may have never been entered into the table, and others may have expired.
+- The ARP table also contains a time-to-live (TTL) value, which indi- cates when each mapping will be deleted from the table
+- when ARP don't have an entry for the desination
+  : the sender constructs a special packet called **ARP packet**
+  : Both ARP query and response packets have the same format
+  : The purpose of the ARP query packet is to query all the other hosts and routers on the subnet to determine the MAC address 
+  : corresponding to the IP address that is being resolved.
+  : The adapter encapsulates the ARP packet in a link-layer frame, uses the broadcast address for the frame’s destina- tion address,
+
+> **the query ARP message is sent within a broadcast frame**
+> **ARP is plug-and-play; that is, an ARP table gets built automatically**
