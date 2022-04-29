@@ -55,3 +55,18 @@
    : if an adapter malfunctions and continually sends Ethernet frames (called a jabbering adapter
    : a switch can detect the problem and internally disconnect the malfunctioning adapter.
    : Switches also gather statistics on bandwidth usage, collision rates, and traffic types, and make this information available to the network man- ager.
+
+### SNIFFING A SWITCHED LAN: SWITCH POISONING
+
+- When a host is connected to a switch, it typically only receives frames that are intended for it.
+- When host A sends a frame to host B, and there is an entry for host B in the switch table, 
+- then the switch will forward the frame only to host B. If host C happens to be running a sniffer, host C will not be able to sniff this A-to-B frame.
+- it is more difficult for an attacker to sniff frames
+
+- **switch poisoning**
+: send tons of packets to the switch with many different bogus source MAC addresses
+: thereby filling the switch table with bogus entries and leaving no room for the MAC addresses of the legitimate hosts
+: This causes the switch to broadcast most frames, which can then be picked up by the sniffer
+
+
+### Switches Versus Routers
