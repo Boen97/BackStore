@@ -128,3 +128,29 @@
   - because **channel propagation delay** of broadcast channel
   : the time it takes for a signal to propagate from one of nodes to another. 
   : the channel propagation delay plays a crucial role in performance
+
+##### CSMA/CD (Carrier Sense Multiple Access with Collision Detection)
+
+- with normal CSMA, nodes do not perform collision detection
+- both B and D continue to transmit there frames in their entirely even though a collision has occured
+- **When a node performs collision detection, it ceases transmission as soon as it detects a collision**
+- **add collision detection will help protocol performance by not transmitting a useless, damaged frame**
+
+###### **binary exponential backoff** algorithm
+: used in Ethernet and DOCSIS cable network, solves the random time choose after a collision stop
+: when transmitting a frame that has already **experienced n collisions**
+: a node chooses the value of **K** at random from **{0,1,2,...2^n-1}**
+: thus **the more collisions experienced by a frame, the larger the interval from whick K is choosed**
+: **for Eithernet, the actual amount of time a node waits is K*512 bits times**
+: for example
+  - first time random choose K from {0, 1}
+    : when K = 0, wait time = 0 * 512 = 0
+    : when K = 1, wait time = 1 * 512 = 512
+  - second time ... K from {0, 1, 2, 3}
+    : ...
+
+###### CSMA/CD Efficiency
+
+- Efficiency = 1 / (1 + 5(dprop)/dtrans)
+- when dprops apporaches 0, the efficiency apporaches 1
+- when dtrans becomes very large, the efficiency apporaches 1
