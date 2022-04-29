@@ -66,3 +66,11 @@
 
 > **the query ARP message is sent within a broadcast frame**
 > **ARP is plug-and-play; that is, an ARP table gets built automatically**
+
+### Sending a Datagram off the Subnet
+
+> each router interface has an IP address and an ARP module
+- for a router has two interfaces, it has two IP address, two ARP modules, and two adapters
+- each adapter has its own MAC address
+- the sending host first get the first hop router interface MAC address, using the ARP protocol
+- then the router forward the datagram to subnet 2, also use ARP protocol, get the destination MAC address
