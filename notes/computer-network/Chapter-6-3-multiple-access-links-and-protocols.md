@@ -150,7 +150,6 @@
     : ...
 
 ###### CSMA/CD Efficiency
-
 - Efficiency = 1 / (1 + 5(dprop)/dtrans)
 - when dprops apporaches 0, the efficiency apporaches 1
 - when dtrans becomes very large, the efficiency apporaches 1
