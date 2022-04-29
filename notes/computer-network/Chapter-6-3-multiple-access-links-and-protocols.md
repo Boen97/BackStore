@@ -62,6 +62,7 @@
 - in a random access protocol, a transmitting node always transmit at full rate of the channel.
 - when there is a collision, each node involved in the collision repeatedly retranmits its frame until its frame gets through without a collision.
 - **when a node experiences a collision, it don't retransmit right away, it waits a random delay before retransmit the frame**
+- Each node involved in a collision chooses independent random delays
 
 - **most commonly used random access protocols**
 1. ALOHA protocols
@@ -70,8 +71,49 @@
 
 ##### Slotted ALOHA
 
+- nodes start to transimit frames only at the beginning of slots
+- the nodes are synchronized so that each node knows when the slots begin
+- if two or more frames collide in a slot, then all the nodes detect the collision event before the slot ends
 - **retransmitting with probability p**
 - the event heads corresponds to “retransmit,” which occurs with prob- ability p.
 - **Slotted ALOHA allows a node to transimit continuously at the full rate, R, when the node is the only active node.**
 - **Slotted ALOHA is highly decentralized, because each node detects collisions and independently decides when to retransmit**
 - **Slotted ALOHA requires the slots to be synchronized in the nodes**
+- The slotted ALOHA protocol required that all nodes synchronize their transmissions to start at the beginning of a slot. 
+- when there are multiple active nodes, a certain fraction of the slots will have collisions and will wasted.
+- fraction of the slots will be empty because all active nodes refrain from transimission as a result of the probabilistic transmission policy.
+- the only unwasted slots will be those in which exactly one node transmit
+- **successful slot**
+  : a slot in which exactly one node transmits
+- **efficiency**
+  : successful slot rates
+  : if no form of access control were used, each node were to immediately retransmit after each collision, the efficiency would be zero.
+  
+- **the maximum efficiency of slotted ALOHA**
+  : 1/e = 0.37
+  : when a large number of nodes have many frames to transimit, then(at best) only 37 percent of the slots do useful work
+  : the effective transimission rate of the channel is only 0.37 R bps
+
+#### Pure ALOHA
+: in order for this frame to be successfully transmitted, no other nodes can begin their transmission in the interval of time [t0 - 1, t0]. 
+: Such a transmis- sion would overlap with the beginning of the transmission of node i’s frame.
+: the maximum efficiency of the pure ALOHA protocol is only 1/(2e)-half of slotted ALOHA
+: this then is the price to be paid for a fully decentralized ALOHA protocol
+
+#### CSMA (carrier sense multiple access)
+
+- in both slotted and pure ALOHA, a node's decision to transimit is made independently of the activity of the other nodes attached to the broadcast channel
+- ALOHA neither pays attention to whether another node happens to be transimission when it begins transimit
+  nor stops transmitting if another node begins to interfere with its transmission
+
+- **Listen before speaking**
+  : **carrier sense**
+    - a node listens to the channel before transimitting
+    - if a frame from another node is currently being transmitted into the channel,
+    - a node then waits until it detects no transimission for a short amount of time and then begins transmission
+
+- **If someone else begins talking at the same time, stop talking**
+  : **collision detection**
+    - a transmitting node listens to the channel while it is transmitting
+    - if it detects that another node is transmitting an interfering frame
+    - it stops transmitting and waits a random amount of time before repeating the sense-and-transmit-when-idle cycle
