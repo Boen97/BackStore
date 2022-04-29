@@ -1,1 +1,57 @@
 > The role of the switch is to receive incoming link-layer frames and forward them onto outgoing links.
+
+## Forwarding and Filtering
+
+1. Filtering
+   : is the switch function that determines whether a frame should be for- warded to some interface or should just be dropped.
+
+2. Forwarding
+   : determines the interfaces to which a frame should be directed, and then moves the frame to those interfaces.
+
+3. **switch table**
+   : Switch filtering and forwarding are done with a switch table.
+   : The switch table contains entries for some, but not necessarily all, of the hosts and routers on a LAN
+   : An entry in the switch table contains
+     1. a MAC address
+     2. the switch interface that leads toward that MAC address
+     3. the time at which the entry was placed in the table.
+ 
+### how switch filtering and forwarding work?
+> suppose a frame with destination address DD-DD-DD-DD-DD-DD arrives at the switch on interface x.
+1. There is no entry in the table
+   : if there is no entry for the destination address, the switch broadcasts the frame.
+   
+2. There is an entry in the table, associating DD-DD-DD-DD-DD-DD with interface x.
+   : the switch performs the filtering function by discarding the frame.
+
+3. There is an entry in the table, associating DD-DD-DD-DD-DD-DD with interface y != x
+   : The switch performs its forwarding function by putting the frame in an output buffer that precedes interface y.
+
+### Self learning
+1. The switch table is initially empty.
+
+2. For each incoming frame received on an interface, the switch stores
+   1. the MAC address in the frame’s source address field
+   2. the interface from which the frame arrived
+   3. the current time. 
+
+3. The switch deletes an address in the table if no frames are received with that address as the source address after some period of time (**the aging time**)
+
+> Switches are plug-and-play devices because they require no intervention from a network administrator or user.
+> Switches are also full-duplex, meaning any switch interface can send and receive at the same time.
+
+### Properties of Link-Layer switching
+ 
+1. Elimination of collisions
+   : The switches buffer frames and never transmit more than one frame on a segment at any one time
+   : As with a router, the maximum aggregate throughput of a switch is the sum of all the switch interface rates.
+   : **switches provide a significant performance improvement over LANs with broadcast links.**
+
+2. Heterogeneous links.
+   : a switch isolates one link from another, the different links in the LAN can operate at different speeds and can run over different media.
+
+3. Management
+   : a switch also eases network management
+   : if an adapter malfunctions and continually sends Ethernet frames (called a jabbering adapter
+   : a switch can detect the problem and internally disconnect the malfunctioning adapter.
+   : Switches also gather statistics on bandwidth usage, collision rates, and traffic types, and make this information available to the network man- ager.
