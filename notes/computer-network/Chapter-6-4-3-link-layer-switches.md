@@ -68,5 +68,46 @@
 : thereby filling the switch table with bogus entries and leaving no room for the MAC addresses of the legitimate hosts
 : This causes the switch to broadcast most frames, which can then be picked up by the sniffer
 
-
 ### Switches Versus Routers
+
+#### pros and cons of switches
+> 1. Traffic isolation
+> 2. Plug and Play
+
+1. plug-and-play
+
+2. have relatively high filtering and forwarding rates
+   : switches have to process frames only up through layer 2, whereas routers have to process datagrams up through layer 3.
+
+3. a large switched network would require large ARP tables in the hosts and routers and would generate substantial ARP traffic and processing.
+
+4. switches are susceptible to broadcast storms
+   : if one host goes haywire and transmits an endless stream of Ethernet broadcast frames
+   : the switches will forward all of these frames, causing the entire network to collapse.
+
+#### pros and cons of routers
+> 1. traffic isolation
+> 2. Optimal routing
+
+1. Because network addressing is often hierarchical, packets do not normally cycle through routers even when the network has redundant paths
+
+2. Thus, packets are not restricted to a spanning tree and can use the best path between source and destination
+
+3. routers is that they provide firewall protection against layer-2 broadcast storms
+
+4. the most significant drawback of routers
+   : they are not plug-and-play
+   : they and the hosts that connect to them need their IP addresses to be configured.
+
+5. routers often have a larger per-packet processing time than switches
+   : they have to process up through the layer-3 fields
+
+#### When to use switches?
+
+> small networks consisting of a few hundred hosts have a few LAN segments.
+> Switches suffice for these small networks, as they localize traffic
+> and increase aggregate throughput **without requiring any configuration of IP addresses.**
+
+#### When to use routers?
+> larger networks consisting of thousands of hosts typically include routers within the network 
+> The routers provide a more robust isolation of traffic, control broadcast storms, and use more “intelligent” routes among the hosts in the network.
