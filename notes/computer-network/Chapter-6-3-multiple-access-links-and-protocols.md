@@ -206,3 +206,18 @@
 > **each upstream and downstream is a broadcast channel**
 
 > **there is no multiple access problem, since there only a single CMTS transmitting into the downstream channel**
+
+> **each upstream channel is divided into intervals of time (TDM like)**
+- each containing a sequence of mini-slots during which cable modems can transmit to the CMTS
+- The CMTS explicitly grants permission to indi- vidual cable modems to transmit during specific mini-slots.
+- The CMTS accomplishes this by sending a control message known as a MAP message on a downstream channel 
+- to specify which cable modem (with data to send) can transmit during which mini-slot for the interval of time specified in the control message.
+- Since mini-slots are explicitly allocated to cable modems, the CMTS can ensure there are no colliding transmissions during a mini-slot.
+
+> how does the CMTS know which cable modems have data to send in the first place?
+- This is accomplished by having cable modems send mini-slot-request frames to the CMTS during a special set of interval mini-slots 
+- that are dedicated for this purpose, 
+- These mini-slot-request frames are transmitted in a **random access manner** and so may collide with each other.
+  : A cable modem can neither sense whether the upstream channel is busy nor detect collisions. 
+  : the cable modem infers that its mini-slot-request frame experienced a collision if it does not receive a response to the requested allocation in the next downstream con- trol message.
+  : When a collision is inferred, a cable modem uses binary exponential backoff
