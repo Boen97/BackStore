@@ -153,3 +153,39 @@
 - Efficiency = 1 / (1 + 5(dprop)/dtrans)
 - when dprops apporaches 0, the efficiency apporaches 1
 - when dtrans becomes very large, the efficiency apporaches 1
+
+
+### Taking-Turns Protocols
+
+> two desirable properties of a multiple access protocol
+1. when only one node is active, the active node has a throughput of R bps
+2. when M nodes are active, then each active node has a throughput of R/M bps.
+
+- **the ALOHA and CSMA protocols has the first property but not the second**
+
+#### Polling protocol
+- the polling protocol requires one of the nodes to be designated as a **master node**.
+- **the master node polls each of the nodes in a round-robin fashion**
+- the master node first sends a message to node 1, saying that it (node 1) can transmit up to some maximum number of frames.
+- after node 1 transmit some frames, the master node tells node 2 to transimit
+- the master node can determine when a node has finished sending its frames by observing the lack of a signal on the channel
+
+- **the polling protocol eliminates the collisions and empty slots that plague random access protocols**
+
+> **drawbacks**
+1. introduce a **polling delay**
+   : when only one node is active, then the node will transmit at a rate less than R 
+2. if the **master node fails**, the entire channel becomes inoperative
+   : the Bluetooth protocol, is an example of a Polling protocol
+
+#### Token-passing protocol
+
+> a small, special-purpose frame known as a **token** is exchanged among the nodes in some fixed order.
+- for example, node 1 always send the token to node 2, node 2 always send the token to node 3
+- **when a node receives a token, it holds onto the token only if it has some frames to transimit**
+
+> **drawbacks**
+1. the failure of one node can crash the entire channel
+
+
+### 6.3.4 DOCSIS: The Link-Layer Protocol for Cable Internet Access
