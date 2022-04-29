@@ -58,4 +58,22 @@
   
 ## Ethernet Technologies
 
+- 10BASE-T, 10BASE-2, 100BASE-T, 10BASE-T, 1000BASE-LX, 10GBASE-T and 40GBASE-T. 
 
+- 1. The first part of the acronym refers to the speed of the standard:
+  : 10, 100, 1000, or 10G, for 10 Megabit (per second), 100 Megabit, Gigabit, 10 Gigabit and 40 Gigibit Ethernet, respectively.
+
+- 2. **“BASE” refers to baseband Ethernet**, meaning that the physical media only carries Ethernet traffic;
+
+- 3. The final part of the acronym refers to the physical media itself;
+  : T refers to twisted-pair copper wires.
+
+- early 10BASE-2 and 10BASE-5 standards specify 10 Mbps Ethernet over two types of coaxial cable, each limited in length to 500 meters
+- **repeater**
+: a physical-layer device that receives a signal on the input side, and regenerates the signal on the output side.
+ 
+- In most installations today, nodes are connected to a switch via point-to-point segments made of twisted-pair copper wires or fiber-optic cables
+
+- In the mid-1990s, Ethernet was standardized at 100 Mbps, 10 times faster than 10 Mbps Ethernet
+
+- 100 Mbps Ethernet is limited to a 100-meter distance over twisted pair
