@@ -106,6 +106,8 @@
 - ALOHA neither pays attention to whether another node happens to be transimission when it begins transimit
   nor stops transmitting if another node begins to interfere with its transmission
 
+##### Two Rules
+
 - **Listen before speaking**
   : **carrier sense**
     - a node listens to the channel before transimitting
@@ -117,3 +119,12 @@
     - a transmitting node listens to the channel while it is transmitting
     - if it detects that another node is transmitting an interfering frame
     - it stops transmitting and waits a random amount of time before repeating the sense-and-transmit-when-idle cycle
+
+- the above two rules are embodied in CSMA and **CSMA/CD(CSMA with collision detection)** protocol
+
+- When use CSMA, why if all nodes perform carrier sensing, do collisions occur in the first place
+  after all, a node will refrain from transmitting whenever it senses that another node is transmitting
+  
+  - because **channel propagation delay** of broadcast channel
+  : the time it takes for a signal to propagate from one of nodes to another. 
+  : the channel propagation delay plays a crucial role in performance
