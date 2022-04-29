@@ -187,5 +187,22 @@
 > **drawbacks**
 1. the failure of one node can crash the entire channel
 
-
 ### 6.3.4 DOCSIS: The Link-Layer Protocol for Cable Internet Access
+
+> three broad classes of multiple access protocols
+1. channel partitioning protocols
+2. random access protocols
+3. taking turns protocols
+
+- we’ll find aspects of each of these three classes of multiple access protocols with the cable access network!
+
+> **DOCSIS (Data-Over-Cable Service Interface Specifications)**
+
+- **DOCSIS uses FDM to divide the downstream (CMTS to modem) and upstream network segments into multiple frequency channels**
+
+- each downstream channel is between 24 MHz and 192 MHz wide, maximum 1.6 Gbps per channel
+- each upstream between 6.4 MHz to 96 MHz, with a maximum upstream throughput of approximately 1 Gbps.
+
+> **each upstream and downstream is a broadcast channel**
+
+> **there is no multiple access problem, since there only a single CMTS transmitting into the downstream channel**
