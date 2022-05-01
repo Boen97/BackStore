@@ -171,3 +171,47 @@ b = (byte) (a << 2); // 0
 > **>>> operator only meaningful for 32-and 64-bit values**
 - smaller values are automatically promoted to int in expressions.
 - **sign extension that could happend when a byte was promoted to int before unsigned shift right.** 
+
+### Bitwise Operator Compound Assignments
+
+a = a << 4;
+a <<= 4;
+
+## Relational Operators
+
+> In Java, true and false are nonnumeric values that do not relate to zero or nonzero.
+
+## Boolean Logical Operators
+1. & logical AND
+2. | logical OR
+3. ^ logical XOR
+4. || short-circuit OR
+5. && short-circuit AND
+6. ! logical unary NOT
+7. &= AND assignment
+8. |= OR assignment
+9. ^= XOR assignment
+10. == equal to
+11. != not equal to 
+12. ?: Ternary If-then-else
+
+- &, |, ^ operate on boolean values in the same way on the bits of an integer.
+
+### Short-Circuit Logical Operators.
+> || &&
+> Java will not bother to evaluate the right-hand operand when the outcome of the expression can be determined by the left operand alone.
+
+### The Assignment Operator
+
+> allows you to create a chain of assignments.
+- int x, y, z;
+- x = y = z = 100; // set x, y, and z to 100
+- **the = is an operator that yields the value of the right-hand expression**
+- the value of z = 100 is 100
+
+### The ? Operator
+> **ternary (three-way) operator** replace of **if-then-else** statememts
+
+- **expression1 ? expression2 : expression3**
+: expression1 evaluates to a boolean value.
+: both expression2 and expression3 are required to return the same type, which can't be **void**
