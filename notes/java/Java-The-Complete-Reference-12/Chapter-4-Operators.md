@@ -88,3 +88,25 @@ y % 10 = 2.25;
 > **applying the bitwise operators can easily produce unexpected results.**
 > for example, turning on the high-order bit will cause the resulting value to be interpreted as a nagetive number.
 > **high-order bit determines the sign of an integer no matter how that high-order bit gets set**
+
+### The Bitwise Logical Operators
+> & | ^ ~
+
+- ^ XOR
+- | OR
+
+| A  | B  | A|B  | A&B  | A^B  | ~A  |
+|:--|:--|:--|:--|:--|:--|
+| 0  | 0  | 0  | 0  | 0  | 1  |
+| 1  | 0  | 1  | 0  | 1  | 0  |
+| 0  | 1  | 1  | 0  | 1  | 1  |
+| 1  | 1  | 1  | 1  | 0  | 0  |
+
+#### The Bitwise XOR
+
+> the bit pattern is inverted whereever the second operand has a 1 bit
+> if the second operand has a 0 bit, the first operand is unchanged.
+
+ 00101010 
+^00001111
+=00100101 
