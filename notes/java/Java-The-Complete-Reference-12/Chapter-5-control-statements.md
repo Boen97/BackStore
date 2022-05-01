@@ -19,3 +19,73 @@
 
 > If you need to select among a large group of values, a **switch** statement will run much faster than the **if-elses**
 > The compiler can do this because it konws that the case constants are all the same type.
+
+## Iteration Statements
+1. for
+2. while
+3. do-while
+
+> the body of the **while** can be empty.
+> This is because **null statement** is syntactically valid in Java.
+
+> The do-while loop is useful when you process a menu selection.
+
+```java
+char choice;
+do {
+// choice choose
+} while(choice < '1' || choice > '5')
+```
+
+### for 
+
+```java
+for(initialization;condition;iteration) {
+// body
+}
+```
+
+1. the initialization expression is executed only once.
+   : **loop control variable**
+2. next, condition is evaluated
+3. body of loop
+4. next the iteration portion of the loop is executed
+
+#### declaring Loop control variables inside the for loop
+
+> when the variable that controls a for loop is needed only for the loop, we declare the variable inside the portion of the for.
+> the scope of that variable ends when the for statement does.
+
+```java
+for (int i = 0; i < 10; i++) {
+}
+```
+
+```java
+for (int a = 1, b = 4; a < b; a++, b--) {
+
+}
+```
+
+##### some for Loop Variations.
+
+> the initialization, condition test, and the iteration, do not need to be used for only those purposes.
+
+1. the condition expression does not need to test the loop control variable, it can be any boolean expression
+
+2. the initialization and iteration can be absent.
+
+```java
+boolean done = false;
+for (;!done;) {
+}
+```
+
+3. infinite loop
+
+```java
+for (;;) {
+}
+```
+
+#### the For-Each Version of the for loop
