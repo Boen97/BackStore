@@ -89,3 +89,30 @@ for (;;) {
 ```
 
 #### the For-Each Version of the for loop
+
+> a for-each style loop is designed to cycle through a collection of objects, such as an array
+> in stricty sequenial fashion, from start to finish.
+
+- for-each style also called **enhanced for loop**
+
+`for(type itrvar: collection)`
+
+> not only the syntax streamlined, but is also prevents boundary errors.
+> it is possible to terminate the loop using **break**
+
+> **for-each style, its iteration variable is read-only as it relates to the underlying array**
+> **an assignment to the iteration variable has no effect on the underlying array**
+
+#### Iterating over multidimensional arrays
+
+> the enhanced for also works on multidimensional arrays
+
+```java
+int[][] nums = new int[5][3];
+for (int[] x : nums) {
+    for (int y : x) {    
+    }
+}
+```
+
+#### local variable type inference in a for loop
