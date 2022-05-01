@@ -153,3 +153,21 @@ b = (byte) (a << 2); // 0
 11111100 -4
 
 > **if you shift -1 right, the result always remains -1, since sign extension keeps bringing in more ones in the hight-order bits**
+
+### The Unsigned Right Shift.
+
+> if you are shifing something that does not represent a numberic value
+> you may not want sign extension to take place.
+> **This situation is common when you are working with pixel-based values and graphics.**
+> In these cases, you will generally want to shift a zero into the high-order bit no matter what its initial value was.
+
+> **unsigned shift >>>**
+: which always shifts zeros into the high-order bit.
+
+- int a = -1; // 11111111_11111111_11111111_11111111
+- >>> 24
+- 00000000_00000000_00000000_11111111 // 255
+
+> **>>> operator only meaningful for 32-and 64-bit values**
+- smaller values are automatically promoted to int in expressions.
+- **sign extension that could happend when a byte was promoted to int before unsigned shift right.** 
