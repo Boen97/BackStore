@@ -139,3 +139,17 @@ b = (byte) (a << 2); // 0
 > programmers frequently use this fact as an efficient alternative to multiplying by 2.
 
 > **But you need to watch out, if you shift a 1 bit into the high-order position(bit 31 or 63), the value will become negative.**
+
+### The Right Shift.
+
+> When a value has bits that are shifted off, those bits are lost.
+> each time you shift a value to the right, it divides that value by two-and discard any remainder.
+
+> **sign extension**
+- when you are shifeing right, the top(leftmost) bits exposed by the right shift are filled in with the previous contents of the top bit.
+
+11111000 -8
+>> 1
+11111100 -4
+
+> **if you shift -1 right, the result always remains -1, since sign extension keeps bringing in more ones in the hight-order bits**
