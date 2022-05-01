@@ -116,3 +116,10 @@ for (int[] x : nums) {
 ```
 
 #### local variable type inference in a for loop
+
+`for (var x : nums)`
+
+## Jump Statements
+1. break;
+2. continue;
+3. return
