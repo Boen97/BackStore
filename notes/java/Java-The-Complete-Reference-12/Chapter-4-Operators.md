@@ -110,3 +110,32 @@ y % 10 = 2.25;
  00101010 
 ^00001111
 =00100101 
+
+### The Left Shift
+
+> for each shift left, the high-order bit is shifted out(and lost), and zero is brought in on the right.
+> when a left shift is applied to an int operand, bits are lost once they are shift past bit position 31.
+> if the operand is a long, then bits are lost after bit position 63.
+
+> Java's automatic type promotions produce unexpected results when you are shifting **byte** and **short** values.
+1. **byte** and **short** values are promoted to **int** when an expression is evaluated.
+2. the outcome of a left shift on a **byte** or **short** value will be an **int**
+3. and the bits shifted left will not be lost until they shift past bit position 31.
+4. **futhermore, a negative byte or short value will be sign-extended when it is promoted to int**
+5. Thus, the high-order bits will be filled with 1's.
+6. **to perform a left shift on a byte or short implies that you must discard the high-order bytes of the int result**
+7. for example, if you left-shift a byte value, that value will be promoted to int and then shifted.
+8. this means that you must discard the top three bytes of the result if what you want is the result of a shifted byte value.
+9. **the easiest way to do this is to simply cast the result back into a byte**
+
+```java
+byte a = 64, b;
+int i;
+i = a << 2; // 256
+b = (byte) (a << 2); // 0
+```
+
+> since each left shift has the effect of doubling the original value.
+> programmers frequently use this fact as an efficient alternative to multiplying by 2.
+
+> **But you need to watch out, if you shift a 1 bit into the high-order position(bit 31 or 63), the value will become negative.**
