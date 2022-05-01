@@ -123,3 +123,58 @@ for (int[] x : nums) {
 1. break;
 2. continue;
 3. return
+4. exception handling
+
+### use break
+1. terminates a statement sequence in a switch statement
+2. exit a loop
+3. used as a civilized form of goto
+
+> when used inside a set of nested loops, the break will only break out of the **innermost loop**
+
+1. more than one break statement may appear in a loop
+   two many break statements have the tendenct to destructure your code.
+
+2. the break that terminates a switch affects only the switch, not any enclosing loops.
+
+3. break was not designed to provide the normal means by which a loop is terminated. the loop's condition expression serves this purpose.
+
+4. the break statement should be used to cancel a loop only when some sort of special situations.
+
+### using break as a form of goto
+
+> Java does not have a goto statement because it provides a way to branch in an arbitrary and unstructed manner.
+> goto makes goto-ridden code hard to understand and maintain.
+> prohibits certain compiler optimizations.
+
+> **break label**
+- Java defines an expanded form of the break statement
+- by using break label, you can break out one or more blocks of code.
+- and they can be any block
+
+> you cannot use break to transfer control out of block that does not enclose the break statement
+
+```java
+first: {
+    second: {
+        third: {
+            break second;
+        }
+    }
+}
+outer: for (int[] i : nums) {
+    for (int y : i) {
+        break outer;
+    }
+}
+```
+
+## using continue
+> in while and do-while loops, a continue statement causes control to be transferred directly to the conditional expression.
+> **in a for loop, control goes first to the iteration portion, and then to the conditional expression**
+
+- As with the break statement, continue may specify a label to describe which enclosing loop to continue.
+
+## return
+
+> the return is used to explicitly return from a method, causes program control to transfer back to the caller of the method
