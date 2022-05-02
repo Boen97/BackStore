@@ -83,3 +83,49 @@
 - initialize static variables with a static block, get execute exactly once, when the class is first loaded.
 
 > this is how Java implements a controlled version of **global methods and global variables**
+
+### introducing final
+
+1. declare a final field
+   : first, you can give it value when it is declared
+   : second, you can assign it a value within a constructor.
+
+- both method parameters and local variable can be declared final.
+  : declaring a parameter final prevents it from being changed within the method.
+
+### Arrays Revisited
+- arrays are implemented as objects.
+- the value **length** of array has nothing to do with the number of elements that are actually in use.
+  it only reflects the number of elements that the array is designed to hold.
+
+### introducing Nested and Inner Classes.
+
+- nested classes 
+: define a class within another class
+: nested classes does not exist independently of its enclosing class
+: a nested class has access to the members, including private members of its enclosing class.
+
+- two types of nested classes: static and non-static
+- an inner class is a non-static nested class
+- it is possible to define inner classes within any block scope.
+
+## EXploring the String Class
+
+- every string you create is actually an object of String
+- even string constants are actually String objects.
+
+- **objects of type String are immutable**
+
+## using Command-Line Arguments
+
+> they are stored as strings in a String array passed to the args parameter of main()
+> all command-line arguments are passed as strings.
+> you must convert numeric values to their internal forms
+
+## Varargs: Variable-Length Arguments
+
+- the variable-length parameter must be the last parameter declared by the method.
+- there must be only one varargs parameter
+- varargs method can be overloaded.
+
+## Local Variable Type Inference with Reference Types
