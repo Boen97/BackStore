@@ -62,3 +62,35 @@
 2. argument
    : an argument is a value that is passed to a method when it is invoked.
    : m(100) 100 is an argument
+
+### Constructors
+
+> allow objects to initialize themselves when they are created.
+> a constructor initializes an object immediately upon creation.
+> once defined, the constructor is automatically called when the object is created, before the new operator completes.
+
+> constructor no return type, not even void.
+> because the implicit return type of a class's constructor is the class type itself.
+
+> it is the constructor's job to initialize the internal state of an object
+> so that the code creating an instance will have a fully initialized, useable object immediately.
+
+> when you do not explicitly define a constructor for a class, then Java creates a default constructor for the class.
+
+> when using the default constructor, all non-initialized instance variables will have their default values.
+> which are zero, null, and false.
+> once you define your own constructor, the default constructor is no longer used.
+
+### The this Keyword.
+
+> **this** can be used inside any method to refer to the current object.
+
+#### instance variable hiding
+
+> it is illegal in Java to declare two local variable with the same name inside the same or enclosing scopes.
+
+> when a local variable has the same name as an instance variable, the local variable hides the instance variable
+
+> you can use this to solve any namespace collisions.
+
+## Garbage Collection.
