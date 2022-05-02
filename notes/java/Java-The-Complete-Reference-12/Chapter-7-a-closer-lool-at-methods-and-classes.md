@@ -53,3 +53,33 @@
 > when writing recursive methods, you must have an **if** statement somewhere to force the method **return** without the recursive call being executed.
 
 ## Introducing Access Control.
+
+> **encapsulation** provides another important attribute: **access control**
+> allowing access to data only through a well-defined set of methods, you can prevent the misuse of that data.
+
+### access modifier
+1. public
+2. private
+3. protected
+4. Java also defines a default access level.
+
+> when a member of a class is modified by public, that member can be accessed by any other code.
+> when a member of a class is specified as private, that member can only be accessed by other members of its class.
+
+> when no access modifier is used, then by default the member of a class is public within its own package,
+> but cannot be accessed outside of its package.
+
+### understanding static
+
+> define a class member that will be used independently of any object of that class.
+> instance variables declared as static are, essentially, **global variables**
+
+> **methods declared as static have several restrictions**
+1. they can only directly call other **static** methods of their class.
+2. they can only directly access **static** variables of their class.
+3. they cannot refer to **this** or **super** in any way.
+
+> **static block**
+- initialize static variables with a static block, get execute exactly once, when the class is first loaded.
+
+> this is how Java implements a controlled version of **global methods and global variables**
