@@ -84,3 +84,7 @@
 > it is illegal to declare a class as both abstract and final
 
 > beginning with JDK 17, the ability to **seal a class** was added to Java
+
+### The Object Class
+> all other classes are subclasses of Object
+> a reference variable of type Object can refer to an object of any other class.
