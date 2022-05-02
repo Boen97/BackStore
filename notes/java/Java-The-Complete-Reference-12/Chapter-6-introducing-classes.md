@@ -25,3 +25,13 @@
 
 - variables defined within a class called **instance variables**
 - because each instance of the class contains its own copy of these variables.
+
+### Declaring Objects.
+
+> `Box mybox = new Box()`
+1. Box mybox // declare referencet to object
+2. mybox = new Box() // allocate a object
+
+> new allocates memory for an object during run time.
+> you program can create as many or as few objects as it need.
+> if unsufficient memory when new object, a run-time exception will occur.
