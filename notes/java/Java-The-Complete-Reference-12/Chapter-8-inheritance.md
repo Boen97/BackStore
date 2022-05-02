@@ -50,3 +50,37 @@
 > **without recompling while maintaining a clean abstract interface is a profoundy powerful tool**
 
 ## using Abstract Classes
+
+> when a superclass is unable to create a meaningful implementation for a method.
+
+### abstract method
+> ensure a subclass override all necessary methods.
+> this methods are sometimes referred to as **subclassr responsibility**
+
+> any class that contains one or more abstract methods must also be declared abstract
+> an abstract class cannot be directly instaniated with the new operator.
+> you cannot declare abstract constructors or abstract static methods.
+
+### using final with inheritance
+
+#### using final to prevent overiding
+
+> methods declared as final can sometimes provides a performance enhancement.
+> the compiler is free to inline calls to them because it knows they will not be overridden by a subclass
+
+> when a small final method is called, often the Java compiler can copy the bytecode for subroutine directly inline with the compiled code
+> of the calling method, thus eliminating the costly overhead associated with a method call.
+
+> Inlining is an option only with final methods.
+
+> Java resolves calls to methods dynamically, at run time.
+> this is called **late binding**
+
+> since **final** methods cannot be overridden, a call to one can be resolved at **compile time**
+> This is called **early binding**
+
+#### using final to prevent inheritance
+> prevent a class from being inherited
+> it is illegal to declare a class as both abstract and final
+
+> beginning with JDK 17, the ability to **seal a class** was added to Java
