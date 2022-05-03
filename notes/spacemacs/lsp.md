@@ -12,3 +12,6 @@ i
 
 ## change jdt update url
 customize variable `lsp-java-jdt-download-url`
+
+## quick insert lsp-mode snippets
+SPC i s

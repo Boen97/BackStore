@@ -147,3 +147,21 @@
 : casuse the thread from which it is called to suspend execution for the specified period of milliseconds
 
 - `static void sleep(long milliseconds, int nanoseconds) throws InterruptedException`
+
+### Creating a Thread
+
+1. implement the Runnable Interface
+
+2. extend the Thread class
+
+#### Implementing Runnable
+
+> Runnable abstracts a unit of executable code
+
+```java
+Thread(Runnable threadOb, String threadName)
+```
+
+- thread.start() initiates a call to run()
+
+- it is often useful for the main thread to be the last thread to finish running
