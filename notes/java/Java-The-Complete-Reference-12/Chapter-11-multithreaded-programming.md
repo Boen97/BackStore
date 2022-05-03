@@ -146,7 +146,7 @@
 - `Thread.sleep(1000);`
 : casuse the thread from which it is called to suspend execution for the specified period of milliseconds
 
-- `static void sleep(long milliseconds, int nanoseconds) throws InterruptedException`
+- static void sleep(long milliseconds, int nanoseconds) throws InterruptedException
 
 ### Creating a Thread
 
@@ -165,3 +165,46 @@ Thread(Runnable threadOb, String threadName)
 - thread.start() initiates a call to run()
 
 - it is often useful for the main thread to be the last thread to finish running
+
+```java
+package com.rhyme;
+
+public class ThreadDemo {
+  public static void main(String[] args) {
+    NewThread newThread = new NewThread();
+    newThread.t.start();
+    try {
+      for (int i = 5; i > 0; i--) {
+        System.out.println("MainThread" + i);
+        Thread.sleep(1000);
+      }
+    } catch (InterruptedException e) {
+    }
+    System.out.println("Main Thread exit");
+  }
+}
+
+
+class NewThread implements Runnable {
+  Thread t;
+
+  NewThread() {
+    t = new Thread(this, "SubThread");
+  }
+
+  @Override
+  public void run() {
+    try {
+      for (int i = 5; i > 0; i--) {
+        System.out.println("SubThread" + i);
+        Thread.sleep(500);
+      }
+    } catch (InterruptedException e) {
+    }
+    System.out.println("subThread exit");
+  }
+
+}
+```
+
+### Extending Thread
