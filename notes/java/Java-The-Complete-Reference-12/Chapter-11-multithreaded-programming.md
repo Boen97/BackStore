@@ -57,3 +57,28 @@
 4. resumed
 5. blocked
 6. terminated
+
+### Thread Priorites
+
+> Java assigns to each thread a **priority** that determines how that thread should be treated with respect to the others
+
+> Thread priorities are integers that specify the **relative priority** of one thread to another
+
+> as an absolute value, a priority is **meaningless**
+
+> a thread's priority is used to decide when to switch from one running thread to the next.
+> This is called **context switch**
+
+1. a thread can voluntarily **relinquish control**
+   : this occurs when **explicitly yielding, sleeping or when blocked**
+   : all other threads are examined, and the highest-priority thread that is ready to run
+
+2. a thread can be **preempted** by a **higher-priority** thread.
+   : a lower-priority thread that does not yield the processor is simply preempted- **no matter what it is doing**
+   : **preemptive multitasking**
+
+- when two threads with the **same priority** are competing for CPU cycles
+  : some operating systems, threads are in **round-robin fashion**
+  : for other types of operating systems, threads must **voluntarily yield control to their peers**
+
+> Portability problems can arise from the differences in the way that operating systems context-switch threads of equal priority.
