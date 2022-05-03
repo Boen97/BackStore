@@ -208,3 +208,16 @@ class NewThread implements Runnable {
 ```
 
 ### Extending Thread
+
+```java
+class NewThread extends Thread {
+    public void run() {
+        ...
+    }
+}
+public static void main(String[] args) {
+    Thread t = new Thread();
+    t.start();
+    ...
+}
+```
