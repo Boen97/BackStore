@@ -82,3 +82,49 @@
   : for other types of operating systems, threads must **voluntarily yield control to their peers**
 
 > Portability problems can arise from the differences in the way that operating systems context-switch threads of equal priority.
+
+### Synchronization
+
+> because multithreading introduces an **asynchronous** behavior to your programs.
+> there must be a way for you to **enforce synchronicity** when you need it.
+> that is, you must prevent one thread from writing data while another thread is in the middle of reading it
+> for this purpose, Java implements an elegant twist on an age-old model of interprocess synchronization: the **monitor**
+> **you can think of a monitor as a very small box that can hold only one thread**
+> **once a thread enters a monitor, all other threads must wait until that thread exits the monitor**
+
+> In Java, there is no class **Monitor**
+> each object has its own **implicit monitor** that is automatically entered when one of the **object's synchronized method** is called
+> once a thread is **inside a synchronized method**, no other thread can call any other synchronized method on the **same object**
+
+### Messaging
+
+> after you divide your program into separate threads.
+> **you need to define how they will communicate with each other**
+> if depends on the operating system to establish communication between threads. This of course, **adds overhead**
+> Java provides a clean, low-cost way for two or more threads to talk to each other,
+> **via calles to predefined methods that all object have**
+> Java's messaging system allows a thread to enter a synchronized method on **an object**
+> and then **wait there until some other thread explicitly notifies it to come out**
+
+### The Thread Class and the Runnable Interface
+
+> Java's multithreading system is built upon the **Thread** class, **its methods**, and **its companion interface Runnable**
+> **Thread encapsulates a thread of execution**
+> since you can't directly refer to the **ethereal state** of a running thread. you will deal with it through **its proxy**
+> the Thread instance that spawned it.
+> to create a new thread, you can **extend Thread or implement the Runnable interface**
+
+> the Thread class defines serveral methods
+1. getName
+2. getPriority
+3. isAlive
+4. join
+   : wait for a thread to terminate
+5. run
+   : entry point for the thread.
+6. sleep
+   : suspend a thread for a period of time.
+7. start
+   : start a thread by calling its run method
+
+### The Main Thread
