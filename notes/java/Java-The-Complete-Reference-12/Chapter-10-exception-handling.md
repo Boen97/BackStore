@@ -134,6 +134,19 @@ try {
 ```
 
 3. final rethrow or more precise rethrow
+- in Java 7, you can be more precise about the exception being thrown, if you declare the exception **final**
 
+```java
+public static void test2() throws ParseException, IOException{
+    DateFormat df = new SimpleDateFormat("yyyyMMdd");
+    try {
+        df.parse("x20110731");
+        new FileReader("file.txt").read();
+    } catch (final Exception e) {
+        System.out.println("Caught exception: " + e.getMessage());
+        throw e;
+    }
+}
+```
 
 > Java's exception-handling statement should not be considered a general mechanism for nonlocal branching
