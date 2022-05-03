@@ -128,3 +128,22 @@
    : start a thread by calling its run method
 
 ### The Main Thread
+> when a Java program starts up, one thread begins running immediately.
+> This is called **the main thread** of your program
+
+> The main thread is important for two reasons:
+1. it is the thread which other "child" threads will be spawned.
+2. often, it must be the last thread to finish execution, because it performs various shutdown actions
+
+> **currentThread()**
+- `static Thread currentThread()`
+  : this method returns a reference to the thread in which it is called.
+- you can use `Thread.currentThread()` to get the reference of the main thread
+
+- **thread group**
+: is a data structure that controls the state of a collection of threads as a whole
+
+- `Thread.sleep(1000);`
+: casuse the thread from which it is called to suspend execution for the specified period of milliseconds
+
+- `static void sleep(long milliseconds, int nanoseconds) throws InterruptedException`
