@@ -63,3 +63,9 @@ SPC ? list all key bindings
 
 ## clear high light search
 SPC s c
+
+## surround one word
+ysiw
+
+## surround entrie line
+yss
