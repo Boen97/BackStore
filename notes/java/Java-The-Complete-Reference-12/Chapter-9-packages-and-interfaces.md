@@ -98,3 +98,66 @@
 > the compiler will remain silent, unless you try to use one of the classes.
 
 ## Interfaces
+
+> one class can implement any number of interfaces.
+> by providing the interface, Java allows you to fully utilize the **one interface, multiple methods** aspect of **polymorphism**
+
+> Interfaces are designed to support **dynamic method resolution at run time**
+
+> beginning with JDK8, it is possible to add a **default implementation** to an interface method
+> JDK8 aslo added **static interface methods**
+> beginning with JDK9, an interface can include **private methods**
+
+> interface variables are implicitly **final** and **static**
+: they cannot be changed by the implementing class, and must be initialized
+> all methods and variables are implicitly **public**
+
+### Implementing Interfaces
+- **implements**
+> if a class implements more than one interface, the interfaces are separated with a comma.
+
+### Partial Implementations
+> a class not fully implement the methods required by that interface, the class must be declared **abstract**
+
+### Nested Interface
+
+```java
+class A {
+    public interface NestedIF {
+        void hello();
+    }
+}
+class B implements A.NestedIF {
+    public void hello() {
+    }
+}
+```
+
+### Variables in Interfaces
+
+> you can use interface to import shared constants into multiple classes by simply declaring an interface that contains variables
+
+### Interfaces Can be Extended
+
+> One interface can inherit another by use of the keyword **extends**
+
+### default interface methods
+
+> from JDK8, interface support **default method or extension method**
+> default method does not change a key aspect of interface: **its inability to maintain state information**
+> an Interface still cannot have instance variables
+> **keyword default**
+
+### Multiple Inheritance Issues
+
+> Java does not support multiple inheritance of classes.
+> an interface can include default methods.
+> if an interface can provide a way around this restriction.
+> No!
+> **a class maintain state information(instance variables), but an interface cannot**
+
+> a class implementation takes priority over an interface default implementation
+
+### Use static Methods in an Interface
+
+### Private Interface Methods
