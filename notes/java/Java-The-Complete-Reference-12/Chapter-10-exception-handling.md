@@ -47,3 +47,93 @@
 > from the point at which the exception occurred, and terminates the program.
 
 ## Using try and catch
+
+> handle an exception by yourself
+1. allows you to fix the error
+2. prevents the program from automatically terminating
+
+> a **try and its catch** statement form a unit.
+
+> **Throwable** overrides the **toString()** method
+> so that it returns a string containing a description of the exception
+
+## Multiple catch Clauses
+
+> more than one exception could be raised by a single piece of code.
+> the first one whose type matches that of the exception is executed
+
+> after one **catch** executes, the others are bypassed
+
+> exception subclasses must come before any of their superclass
+> in Java, unreachable code is an error
+
+## Nested try Statements
+
+> each time a try statement is entered, the context of that exception is pushed on the stack
+> when the inner block does not catch a exception, it will be passed to the outer try block
+> nesting of try statement can occur in less obvious when method calls are involved
+
+## throw
+> for you program to throw an exception explicitly
+> the flow of execution stops immediately after the **throw** statement
+
+## throws
+
+## finally
+
+> the **finally** block will execute whether or not an exception is thrown
+> any time a method is about to return to the caller from inside a **try/catch** block,
+> via an uncaught exception or an explicit return statement, the **finally** clause is also executed just before the method returns
+
+> each try statement requires at least **one catch or a finally clause**
+
+## Java's Build-in Exceptions
+
+> **RuntimeException**, these exceptions need not be included in any method's **throws** list
+> these are called **unchecked exception**
+> **because the compiler does not check to see if a method handles or throws these exceptions**
+
+> **checked exception**
+
+## create your own Exception Subclasses
+
+> define a subclass of **Exception**
+> your subclasses don't need to actually implement anything
+> it is their existence in the type system that allows you to use them as exceptions
+
+## Chained Exceptions
+
+> the chained exception feature allows you to associate another exception with an exception
+> **the second exception describes the cause of the first exception**
+
+- `Throwable(Throwable causeExc)`
+- `Throwable(String msg, Throwable causeExc)`
+
+- `Throwable getCause()`
+- `Throwable initCause(Throwable causeExc)`
+: the **initCause()** is used to set a cause for legacy exception classes
+: that don's support the two additional constructors described earlier
+
+## Three Additional Exception Features
+
+> Begin with JDK7
+
+1. automates the process of releasing a resource, such as a file
+   **try-with-resources**
+
+2. multi-catch
+   : allows two or more exceptions to be caught by the same catch clause
+   : to use a multi-catch, separate each exception type in the catch clause with the **OR** operator.
+   : each multi-catch parameter is implicitly **final**
+
+```java
+try {
+
+} catch (ArithmeticException | ArrayIndexOutofBoundsException e) {
+}
+```
+
+3. final rethrow or more precise rethrow
+
+
+> Java's exception-handling statement should not be considered a general mechanism for nonlocal branching
