@@ -47,3 +47,41 @@
 3. use the **-classpath** option with java and javac to specify the path to your classes
 
 4. beginning with JDK9, a package can be part of a module, and thus found on the module path.
+
+### Packages and Memeber Access
+
+- Java addresses four categories of visibility for class memebers:
+1. subclasses in the same package
+2. non-subclasses in the same package
+3. subclasses in different packages
+4. classes that are neither in the same package nor subclasses
+
+- modifiers
+> only to members of classes
+
+1. private
+   : same class
+2. public
+   : same class
+   : same package subclass
+   : same package non-subclass
+   : different package subclass
+   : different package non-subclass
+3. protected
+   : same class
+   : same package subclass
+   : same package non-subclass
+   : different package subclass
+   > allow an element to be seen outside your current package, but only to classes that subclass of your class directly
+4. no modifier
+   : same class
+   : same package subclass
+   : same package non-subclass
+   > visible to subclasses as well as other classes in the same package
+
+> a non-nested class has only two possible access levels: **default and public**
+
+> When a class is public, it must be the only public class declared in the file
+> and the file must have the same name as the class.
+
+### Importing Packages
