@@ -85,3 +85,16 @@
 > and the file must have the same name as the class.
 
 ### Importing Packages
+
+> classes within packages must be fully qualified with their package name or names
+
+- `import pkg1[.pkg2].(classname | *)`
+
+> all of the standard Java SE classes included with Java begin with the name **java**
+> basic language functions are stored in a package called **java.lang**
+> **java.lang** is implicitly imported by the compiler for all programs.
+
+> If a class with the same name exists in two different packages that you import using the start from,
+> the compiler will remain silent, unless you try to use one of the classes.
+
+## Interfaces
