@@ -221,3 +221,34 @@ public static void main(String[] args) {
     ...
 }
 ```
+
+### Using isAlive() and join()
+
+> How can one thread know when another thread has ended ?
+1. `final boolean isAlive()`
+2. `join()`
+   : this method will wait until the thread on which it is called terminates
+   : its name comes from the concept of the calling thread waiting until the specified thread **joins** it.
+
+```java
+package com.rhyme;
+
+public class TestJoin {
+ public static void main(String[] args) {
+   MyThread t1 = new MyThread("Thread1");
+   MyThread t2 = new MyThread("Thread2");
+   MyThread t3 = new MyThread("Thread3");
+   t1.t.start(); // 等待t1 加入主线程
+   t2.t.start();
+   t3.t.start();
+
+   try {
+    t1.t.join();
+    t2.t.join();
+    t3.t.join();
+  } catch (InterruptedException e) {
+  }
+  System.out.println("Main Thread exit");
+ }
+}
+```
