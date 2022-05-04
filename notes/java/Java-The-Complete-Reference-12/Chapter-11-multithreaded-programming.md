@@ -252,3 +252,21 @@ public class TestJoin {
  }
 }
 ```
+
+### Thread Priorites
+
+> Thread Priorites are used by the **thread scheduler** to decide when each thread should be allowed to run.
+> in **theory**, over a given period of time, higher-priority threads get more CPU time that lower-priority threads
+> in **practice**, depends on serveral factors:
+: for example, how operating system implements multitasking
+> a higher priority thread **preempt** a low-priority one.
+
+> **threads of equal priority**
+1. depends on different operating system implements
+2. **threads that share the priority should yield control once in a while**
+
+> `setPriority()`
+: within **MIN_PRIORITY** and **MAX_PRIORITY**
+
+> **NORM_PRIORITY**
+: return a thread to default priority
