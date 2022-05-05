@@ -16,3 +16,18 @@
 > you should use **synchronized** keyword
 > once a thread enters an **synchronized** method on an instance
 > no other thread can enter any other synchronized method on the same instance
+
+## The Synchronized Statement
+
+> imagine a class was not created by you, by a third party, and you do not have access to the source code
+> you can't add synchronized keyword to the target class
+> you simple put calls to the methods defined by this class inside a **synchronized block**
+
+```
+synchronized(objRef) {
+    // statements to be synchronized
+}
+```
+- objRef is a reference to the object being synchronized
+> a synchronized block ensures that a call to a synchronized method that is a member of **objRef's class** occurs 
+> only after the current thread has successfully entered **objRef's monitor**
