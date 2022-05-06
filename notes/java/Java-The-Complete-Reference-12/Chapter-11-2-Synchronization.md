@@ -60,3 +60,40 @@ synchronized(objRef) {
 - the thread resumes for no apparent reason without **notify()** or **notifyAll()**
 - because of this remote possibility, Java API documentation recommends that calls to **wait()**
 - should take place within a loop that checkes the condition on which the thread is waiting
+
+```java
+package com.rhyme.app.test2;
+
+public class Q {
+  private int n;
+  private boolean valueSet = false;
+
+  public synchronized int get() {
+    while (!valueSet) {
+      try {
+        wait();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+    System.out.println("Get" + n);
+    valueSet = false;
+    notify();
+    return n;
+  }
+
+  public synchronized void set(int n) {
+    while (valueSet) {
+      try {
+        wait();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+    this.n = n;
+    valueSet = true;
+    notify();
+    System.out.println("Put" + n);
+  }
+}
+```
