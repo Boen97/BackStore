@@ -31,3 +31,24 @@ synchronized(objRef) {
 - objRef is a reference to the object being synchronized
 > a synchronized block ensures that a call to a synchronized method that is a member of **objRef's class** occurs 
 > only after the current thread has successfully entered **objRef's monitor**
+
+## Interthread communication
+> achieve a **more subtle level of control** through **interthread communication**
+> multithreading replaces **event loop programming** by dividing your tasks into direct, logical units.
+> **Threads do away with polling**
+- polling is usually implemented by a loop that is used to check some condition repeatedly.
+- once the condition is true, appropriate action is taken. this wastes CPU time.
+
+> to **avoid polling**, Java includes an elegant **interprocess communication** via the **wait(), nofify(), notifyAll()** methods
+> these are **final Object methods**
+> **all three methods can be called only from synchronized context**
+
+> **wait()**
+- tells the calling thread to give up the monitor and go to sleep until some other thread enters the same monitor
+  and calles notify() or notifyAll()
+
+> **nofify()**
+- wakes up a thread that called **wait()** on the same object.
+
+> **notifyAll**
+
