@@ -51,4 +51,12 @@ synchronized(objRef) {
 - wakes up a thread that called **wait()** on the same object.
 
 > **notifyAll**
+- wakes up all the threads that called **wait()** on the same object.
+- one of the threads will be granted access.
 
+> **spurious wakeup**
+- although **wait()** normally waits until **notify()** or **notifyAll()** is called.
+- there is a possibility that in very rare cases the waiting thread could be awakended due to **spurious wakeup**
+- the thread resumes for no apparent reason without **notify()** or **notifyAll()**
+- because of this remote possibility, Java API documentation recommends that calls to **wait()**
+- should take place within a loop that checkes the condition on which the thread is waiting
