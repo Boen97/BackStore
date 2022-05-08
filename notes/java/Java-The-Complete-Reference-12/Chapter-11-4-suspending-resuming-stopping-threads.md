@@ -26,3 +26,42 @@
 
 
 ## use wait() and notify() to control the execution of a thread
+
+```java
+package com.rhyme.app.test4;
+
+public class TestFlag implements Runnable {
+  Thread t;
+  private Boolean suspendFlag;
+
+  public TestFlag(String name) {
+    t = new Thread(this, name);
+    suspendFlag = false;
+  }
+
+  @Override
+  public void run() {
+    try {
+      for (int i = 0; i < 10; i++) {
+        System.out.println(Thread.currentThread().getName() + i);
+        Thread.sleep(1000);
+        synchronized (this) {
+          while (suspendFlag) {
+            wait();
+          }
+        }
+      }
+    } catch (InterruptedException e) {
+    }
+  }
+
+  public synchronized void mySuspend() {
+    suspendFlag = true;
+  }
+
+  public synchronized void myResume() {
+    suspendFlag = false;
+    notify();
+  }
+}
+```
