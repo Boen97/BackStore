@@ -34,3 +34,8 @@ public @interface MyAnno {
   }
 
 ```
+
+## Specifying a Retention Policy
+> **annotation retention policies**
+> a retention policy determines at what point an annotation is discarded
+> Java defines three policies, which are defined in **java.lang.annotation.RetentionPolicy**
