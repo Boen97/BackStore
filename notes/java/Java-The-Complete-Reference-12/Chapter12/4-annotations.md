@@ -39,3 +39,85 @@ public @interface MyAnno {
 > **annotation retention policies**
 > a retention policy determines at what point an annotation is discarded
 > Java defines three policies, which are defined in **java.lang.annotation.RetentionPolicy**
+1. SOURCE
+   - retained only in the source file and is discarded during compilation
+   
+2. CLASS
+   - is stored in the .class file during compilation
+   - not available through the JVM during the run time.
+   
+3. RUNTIME
+   - stored in the .class file during compilation
+   - available through the JVM during the run time.
+
+> an annotation on a local variable declaration is not retained in the .class file
+
+> **@Retention**
+> **the default policy is CLASS**
+
+```java
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MyAnno {
+  String val();
+}
+```
+
+## obtaining Annotations at Run Time by Use of Reflection
+> Reflection is the feature that enables information about a class to be obtained at run time.
+> If retention policy is RUNTIME, they can be queried at run time by any Java program through the use of reflection
+> **java.lang.reflect**
+
+### steps to using the reflection
+
+1. obtain a **Class** object that represents the class 
+   - **getClass()**
+
+```java
+package com.rhyme.app.test5;
+
+import java.lang.reflect.Method;
+
+public class AnnoRun {
+
+  @MyAnno(val = "HelloAnno")
+  public static void myMeth() {
+    AnnoRun ar = new AnnoRun();
+    Class<?> class1 = ar.getClass();
+    try {
+      Method m = class1.getMethod("myMeth");
+      MyAnno annotation = m.getAnnotation(MyAnno.class);
+      System.out.println(annotation.val());
+    } catch (NoSuchMethodException | SecurityException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static void main(String[] args) {
+    myMeth();
+  }
+}
+```
+
+> **class literal**
+- `MyAnno.class`
+- you can obtain a class literal for **classes, interfaces, primitive types, and arrays**
+```java
+int.class
+```
+
+```java
+  @MyAnno(val = "MyMeth2")
+  public static void myMeth2(String name, int val) {
+    AnnoRun ar = new AnnoRun();
+    Class<?> c = ar.getClass();
+    try {
+      Method m = c.getMethod("myMeth2", String.class, int.class);
+      MyAnno annotation = m.getAnnotation(MyAnno.class);
+      System.out.println(annotation.val());
+    } catch (NoSuchMethodException e) {
+      e.printStackTrace();
+    } catch (SecurityException e) {
+      e.printStackTrace();
+    }
+  }
+```
