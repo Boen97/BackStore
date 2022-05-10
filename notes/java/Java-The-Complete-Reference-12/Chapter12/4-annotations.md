@@ -121,3 +121,61 @@ int.class
     }
   }
 ```
+
+## The AnnotatedElement Interface
+- getAnnotation()
+- getAnnotations()
+- getDeclaredAnnotations()
+: returns all non-inherited annotations present in the invoking object
+- isAnnotationPresent()
+- getAnnotationsByType()
+
+## using default values
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@interface MyAnno {
+    String str() default "hello";
+    int val() default 100;
+}
+```
+
+## Marker Annotations
+> a marker annotation is a special kind of annotation that contains no members
+> its sole purpose is to make an item.
+> its presence as an annotation is sufficient
+
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@interface MyMaker {}
+
+@MyMaker // no need ()
+public void test() {
+
+}
+```
+
+> **AnnotatedElement.isAnnotationPresent()**
+
+## single-member Annotations
+> you don't need to specify the name of the member
+> in order to use this shorthand, the name of the member must be **value**
+
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@interface MyMaker{
+    int value();
+}
+```
+
+> you can use the single-value syntax which have other members
+> but those members must all have default value
+
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@interface SomeAnno{
+    int value();
+    int zyx() default 100;
+}
+```
+
+> whenever you are using a single-member annotation, the name of that member must be value.
