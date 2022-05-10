@@ -179,3 +179,64 @@ public void test() {
 ```
 
 > whenever you are using a single-member annotation, the name of that member must be value.
+
+## the built-in annotations
+
+> **java.lang.annotation**
+1. @Retention
+2. @Documented
+   : marker interface
+   : tells a tool that an annotation is to be documented.
+   : it is designed to be used only as an annotation to an annotation declaration
+   
+3. @Target
+   : specifies the types of items to which an annotation can be applied
+   : designed to be used only as an annotation to another annotation
+   : takes one argument, which is **ElementType** enumeration
+   1. ANNOTATION_TYPE
+   2. CONSTRUCTOR
+   3. FIELD
+   4. LOCAL_VARIABLE
+   5. METHOD
+   6. MODULE
+   7. PACKAGE
+   8. PARAMETER
+   9. RECORD_COMPONENT (a component of a record added by JDK16)
+   10. TYPE (class, interface or enumeration)
+   11. TYPE_PARAMETER
+   12. TYPE_USE
+   > you can specify one or more of these values
+   `@Target({ElementType.FIELD, ElementType.LOCAL_VARIABLE})`
+   > if you don't use @Target, then the annotation can be used on any declaration
+   
+4. @Inherited
+   > marker annotation used only on another annotation
+   > it affects only annotations that will be used on class declarations
+   > **Inherited** causes the annotation for a superclass to be inherited by a subclass
+   > if the annotation is not present in subclass, the superclass annotation will be returned
+   
+5. @Repeatable
+6. @Native
+   : Native annotates a field that can be accessed by native code.
+
+> **java.lang**
+1. @Override
+   : marker annotation used only on methods
+   
+2. @Deprecated
+   : a declaration is obsolete and not recommended for use.
+
+3. @FunctinalInterface
+   : used for interfaces
+   : a functional interface is an interface that contains one and only one abstract method
+   : functional interface are used by lambda expressions
+   : that @FunctionalInterface is not needed to create a functional interface
+4. @SafeVarargs
+   : marker annotation
+   : used on methods and constructors
+   : indicates that **no unsafe actions related to a varargs parameter occur**
+   : It is used to suppress unchecked warnings on otherwise safe code as it relates to non-reifiable vararg types and parameterized array instantiatio
+   : A non-reifiable type is, essentially, a generic type. 
+   : It must be applied only to vararg methods or constructors. Methods must also be static, final, or private.
+5. @SuppressWarnings
+   : The warnings to suppress are specified by name, in string form.
