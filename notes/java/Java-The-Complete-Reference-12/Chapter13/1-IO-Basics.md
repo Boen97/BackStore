@@ -115,3 +115,20 @@
   : input stream that reads from a string
 - StringWriter
   : input stream that writes to a string
+
+### The Predefined Streams
+> all Java programs automatically import the **java.lang**
+> this package defines a class called **System**, which encapsulates several aspects of the run-time environment
+> **Stream** also contains three predefined stream: **in, out ane err**, which are **public static final**
+
+- **System.out**
+: refers to the standard output stream, by default is the console
+
+- **System.in**
+: refers to standard input, which is the keyboard by default
+
+- **System.err**
+: refers to the standard error stream, which also is the console by default
+
+- **System.in** are InputStream
+- **System.out and System.err** are PrintStream
