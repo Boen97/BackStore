@@ -71,4 +71,47 @@
     : input stream that is a combination of two or more input streams
     : that will be read sequentially, one after the other
 
+> Pipes in Java IO provides the ability for two threads running in the same JVM to communicate.
+
 #### The Character Stream Classes
+> two class hierarchies, at the top are two abstract classes: **Reader and Writer**
+> **handle Unicode character streams**
+
+- BufferedReader
+  : buffered input character stream
+- BufferedWriter
+  : buffered output character stream
+- CharArrayReader
+  : input stream that reads from a character array
+- CharArrayWriter
+  : output stream that writes to a character array
+- FileReader
+  : input stream that reads from a file
+- FileWriter
+  : output stream that writes to a file
+- FilterReader
+  : filtered reader
+- FilterWriter
+  : filtered writer
+- InputStreamReader
+  : input stream that translates bytes to characters
+- OutputStreamWriter
+  : output stream that translates characters to bytes
+- LineNumberReader
+  : input stream that counts lines
+- PipedReader
+  : input pipe
+- PipedWriter
+  : output pipe
+- PrintWriter
+  : output stream that contains **print()** and **println()**
+- PushbackReader
+  : input stream that allows characters to be returned to the input stream
+- Reader
+  : abstract class that describes character stream input
+- Writer
+  : abstract class that describes character stream output
+- StringReader
+  : input stream that reads from a string
+- StringWriter
+  : input stream that writes to a string
