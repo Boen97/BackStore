@@ -55,3 +55,11 @@ try {
     } while (!s.equals("stop"));
   }
 ```
+
+## Writing Console Output
+> `PrintStream.write(int byteval)`
+```java
+int b = 'A';
+System.out.write(b);
+```
+> although bytevalue is declared as an integer, **only the low-order eight bits are written**
