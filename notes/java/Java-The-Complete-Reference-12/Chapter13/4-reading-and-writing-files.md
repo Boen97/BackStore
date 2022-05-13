@@ -162,3 +162,53 @@
 ```
 
 ## write to a file
+> `write()` of `FileOutputStream`
+- `write()` writes the byte specified by byteval to the file.
+- although byteval is declared as an integer, only the low-order eight bits are written to the file.
+```java
+  public static void main(String[] args) {
+    int i;
+    FileInputStream fis = null;
+    FileOutputStream fos = null;
+    String wName;
+    String oName = "output.txt";
+
+    if (args.length <= 0) {
+      System.out.println("Plean input filename");
+      return;
+    }
+
+    wName = args[0];
+
+    try {
+      fis = new FileInputStream(wName);
+      fos = new FileOutputStream(oName);
+      do {
+        i = fis.read();
+        if (i != -1)
+          fos.write(i);
+      } while (i != -1);
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        if (fis != null) {
+          fis.close();
+        }
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      if (fos != null) {
+        try {
+          fos.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+```
+
+> watch the two `try-catch` in the `finally` block, both two files are closed separately
