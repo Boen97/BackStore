@@ -20,3 +20,22 @@ try (resource-specification) {
 > thus, `try-with-resouces` can be used with streams, including file streams.
 
 > a resource declared in the `try` statement is implicitly `final`
+
+```java
+  public static void main(String[] args) {
+    if (args.length <= 0) {
+      System.out.println("please input a filename");
+      return;
+    }
+    try (FileInputStream fin = new FileInputStream(args[0])) {
+      int i;
+      do {
+        i = fin.read();
+        if (i != -1)
+          System.out.print((char) i);
+      } while (i != -1);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+```
