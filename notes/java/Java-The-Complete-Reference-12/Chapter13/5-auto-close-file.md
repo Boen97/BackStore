@@ -39,3 +39,31 @@ try (resource-specification) {
     }
   }
 ```
+
+> you can manage more than one resource within a single `try` statement
+
+```java
+  public static void main(String[] args) {
+    try (var fin = new FileInputStream(args[0]);
+        var fos = new FileOutputStream("output.txt")) {
+      int i;
+      do {
+        i = fin.read();
+        if (i != -1)
+          fos.write(i);
+      } while (i != -1);
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+```
+
+> **when using `try-with-resouces`**, the second exception is **suppressed**
+- in general, when a try block executes, it is possible that an exception inside the try block
+- will lead to another exception that occurs when the resouce is closed in a `finally` clause.
+- the original exception is **lost**, being **preempted** by the second exception.
+- however, with `try-with-resouces`, **the second exception is suppressed**, it is not lost.
+- it is added to the list of suppressed exceptions associated with the first exception.
+- the list of suppressed exceptions can be obtained by using the `getSuppressed()` definded by `Throwable`
