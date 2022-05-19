@@ -15,3 +15,6 @@ customize variable `lsp-java-jdt-download-url`
 
 ## quick insert lsp-mode snippets
 SPC i s
+
+## run go
+, x x
