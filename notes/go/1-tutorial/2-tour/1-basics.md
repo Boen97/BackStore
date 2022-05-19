@@ -187,3 +187,26 @@ func test5() {
 > 64bits wide on 64-bit systems
 > when you need an integer value you should use `int`
 > unless you have a specific reason to use a sized or unsigned integer type.
+
+## zero values.
+
+> variables declared without an explicit initial value are given their **zero value**
+> the **zero value** is:
+1. 0 for numeric types
+2. false for boolean type
+3. "" empty string for strings
+
+## type conversions
+
+> the expression `T(v)` converts the value `v` to type `T`
+
+```golang
+func test7() {
+	i := 42
+	f := float64(i)
+	u := uint(f)
+	fmt.Println(u)
+}
+```
+
+> in Go, between different type requires an explicit conversion.
