@@ -171,3 +171,19 @@ func test5() {
 ```
 
 ## Basic types
+1. bool
+2. string
+3. int int8 int16 int32 int64
+4. unit unit8 unit16 unit32 unit64 unitptr
+5. byte // alias for unit8
+6. rune // alias for int32, represents a Unicode code point
+7. float32 float64
+8. complex64 complex128
+
+- `unitptr`
+: an unsigned integer large enough to store the uninterpreted bits of a pointer value
+
+> `int`, `unit`, `unitptr` are 32bits wide on 32-bit systems
+> 64bits wide on 64-bit systems
+> when you need an integer value you should use `int`
+> unless you have a specific reason to use a sized or unsigned integer type.
