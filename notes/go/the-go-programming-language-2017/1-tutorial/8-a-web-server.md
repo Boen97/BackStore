@@ -1,6 +1,6 @@
 # a minimal server that returns the path component of the URL
 
-```golang
+```go
 package main
 
 import (
@@ -24,7 +24,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 ## server2 counts the number of requests
 
-```golang
+```go
 package main
 
 import (
