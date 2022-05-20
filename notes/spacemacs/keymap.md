@@ -140,3 +140,6 @@ lsp-update-server
 find lsp-server-install-dir (~/.emacs.d/.cache/lsp)
 download the target lsp server from eclipse.jdt.ls
 put it into ~/.emacs.d/.cache/lsp
+
+## Terminal signal of EOF
+Ctrl + D
