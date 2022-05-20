@@ -134,3 +134,21 @@ func main() {
 > in practice, you should generally use one of the first two forms
 > with explicit initialization to say that the initial value is important 
 > and implicit initialization to say that the initial value doesn’t matter.
+
+## a more efficient way
+
+> use `Join` from the `strings` package
+
+```golang
+package main
+
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.Join(os.Args[1:], " "))
+}
+```
