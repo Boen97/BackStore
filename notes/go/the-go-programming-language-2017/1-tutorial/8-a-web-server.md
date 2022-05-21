@@ -66,3 +66,46 @@ func counter(w http.ResponseWriter, r *http.Request) {
 - which is the purpose of the `mu.Lock()` and `mu.Unlock()`
 
 ## server3 report on the headers and form data
+
+```go
+// handler echoes the HTTP request
+package main
+
+import (
+	"fmt"
+	"log"
+	"net/http"
+)
+
+func main() {
+	http.HandleFunc("/", handler)
+	log.Fatal(http.ListenAndServe("localhost:9999", nil))
+}
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "%s %s %s\n", r.Method, r.URL, r.Proto)
+	for k, v := range r.Header  {
+		fmt.Fprintf(w, "Header[%q] = %q\n", k, v)
+	}
+	fmt.Fprintf(w, "Host = %q\n", r.Host)
+	fmt.Fprintf(w, "RemoteAddr = %q\n", r.RemoteAddr)
+	if err := r.ParseForm(); err != nil {
+		log.Print(err)
+	}
+	for k, v := range r.Form {
+		fmt.Fprintf(w, "Form[%q] = %q\n", k, v)
+	}
+}
+```
+
+- `if err := r.ParseForm(); err != nil`
+```go
+err := r.ParseForm()
+if err != nil {
+}
+```
+
+- go allows a simple statement such as a local variable declaration to precede
+- the if condition
+- which is particularly useful for error handling
+- is shorter and reduces the scope of the variable err
