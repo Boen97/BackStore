@@ -29,3 +29,4 @@ f, err = os.Open("foo.txt")  // function call returns two values
 _, err = io.Copy(dst, src)
 _, ok = x.(T)
 ```
+- short variable declaration is different with assignment, so the blank identifier could not be used in short variable declaration
