@@ -30,3 +30,24 @@ _, err = io.Copy(dst, src)
 _, ok = x.(T)
 ```
 - short variable declaration is different with assignment, so the blank identifier could not be used in short variable declaration
+
+## Assignability
+
+- there are many places in a program where an assignment occurs `implicitly`
+- a function call implicitly assigns the argument values to the corresponding parameter variables
+- a return statement implicitly assigns the return operands to the corresponding result variables
+- and a literal expression for a composite type:
+- `metals := []string{"a", "b"}`
+- implicitly assigns each element
+```go
+metals[0] = "a"
+metals[1] = "b"
+```
+- An assignment, explicit or implicit, is always legal if the left-hand side (the variable) and the right-hand side (the value) have the same type.
+- More generally, the assignment is legal only if the value is assignable to the type of the variable.
+
+- the rules for **assignability** are simple:
+: the types must exactly match, and nil may be assigned to any variable of interface or reference type.
+
+- Whether two values may be compared with == and != is related to assignability: 
+- in any comparison, the first operand must be assignable to the type of the second operand, or vice versa.
