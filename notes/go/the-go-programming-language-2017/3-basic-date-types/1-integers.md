@@ -223,6 +223,6 @@ fmt.Printf("%d %[1]x %#[1]x %#[1]X\n", x) // 3735928559 deadbeef 0xdeadbeef 0XDE
 ```go
 ascii := 'a'
 newline := '\n'
-fmt.Printf("%d %[1]c %[1]q\n", ascii) // "97 a 'a'"
+fmt.Printf("%d %[1]c %[1]q\n", ascii) // "97 a 'a'" ascii only write once
 ```
 - Runes are printed with %c, or with %q if quoting is desired
