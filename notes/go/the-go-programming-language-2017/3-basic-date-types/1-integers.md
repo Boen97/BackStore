@@ -171,3 +171,58 @@ for i := len(medals) - 1; i >= 0; i-- {
 - for this reason, unsigned numbers tend to be used only when their bitwise operators or 
 - peculiar arthmetic operators are required, as when implementing bit sets, parsing binary file formats, or for `hashing and cryptography`
 - **they are typically not used for merely non-negative quanties**
+
+```go
+var apples int32 = 1
+var oranges int64 = 2
+var compote int = applies + oranges // compile error
+```
+
+- fix1
+`var compote int = int(apples) + int(oranges)`
+
+- many integer-to-integer conversions do not entail any change in value.
+- they just tell the compiler how to interpret a value.
+
+## narrows a big integer into a smaller one
+
+- But a conversion that nar- rows a big integer into a smaller one, 
+- or a conversion from integer to floating-point or vice versa, may change the value or lose precision:
+- Float to integer conversion discards any fractional part, truncating toward zero. 
+- You should avoid conversions in which the operand is out of range for the target type
+- because the behav- ior depends on the implementation:
+
+```go
+f := 1e100  // a float64
+i := int(f) // result is implementation-dependent
+```
+
+## integer literal
+
+- Integer literals of any size and type can be written as ordinary decimal numbers, 
+- or as octal numbers if they begin with 0, as in 0666, or as hexadecimal if they begin with 0x or 0X, as in 0xdeadbeef.
+- Hex digits may be upper or lower case.
+
+- Nowadays octal numbers seem to be used for exactly one purpose
+- `file permissions on POSIX systems`
+- but hexadecimal numbers are widely used to emphasize the bit pattern of a number over its numeric value.
+
+## %d, %o and %x verbs
+
+```go
+o := 0666
+fmt.Printf("%d %[1]o %#[1]o\n", o) // 438 666 0666
+x := int64(0xdeadbeef)
+fmt.Printf("%d %[1]x %#[1]x %#[1]X\n", x) // 3735928559 deadbeef 0xdeadbeef 0XDEADBEEF
+```
+-  the [1] ‘‘adverbs’’ after % tell Printf to use the first operand over and over again.
+- the `#` adverb tells Printf to emit a `0` or `0x` or `0X` prefix respectively.
+
+## Rune literals are written as a character within single quotes.
+
+```go
+ascii := 'a'
+newline := '\n'
+fmt.Printf("%d %[1]c %[1]q\n", ascii) // "97 a 'a'"
+```
+- Runes are printed with %c, or with %q if quoting is desired
