@@ -148,3 +148,26 @@ fmt.Printf("%08b\n", x)    // "00100010", the set {1, 5}
 - Left shifts fill the vacated bits with zeros, as do right shifts of unsigned numbers, 
 - but right shifts of signed numbers fill the vacated bits with copies of the `sign bit`
 - for this reason, it is important to use unsigned arithmetic when you're treating an integer as a bit pattern.
+
+### why use signed int form even for quanties that can't be negative?
+
+- Although Go provides unsigned numbers and arithmetic, 
+- we tend to use the signed int form even for quanties that can't be nagative
+- such as the length of an array.
+- though `uint` might seem a more obvious choice.
+
+```go
+medals := []string{"a", "b", "c"}
+for i := len(medals) - 1; i >= 0; i-- {
+    fmt.Println(medals[i])
+}
+```
+
+- If len returned an unsigned number, 
+- then `i` too would be a `uint`
+- and the condition `i >= 0` woudl always be `true` by definition
+- After the third iteration, in which i == 0, the i-- statement would cause i to become not −1, but the maximum uint value (for example, 264−1),
+- the evaluation of medals[i] would fail at run time
+- for this reason, unsigned numbers tend to be used only when their bitwise operators or 
+- peculiar arthmetic operators are required, as when implementing bit sets, parsing binary file formats, or for `hashing and cryptography`
+- **they are typically not used for merely non-negative quanties**
