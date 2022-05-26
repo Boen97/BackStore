@@ -219,3 +219,75 @@ for range s {
     n++
 }
 ```
+
+- for correct use of range loops on strings, it’s more than a convention, it’s a necessity
+- What happens if we range over a string containing arbitrary binary data or, for that matter, UTF-8 data containing errors?
+- Each time a UTF-8 decoder, whether explicit in a call to utf8.DecodeRuneInString or implicit in a range loop,
+- consumes an unexpected input byte, it generates a special Unicode replacement character, '\uFFFD'
+- which is usually printed as a white question mark inside a black hexagonal or diamond-like shape.
+- When a program encounters this rune value, it’s often a sign that some upstream part of the system that generated the string data has been careless in its treatment of text encodings.
+
+- UTF-8 is exceptionally convenient as an interchange format but within a program runes may be more convenient
+- because they are of `uniform size` and are thus easily indexed in arrays and slices.
+
+- `[]rune` 
+-  a `[]rune` conversion applied to a `UTF-8` string returns the sequence of `Unicode code points` that the string encodes
+
+```go
+r := []rune(s)
+fmt.Printf("%x\n", r)
+```
+- (The verb % x in the first Printf inserts a space between each pair of hex digits.)
+- If a slice of runes is converted to a string, it produces the concatenation of the UTF-8 encodings of each rune:
+
+- converting an `integer value to a string` interprets the integer as a `rune` value
+- and yields the UTF-8 representation of that rune.
+- If the rune is invalid, the replacement character is substituted:
+- fmt.Println(string(1234567)) // �
+
+## Strings and Byte Slices
+
+- four standard packages are particularly important for manipulating strings: `bytes`, `strings`, `strconv`, `unicode`
+- the `strings` package provides many functions for searching, replacing, comparing, trimming, splitting, and joining strings.
+
+- because strings are `immutable`, building up strings incrementally can involve a lot of allocation and copying.
+- it's more efficient to use the `bytes.Buffer` type
+
+- the `strconv` package provides functions for converting boolean, integer, and floating-point values to and from their string representations
+- and functions for `quoting` an `unquoting` strings
+
+- the `unicode` package provides functions like `IsDigit, IsUpper` for `classifying runes`
+- conversion functions like `ToUpper` and `ToLower` converts a rune into the given case
+
+- the `strings` package has similar functions, also called `ToUpper` and `ToLower`,
+- returns a new string with the specified transformation applied to each character
+
+```go
+func basename1(s string) string {
+	for i := len(s) - 1; i >= 0; i-- {
+		if s[i] == '/' {
+			s = s[i+1:]
+			break
+		}
+	}
+
+    // preserve everything before .
+	for i := len(s) - 1; i >= 0; i-- {
+		if s[i] == '.' {
+			s = s[:i]
+			break
+		}
+	}
+	return s
+}
+```
+```go
+func basename2(s string) string {
+	slash := strings.LastIndex(s, "/") // -1 if not found
+	s = s[slash+1:]
+	if dot := strings.LastIndex(s, "."); dot >= 0 {
+		s = s[:dot]
+	}
+	return s
+}
+```
