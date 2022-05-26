@@ -164,3 +164,58 @@ Usage:
 ## string operations
 
 > Thanks to the nice properties of UTF-8, many string operations don’t require decoding. 
+
+```go
+func HasPrefix(s, prefix string) bool {
+	return len(s) >= len(prefix) && s[:len(prefix)] == prefix
+}
+func HasSuffix(s, suffix string) bool {
+	return len(s) >= len(suffix) && s[len(s)-len(suffix):] == suffix
+}
+func Contains(s, substr string) bool {
+	for i := 0; i < len(s); i++ {
+		if (HasPrefix(s[i:], substr)) {
+			return true
+		}
+	}
+	return false
+}
+```
+
+- if we really care about the individual Unicode characters, we have to use other mechanisms.
+- s := "Hello, 世界"
+: the `s` contains `13 bytes`, but interpreted as `UTF-8`, it encodes only `nine code points or runes`
+
+```go
+s := "Hello, 世界"
+fmt.Println(len(s)) // 13
+fmt.Println(utf8.RuneCountInString(s)) // 9
+```
+- to process those characters, we need a `UTF-8` decoder
+
+```go
+for i := 0; i < len(s); {
+    r, size := utf8.DecodeRuneInString(s[i:])
+    fmt.Printf("%d\t%c\n", i, r)
+    i += size
+}
+```
+- each call to `DecodeRuneInString` returns `r`, the rune itself, and `size`, the number of bytes occupied by the UTF-8 encoding of `r`
+- the `size` is used to update the byte index `i` of the next rune in the string.
+
+- Go's `rang loop`, when applied to a string, performs `UTF-8` decoding implicitly
+
+```go
+for i, r := range s {
+    fmt.Printf("%d\t%q\t%d\n", i, r, r)
+}
+```
+
+- we could use a simple `range loop` to count the number of `runes` in a string.
+
+```go
+n := 0
+for range s {
+    n++
+}
+```
