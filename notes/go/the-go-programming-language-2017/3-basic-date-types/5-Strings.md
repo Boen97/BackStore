@@ -291,3 +291,82 @@ func basename2(s string) string {
 	return s
 }
 ```
+
+- the `path` and `path/filepath` package provides a more general set of functions for manipulated hierarchical names.
+- the `path` package works with slash-delimited paths on any platform. but it shouldn't be used for file names.
+- `path/filepath` manipulates file names using the rules for the host system.
+- such as /foo/bar for POSIX or c:\foo\bar on Microsoft Windows.
+
+```go
+func comma(s string) string {
+	n := len(s)
+	if n <= 3 {
+		return s
+	}
+	return comma(s[:n-3]) + "," + s[n-3:]
+}
+```
+
+## a byte slice
+
+- the elements of a byte slice can be freely `modified`.
+
+```go
+s := "abc"
+b := []byte(s)
+s2 := string(b)
+```
+- the `[]byte` conversion allocates a new byte array holding a copy of the bytes of `s`
+- and yields a slice that references the entirely of that array.
+
+### Buffer
+
+- the `bytes` package provides the `Buffer` type for efficient manipulation of `byte slices`
+- a `Buffer` starts out empty but grows as data of types like `string`, `byte`, `[]byte` are written to it.
+
+```go
+func intsToString(values []int) string {
+	var buf bytes.Buffer
+	buf.WriteByte('[')
+	for i, v := range values {
+		if (i > 0) {
+			buf.WriteString(",")
+		}
+		fmt.Fprintf(&buf, "%d", v)
+	}
+	buf.WriteByte(']')
+	return buf.String()
+}
+```
+
+- when appending `UTF-8` encoding of an `rune`, it's best to use `bytes.Buffer's WriteRune`
+
+### Conversions between Strings and Numbers.
+
+- `strconv` package
+
+- convert an integer to string
+```go
+x := 123
+y := fmt.Sprintf("%d", x)
+z := strconv.Itoa(x)
+fmt.Println(y, z)
+```
+- `strconv.Itoa` (integer to ASCII)
+
+- format numbers in a different `base`
+```go
+fmt.Println(strconv.FormatInt(int64(x), 2))
+```
+
+- parse a string to an integer
+
+```go
+x, err := strconv.Atoi("456")
+i, err := strconv.ParseInt("456", 10, 64)
+fmt.Println(x, err, i, err)
+```
+- `ParseInt`
+: The third argument of ParseInt gives the size of the integer type that the result must fit into;
+: 16 implies int16
+: 0 implies int. 
