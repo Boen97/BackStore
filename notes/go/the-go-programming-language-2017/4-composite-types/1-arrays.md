@@ -99,3 +99,16 @@ func main() {
 	fmt.Printf("%x\n%x\n%t\n%T\n", c1, c2, c1 == c2, c1)
 }
 ```
+
+- when a function is called, a copy of each argument value is assigned to the corrosponding parameter variable
+- so the function receives a copy, not the original.
+- passing large arrays in this way can be `inefficient`
+- usinng a pointer to an array is efficient
+
+```go
+func zero(ptr *[32]byte) {
+    *ptr = [32][byte]{}
+}
+```
+
+- arrays are still inflexible because of their fixed size
