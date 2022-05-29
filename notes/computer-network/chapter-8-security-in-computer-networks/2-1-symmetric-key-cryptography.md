@@ -45,3 +45,16 @@
 
 - Five hundred years ago, techniques improving on monoalphabetic encryption, known as polyalphabetic encryption, were invented
 - the idea behind polyalphabetic encryption is to use `muliple monoalphabetic ciphers`
+
+### Block Ciphers
+
+> how symmetric key encryption is done today.
+
+- `block ciphers`, which are used in many secure Internet protocols, including PGP(for secure email)
+- `TLS` (for securing TCP connections) and `IPses` for securing the network-layer transport
+
+- in a block cipher, the message to be encrypted is processed in blocks of `k` bits
+- for example, if `k=64`, then the message is broken into 64-bit blocks, and each block is encrypted independently.
+- To encode a block, the cipher uses a one-to-one mapping to map the k-bit block of cleartext to a k-bit block of ciphertext.
+
+- This block cipher breaks the message up into 3-bit blocks and encrypts each block according to the above mapping.
