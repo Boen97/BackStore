@@ -58,3 +58,13 @@
 - To encode a block, the cipher uses a one-to-one mapping to map the k-bit block of cleartext to a k-bit block of ciphertext.
 
 - This block cipher breaks the message up into 3-bit blocks and encrypts each block according to the above mapping.
+
+- `full-table block` ciphers is difficult to implement
+- For k = 64 and for a given mapping, Alice and Bob would need to maintain a table with 2^64 input values
+- which is an infeasible task
+- Moreover, if Alice and Bob were to change keys, they would have to each regenerate the table
+
+- Instead, block ciphers typically use functions that simulate randomly permuted tables.
+
+- Today there are a number of popular block ciphers, including 
+- `DES(standard for data encryption standard)` and `3DES` and `AES` (advanced encryption standard)
