@@ -68,3 +68,11 @@
 
 - Today there are a number of popular block ciphers, including 
 - `DES(standard for data encryption standard)` and `3DES` and `AES` (advanced encryption standard)
+
+### Cipher-Block Chaining
+- In computer networking applications, we typically need to encrypt `long messages` or long streams of data.
+- if we apply a `block cipher`, two or more of the cleartext blocks can be identical
+- For these identical blocks, a block cipher would, of course, produce the same ciphertext
+
+- To address this problem, 
+- we can mix some `randomness` into the ciphertext so that identical plaintext blocks produce different ciphertext blocks.
