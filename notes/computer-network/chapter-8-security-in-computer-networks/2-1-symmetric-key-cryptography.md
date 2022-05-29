@@ -76,3 +76,10 @@
 
 - To address this problem, 
 - we can mix some `randomness` into the ciphertext so that identical plaintext blocks produce different ciphertext blocks.
+- The sender creates a random k-bit number r(i) for the ith block and calculates c(i)
+- a new k-bit random number is chosen for each block. 
+
+- introducing randomness solves one problem but creates another: namely, Alice must transmit `twice` as many bits as before.
+- block ciphers typically use a technique called `Cipher Block Chaining (CBC)`.
+- the basic idea is to `send only one random value along with the very first message`
+- and then have the sender and receiver use the computed coded blocks in place of the subsequent random number
