@@ -62,3 +62,20 @@ m = (c ^ d) mod n
 ```
 
 ## Session Keys
+
+- `exponentiation` required by RSA is a rather `time-consuming` process
+- as a result, RSA is often used in practice in combination with symmetric key cryptography.
+- `RSA-encrypted session key`, just use `RSA` to encrypt the shared symmetric key.
+
+## why does RSA works?
+
+- The security of RSA relies on the fact that there are no known algorithms for quickly factoring a number, 
+- in this case the public value n, into the primes p and q
+- If one knew p and q, then given the public value e, one could easily compute the secret key, d.
+- On the other hand, it is not known whether or not there exist fast algorithms for factoring a number, 
+- and in this sense, the security of RSA is not guaranteed.
+- With recent advances in quantum computing, and published fast factoring algorithms for quantum computers, 
+- there are concerns that RSA may not be secure forever
+- Another popular public-key encryption algorithm is the Diffie-Hellman algorithm
+- `Diffie-Hellman` is not as versatile as RSA in that it cannot be used to encrypt messages of arbitrary length;
+- it can be used, however, to establish a symmetric session key, which is in turn used to encrypt messages.
