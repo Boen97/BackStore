@@ -54,3 +54,16 @@
 - and then pass the encrypted data on the fly to `TCP`
 
 - but if we encrypt data on the fly, where would we put the `HMAC` for the `integrity check`?
+- to address this issue, TLS `breaks` the data stream into `records`, `appends` an `HMAC` to each record for `integrity checking`
+- and encrypts the `record + HMAC`
+
+- to create the `HMAC`, Bob inputs the `record data along with the key Mb` info a `hash function`.
+- and then use `Eb` to encrypt the `package record + HMAC`
+- then send this encrypted package to TCP
+
+- although this approach goes a long way, it still isn't bullet-proof when it comes to providing `data integrity` 
+- for the `entire message stream`
+- the intruder could `capture two segaments sent by Bob, reverse the order of the segments, adjust the TCP sequence number (which are not encrypted)`
+- the solution to this problem, is to use `sequence number`;
+
+- TLS does this as follows:
