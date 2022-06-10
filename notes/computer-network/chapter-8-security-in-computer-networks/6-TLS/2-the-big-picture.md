@@ -67,3 +67,9 @@
 - the solution to this problem, is to use `sequence number`;
 
 - TLS does this as follows:
+1. Bob maintains a `sequence number counter`, which begins at zero and is `incremented for each TLS record he sends`
+: Bob doesn’t actually include a sequence number in the record itself, 
+  but when he `calculates the HMAC`, he `includes the sequence number` in the `HMAC calculation`
+: Thus, the `HMAC` is now a `hash of the data` plus the `HMAC key` plus the `current sequence number`
+: `Alice tracks Bob’s sequence numbers`, 
+: allowing her to verify the data integrity of a record by `including the appropriate sequence number in the HMAC calculation`.
