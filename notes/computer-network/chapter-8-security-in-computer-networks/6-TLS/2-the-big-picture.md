@@ -15,5 +15,42 @@
 
 - during the handshake phase, Bob needs to:
 1. establish a TCP connection with Alice
+   : once the three-way TCP handshake is finished, Bob sends Alice a hello messge
+   : `Alice` responds with her `certificate`, which contains her public key.
+   
 2. verify that Alice is really Alice
-3. send Alice a `master secret key`
+   : the `certificate` has been certified by a `CA`, it is for sure that the public key belongs to `Alice`
+   
+3. send Alice a `master secret key`, which will be used by both Alice and Bob to generate all the `symmetric keys`
+   they need to for the TLS session.
+   : Bob generate a `Master Secret(MS)` which will only be used for this TLS session
+   : Bob `encrypts` `MS` with `Alice's public key` to create the `(EMS) encrypted master secret`
+   : send `EMS` to Alice
+   : Alice decrypts the `EMS` with her `private key` to get the `MS`
+   : then Botn Bob and Alice know the master secret for this TLS session.
+
+## Key Derivation
+
+- Alice and Bob could use the `shared MS` as the `symmetric session key` for all subsequent `encryption and data integrity checking`
+- but it's `more safer` to use different `cryptographic keys`
+- and also use `different keys` for `encryption and integrity checking`
+
+- thus, both Alice and Bob use the `MS` to generate `four keys`
+
+1. `Eb` = session encryption key for data send from Bob to Alice.
+2. `Mb` = seesion `HMAC key` for data sent from Bob to Alice.
+   where `HMAC` is a standard `hashed` message authentication code (`MAC`)
+3. `Ea` = session encryption key for data send from Alice to Bob.
+4. `Ma` = session `HMAC key` for data sent from Alice to Bob.
+
+- Alice and Bob each generate the four keys from the `MS`
+- at the end of the key derivation phase, both Alice and Bob have all the `four keys`
+- `two encryption keys` will be used to encrypted data;
+- `two HMAC keys` will be used to verify the integrity of the data;
+
+## Data Transfer
+
+- since TCP is a `byte-stream` protocol, a natural approach for TLS to `encrypt application data` `on the fly`
+- and then pass the encrypted data on the fly to `TCP`
+
+- but if we encrypt data on the fly, where would we put the `HMAC` for the `integrity check`?
