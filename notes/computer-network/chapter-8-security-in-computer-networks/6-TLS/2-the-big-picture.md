@@ -73,3 +73,16 @@
 : Thus, the `HMAC` is now a `hash of the data` plus the `HMAC key` plus the `current sequence number`
 : `Alice tracks Bob’s sequence numbers`, 
 : allowing her to verify the data integrity of a record by `including the appropriate sequence number in the HMAC calculation`.
+
+## TLS Record
+
+- the record consists of
+: type field 
+  indicates whether the record is a handshake message or a message that contains application data.
+  it also used to close the TLS connection
+: version field
+: length field
+: data field
+: HMAC field
+
+- the first three fields are not encrypted
