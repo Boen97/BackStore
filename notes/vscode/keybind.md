@@ -20,3 +20,6 @@ ctrl + ' / ctrl + ;
 
 # emmet go to match pair
 ctrl + m
+
+# search the file explorer
+type `/` to start search
