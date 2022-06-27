@@ -13,4 +13,10 @@ shift + command + p
 shift + command + w
 
 # smart select grow
-ctrl + '
+ctrl + s
+
+# emmet next/previous edit point
+ctrl + ' / ctrl + ;
+
+# emmet go to match pair
+ctrl + m
