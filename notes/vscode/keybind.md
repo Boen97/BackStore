@@ -11,3 +11,6 @@ shift + command + p
 
 # close window
 shift + command + w
+
+# smart select grow
+ctrl + '
