@@ -5,3 +5,9 @@ shift + command + p
 
 # show hover tooltip
 `gh`
+
+# switch window
+^ w
+
+# close window
+shift + command + w
