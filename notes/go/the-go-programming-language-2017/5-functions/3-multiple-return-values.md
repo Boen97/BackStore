@@ -64,3 +64,29 @@ func findLinksLog(url string) ([]string, error) {
   findLinks(url)
 }
 ```
+
+```go
+fmt.Println(findLinks(url))
+
+links, err := findLinks(url)
+log.Println(links, err)
+```
+
+- names with multiple return values
+
+```go
+func Size() (width, height int)
+```
+- in convention, a final `bool`m result indicates success, an `error` result often needs no explanation.
+
+## bare return 
+
+- in a function with named results, the operands of a `return` statement may be omitted.
+
+```go
+func hello() (name string, age int) {
+	name = "Rhyme"
+	age = 123
+	return
+}
+```
