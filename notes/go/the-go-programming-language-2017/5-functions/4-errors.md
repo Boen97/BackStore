@@ -108,3 +108,13 @@ if err := waitForServer(url); err != nil {
 
 - after checking an error, `failure` is usually dealt with `before success`.
 - if failure causes the function to return, the logic for success is not indented within an `else` block
+
+## End of File(EOF)
+
+- on occasion, a program must take different actions depending on the kind of error that has occured.
+- when tries to read fixed-size chunks until the file is exhausted.
+- the caller must respond differently to an `end-of-file` condition than other `errors`
+- `io.EOF`
+```go
+if err == io.EOF
+```
