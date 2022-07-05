@@ -11,3 +11,32 @@ f := func() int {
 }
 f()
 ```
+
+- the lifetime of a variable is not determined by its scope.
+
+## Caveat: Capturing lteration Variables
+
+- wrong
+```go
+var rmdirs []func()
+for _, dir := range tempDirs() {
+    os.MkdirAll(dir, 0755)
+    rmdirs = append(rmdirs, func() {
+        os.RemoveAll(dir) // incorrect
+    })
+}
+```
+> the `for` loop introduces a new lexical block in which the `dir` is declared.
+> all function values created by this loop `capture` and `share` the same variable.
+
+- correct 
+```go
+var rmdirs []func()
+for _, d := range tempDirs() {
+    dir := d
+    os.MkdirAll(dir, 0755)
+    rmdirs = append(rmdirs, func() {
+        os.RemoveAll(dir)
+    })
+}
+```
