@@ -20,3 +20,18 @@ func sum(vals ...int) int {
 values := []int{1,2,3}
 sum(values...)
 ```
+
+- the type of a variadic function is distinct from the type of a function with an ordinary slice parameter
+```go
+func f(...int) {} // func(...int)
+func g([]int) {} // func([]int)
+```
+
+- the `interface{}` type means that this function can `accept any values` at all for its final arguments
+```go
+func errorf(linenum int, format string, args ...interface{}) {
+	fmt.Fprintf(os.Stderr, "Line %d: ", linenum)
+	fmt.Fprintf(os.Stderr, format, args...)
+	fmt.Fprintln(os.Stderr)
+}
+```
