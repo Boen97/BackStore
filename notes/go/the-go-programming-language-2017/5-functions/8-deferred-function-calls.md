@@ -88,3 +88,78 @@ defer resp.Body.Close()
 mu.Lock()
 defer mu.Unlock()
 ```
+
+### the defer statement can also be used to pair "on entry" and 'on exit' actions when debugging a complex function.
+```go
+func bigSlowOperation() {
+    defer trace('bigSlowOperation')() // don't forget the ()
+    // lots of work
+}
+func trace(msg string) func() {
+    start := time.Now()
+    log.Printf("enter %s", msg)
+    return func() {
+        log.Printf("exit %s (%s)", msg, time.Since(start))
+    }
+}
+```
+
+### a `deferred` anonymous function can observe the functions' results
+
+```go
+func double(x int) (result int) {
+	defer func() {fmt.Printf("double(%d) = %d\n", x, result)}()
+	return x + x
+}
+```
+
+### a `deferred` anonymous function can even change the values that the enclosing function returns to its caller
+
+```go
+func triple(x int) (result int) {
+    defer func() {result += x}()
+    return x + x
+}
+triple(4) // 12
+```
+
+### a `defer` statement in a loop
+
+- the code below could run out of file descriptions
+
+```go
+for _, filename := range filenames {
+    f, err := os.Open(filename)
+    if err != nil {
+        return err
+    }
+    defer f.Close() // Note risky; could run out of file descriptors.
+}
+```
+
+> solution1, wrap into a function
+```go
+for _, filename := range filenames {
+   if err := doFile(filename); err != nil {
+       return err
+   }
+}
+func doFile(filename string) error {
+    f, err := os.Open(filename)
+    if err != nil {
+        return err
+    }
+    defer f.Close()
+}
+```
+
+- On many file systems, notably NFS, write errors are not reported immediately but may be postponed until the file is closed.
+- Fail- ure to check the result of the close operation could cause serious data loss to go unnoticed.
+- It’s tempting to use a second deferred call, to f.Close, to close the local file, but this would be subtly wrong because os.Create opens a file for writing, creating it as needed.
+```go
+n, err = io.Copy(f, resp.Body)
+// Close file, but prefer error from Copy, if any.
+if closeErr := f.Close(); err == nil {
+    err = closeErr
+}
+```
