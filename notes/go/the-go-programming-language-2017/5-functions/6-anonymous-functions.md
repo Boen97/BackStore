@@ -40,3 +40,18 @@ for _, d := range tempDirs() {
     })
 }
 ```
+
+- the same problem happens with normal for iteration
+
+```go
+var rmdirs []func()
+dirs := tempDirs()
+for i := 0; i < len(dirs); i++ {
+    os.MkdirAll(dirs[i], 0755) // ok
+    rmdirs = append(rmdirs, func() {
+        os.RemoveAll(dirs[i]) // note : incorrect
+    })
+}
+```
+
+- the problem also happens with `go` and `defer`, which `delay` the execution of a `function value`
