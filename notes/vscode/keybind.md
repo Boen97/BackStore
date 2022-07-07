@@ -23,3 +23,6 @@ ctrl + m
 
 # search the file explorer
 type `/` to start search
+
+# multiple project in same workspace
+add folder to wordspace
