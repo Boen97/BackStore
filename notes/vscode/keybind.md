@@ -40,7 +40,7 @@ add folder to wordspace
 
 command increase/decrease view size
 
-## markdown snippt
+## markdown snippet
 
 1. command `configure user snippets`
 
