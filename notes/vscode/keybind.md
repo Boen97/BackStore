@@ -39,3 +39,20 @@ add folder to wordspace
 ## decrease and increase window size
 
 command increase/decrease view size
+
+## markdown snippt
+
+1. command `configure user snippets`
+
+```json
+"go": {
+ "prefix": "go",
+  "body": [
+   "```go",
+   "$1",
+   "```",
+  ],
+  "description": "Add Go code block"
+ }
+```
+
