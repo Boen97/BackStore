@@ -28,3 +28,23 @@ p.ScaleBy(2) // can call methods of the embedded Point field
 
 - the compiler reports an error if the selector was ambiguous
 - because two methods were promoted from the same rank.
+
+## unnamed struct types to have methods too.
+
+- thanks to embedding, it's possible and sometimes useful for `unnamed` struct types to have methods too.
+
+```go
+var cache = struct {
+ sync.Mutex
+ mapping map[string] string
+} {
+ mapping: make(map[string]string),
+}
+
+func Lookup(key string) string {
+ cache.Lock()
+ v := cache.mapping[key]
+ cache.Unlock()
+ return v
+}
+```
