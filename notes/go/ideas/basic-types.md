@@ -11,3 +11,8 @@
 ## int to binary string
 
 `fmt.Sprintf("%b", math.MaxInt)`
+
+## max of `uint8`
+
+- 1 << 8 - 1
+- binary is `11111111`
