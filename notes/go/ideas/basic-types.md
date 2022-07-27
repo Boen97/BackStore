@@ -16,3 +16,10 @@
 
 - 1 << 8 - 1
 - binary is `11111111`
+
+## the max of `uint8` almost is the twice bigger than `int8`
+
+## `byte` is alias for `uint8`
+
+## `rune` is alias for `int32`
+
