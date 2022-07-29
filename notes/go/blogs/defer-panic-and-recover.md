@@ -79,3 +79,11 @@ func c()(i int) {
 - Recover only useful inside deffered functions.
 - During normal execution, a call to recover will return nil and have no other effect
 - if the current goroutine is panicking, a call to recover will capture the value given to panic and resume normal execution.
+
+> The convention in the Go libraries is that even when a package uses panic internally, its external API still presents explicit error return values
+
+- Other uses of defer (beyond the file.Close example given earlier) include releasing a mutex:
+```go
+mu.Lock()
+defer mu.Unlock()
+```
