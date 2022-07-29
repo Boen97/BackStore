@@ -26,3 +26,19 @@ func main() {
 	fmt.Println(sum)
 }
 ```
+
+## `for` with `while`
+
+```go
+sum := 0
+for sum < 1000 {
+    sum += 50
+}
+```
+
+## forever loop
+
+```go
+for {
+}
+```
