@@ -40,3 +40,44 @@
 - <P> means the same as <p>.
 - W3C recommends lowercase in HTML
 - demands lowercase for stricter document types like XHTML.
+
+## <img> tag with `width` and `height` attributes
+
+- specifies the width and height of the image (in pixels)
+
+```html
+<img src="img_girl.jpg" width="500" height="600">
+```
+
+## the `lang` attributes
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+...
+</body>
+</html>
+```
+
+- you should always include the `lang` attributes inside the `<html>` tag
+- it declares the language of the web page
+- this is meant to assist search engines and browsers
+
+- `country codes` can also be added to the language code in the `lang` attributes
+- `<html lang="en-US">` or `<html lang="zh-CN">`
+- the first two `en` define the language of the HTML page
+- the last two `US` define the country
+
+### Chinese language code
+
+1. Chinese zh
+2. English en
+3. Chinese Simplified zh-Hans
+4. Chinese Simplified zh-Hant
+
+### Country Codes
+
+1. UNITED STATES (US)
+2. CHINA (CN)
+
