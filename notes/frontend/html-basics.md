@@ -81,3 +81,9 @@
 1. UNITED STATES (US)
 2. CHINA (CN)
 
+## Always Quote Attributes Values
+
+## Single or Double Quotes of Attributes Values
+
+- Double quotes around attribute values are the most common in HTML, but single quotes can also be used.
+- when the attribute value itself contains double quotes, it is necessary to use single quotes, or vice versa.
