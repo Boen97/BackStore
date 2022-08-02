@@ -18,3 +18,15 @@ SPC i s
 
 ## run go
 , x x
+
+## enable Scala mill build tool
+
+1. cd ~/.emacs.d/layers/+lang/scala
+2. init-scala-mode
+```lisp
+(defun scala/init-scala-mode ()
+  (use-package scala-mode
+    :defer t
+    :mode "\\.sc\\'"
+    ...
+```
