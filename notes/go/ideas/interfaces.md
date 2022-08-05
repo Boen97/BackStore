@@ -69,3 +69,44 @@ var t *T
 i = t
 i.M()
 ```
+
+## Nil interface values
+
+- a nil interface value holds neither value nor concrete type
+
+- calling a method on a nil interface is a run-time error
+- because there is no type inside the interface tuple to indicate 
+- which concrete method to call
+
+```go
+type I interface {
+    M()
+}
+var i I
+fmt.Printf("%v, %T", i, i) // nil, nil
+i.M() // run-time error
+```
+
+## The empty interface
+
+- the interface type that specifies zero methods
+- ```interface{}```
+- an empty interface may hold values of any type
+- every type implements at least zero methods
+- empty interface are used by code that handles values of `unknow type`
+```go
+package main
+
+import (
+	"fmt"
+)
+
+type Hello interface {
+}
+
+func main() {
+	var i Hello = "Rhyme"
+	var b interface{} = "Chiange"
+	fmt.Println(i, b)
+}
+```

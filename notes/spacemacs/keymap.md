@@ -143,3 +143,6 @@ put it into ~/.emacs.d/.cache/lsp
 
 ## Terminal signal of EOF
 Ctrl + D
+
+## show error list
+SPC + s + l
