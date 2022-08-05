@@ -111,8 +111,8 @@ r.m() // ok
 
 - there are two reasons to use a pointer receiver
 
-1. the method can modify the value that its receiver points to 
+1. the method can modify the value that its receiver points to
 2. avoid copying the value on each method call.
 
-> in general, all methods on a given type should have either 
+> in general, all methods on a given type should have either
 > value or pointer receivers, but not a mixture of both.
