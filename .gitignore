@@ -24,3 +24,4 @@ hs_err_pid*
 
 ## emacs
 *.DS_Store
+*.code-workspace
