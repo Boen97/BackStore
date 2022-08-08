@@ -34,3 +34,16 @@ func main() {
 	fibonacci(c, quit)
 }
 ```
+
+## Default Selecting
+
+- the `default` case in a `select` is run if no other case is ready.
+- use a `default` case to try a send or receive without blocking
+
+```go
+select {
+case i := <-c:
+default:
+    // receving from c would block
+}
+```
