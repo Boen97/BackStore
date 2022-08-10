@@ -68,3 +68,38 @@ func TestHello(t *testing.T) {
 - `go test` executest test functions in test files, whose name ends with _test.go
 - `go test -v` get verbose output that lists all of the tests and their values.
 - the output will include results for only the test that failed.
+
+## compile and install the application
+
+- `go run` command doesn't generate a binary executable
+- it is a useful shortcut for compiling and running a program when you're making frequent changes.
+
+- `go build` command compiles the package, along with their dependencies, but it doesn't install the results
+- compile the code into an executable
+- it will generate a executable file
+
+- `go install` command compiles and intalls the package
+
+
+3. install the executable so you can run it without specifying its path.
+
+- discover the `Go install path`, where the `go` command will install the current package
+- you can discover the install path by running `go list` command
+
+- `$ go list -f '{{.Target}}'`
+- it returns `/Users/rhyme/go/bin/hello`
+- meaning that binaries are installed to `/Users/rhyme/go/bin`
+
+4. add the Go install directory to your system's shell path.
+
+```shell
+export PATH=$PATH:/path/to/your/install/directory
+```
+
+- you can change the install target by setting the `GOBIN` variable
+
+```shell
+go env -w GOBIN=/path/to/your/bin
+```
+
+5. once you've updated the shell path, run the `go install` to compile and install the package
