@@ -145,3 +145,5 @@ protection is at the heart of one of the main principles, which is that of `isol
 > isolating processes from one another is the key to protection
 
 4. the OS must also run `non-stop`, OS needs to provide `high reliability`
+
+## Some History
