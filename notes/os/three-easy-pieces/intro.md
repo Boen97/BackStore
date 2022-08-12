@@ -117,3 +117,31 @@ the system can recover to reasonable state afterwards
 to make different common operations efficient
 file system employ many different `data structures` and `access methods`
 from simple lists to `complex b-trees`
+
+## Design Goals
+
+finding the right set of trade-offs to building systems
+
+1. one of the most basic goals is to build up some `abstractions`
+   to make the system convenient and easy to use.
+
+> abstractions are fundamental of everything we do in computer science
+
+2. one goal in designing and implementing an OS is provide high `performance`
+   another way to say this is our goal is to `minimize the overheads of the OS`
+
+virtualization and makeing the system easy to use are well worth it, but not at any costs
+thus we must strive to provide virtualization and other OS features without `excessive overheads`
+
+these overheads arise in a number of forms:
+1. extra time(more instructions)
+2. extra space(in memory or on disk)
+
+3. another goal will be to provide `protection` between applications
+   as well as between the OS and applications
+
+protection is at the heart of one of the main principles, which is that of `isolation`
+
+> isolating processes from one another is the key to protection
+
+4. the OS must also run `non-stop`, OS needs to provide `high reliability`
