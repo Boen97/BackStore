@@ -78,3 +78,42 @@ when the shared counter is incremented, takes three instructions:
 because these three instructions do not execute `atomically(all at once)`, strange things can happen
 
 ### Persistence
+
+in system memory, data can easily lost
+as devices such as `DRAM` store values in a `volatile manner`
+we need to store data `persistently`
+
+a `hard drive` is a common for long-lived information
+although `solid-state drives (SSDs)` are making headway as well
+
+the software in the OS which manges the `disk` is called the `file system`
+it is responsible for storing any `files` the user creates in disk
+
+unlike the abstractions provided by the OS for the CPU and memory
+the OS does not create a private, virtualized disk for each application
+it assumed that often times, users will want to `share` information that in `files`
+
+file operations `system calls` are routed to the `file system`
+
+- what the OS does in order to actually write to disk.
+
+1. the file system first figuring out where on disk this new data will reside
+   and then keeping track of it in various structures the file system maintains.
+   does so requires issuing `I/O requests to the underlying storage device`,
+   to either read existing structures or update(write) them
+
+write a `hard driver` is an tough and complicated process
+the OS provides a standard and simply way to access devices through its system calls
+thus the OS is sometimes seen as a `standard library`
+
+for perfomance reasons, most file systems first `delay` such `writes` for a while
+hoping to `batch them` into larger groups
+
+to handle the problems of `system crashs` during writes
+most file system incorporate some kind of write protocol, such as `journaling` or `copy-on-write`
+carefully ordering writes to disk to ensure that if a failure occurs during the write sequence
+the system can recover to reasonable state afterwards
+
+to make different common operations efficient
+file system employ many different `data structures` and `access methods`
+from simple lists to `complex b-trees`
