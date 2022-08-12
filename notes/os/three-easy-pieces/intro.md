@@ -64,3 +64,17 @@ which the OS somehow maps onto the physical memory of the machine
 a memory reference within one running program does not affect the address space of other processes or the OS itself
 
 ### Concurrency
+
+the problem of concurrency are no longer limited just to the OS itself
+modern `multi-threaded` programs exhibit the same problems
+
+you can think of a thread as a function within the `same memory space` as other functions
+and with more than one of them active at a time.
+
+when the shared counter is incremented, takes three instructions:
+1. one to load the value of the counter from memory into a register
+2. one to increment it
+3. one to store it back into memory
+because these three instructions do not execute `atomically(all at once)`, strange things can happen
+
+### Persistence
