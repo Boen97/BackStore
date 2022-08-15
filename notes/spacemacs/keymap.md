@@ -146,3 +146,7 @@ Ctrl + D
 
 ## show error list
 SPC + s + l
+
+## search with file filter
+
+#keyword #scala
