@@ -92,3 +92,47 @@ and is thus a form of `modularity`, a general software design principle
 5. Status
    interfaces to get some status information about a process
    such as how long it has run for, or what state it is in.
+
+## Process Creation: A Little More Detail
+
+> how program are transformed into processes?
+
+1. the first thing that the OS must do to run a program is to `load` its code and any static data (e.g., initialized variables) into memory, into `the address space of the process`
+
+programs initially reside on `disk` in some kind of `executable format`
+
+in early (or simple) operating systems, the loading process is done `eagerly`, all at once before running the program
+
+modern OSes perform the process `lazily`
+to truly understand how lazy loading of pieces of code and data works
+you have to understand the `machinery of paging and swapping` topics when we discuess the virtualization of memory
+
+for now ,just remmeber
+
+> the OS must do some work to get the important program bits from disk into memory
+
+2. allocate memory for the program's `run-time stack or just stack`
+
+once the code and static data are loaded into memory, there are a few things the OS needs to do before running the process.
+some memory must be allocated for the program's `run-time stack or just stack`
+for example, C program use the stack for local variables, function parameters, and return addresses
+the OS allocates this memory and gives it to the process
+
+3. the OS may also allocate some memory for the program's `heap`
+in C programs, the heap is used for explicitly requested dynamically-allocated data
+the heap is needed for data structures such as linked list, hash tables, trees
+the heap will be small at first, as the program runs, and requests more memory via `malloc` library API
+the OS may get involved and allocate more memory to the process to help satisfy such calls
+
+4. the OS will also do some other initialization tasks, such as `input/output(I/O)`
+for example, in Unix systems, each process by default has three open `file descriptors`
+for standard input, output and error;these descriptors let programs easily read input from the terminal
+and print output to the screen.
+
+
+5. start the program running at the entry point, namely `main()`
+
+by loading the code and static data into memory，by creating and initializing a stack
+and by doing other work as related to I/O setup, the OS now set the stage for program execution
+jump to the `main()` routine, the OS transfer control of the CPU to the newly-created process
+thus the program begins its execution
