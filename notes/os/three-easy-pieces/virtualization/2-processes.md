@@ -35,3 +35,30 @@ for example, `scheduling policy` decide which program to run
 - `space sharing` where a resource is divided among those who wish to use it
   for example, disk space is naturally a space shared resouce
   once a block is assigned to a file, it is normally not assigned to another file
+
+## The Abstraction: A Process
+
+- the abstraction provided by the OS of a running program is something we will call a `process`
+- a process is simply a running program.
+
+to understand what constitutes a process, we thus have to understand its `machine state`:
+what a program can read or update when it is running?
+at any time, what parts of the machine are important to the execution of this program?
+
+1. memory
+
+one obvious component of `machine state` that comprises a process is its `memory`
+instructions lie in memory, the data that the running program reads and writes sits in memory as well.
+thus the memory that the process can address (called its `address space`) is part of the process.
+
+2. registers
+
+many instructions explicitly read or update registers and thus clearly they important to the process
+
+note that there are some special registers that form part of this machine state.
+for example, the `program counter(PC) or instruction pointer(IP)` tell us which instruction of the program will execute next.
+similary, a `stack pointer` and associated `frame pointer` are used to manage the stack for function parameters, local variables, and return addresses.
+
+3. persistent storage devices
+
+program often access persistent storage devices, such I/O information might include a list of the files the process has open.
