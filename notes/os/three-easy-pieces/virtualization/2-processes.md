@@ -157,3 +157,46 @@ in a simplified view, a process can be in one of three states:
 `descheduled` - process from running state to ready state
 
 when process `blocked`, the OS will keep it as such until some event occurs (such as I/O completion)
+
+## Data Structures
+
+like any program,  OS has some key data structures that track various relevant pieces of information
+to track the state of each process, for example, the OS likely will keep some kind of `process list` for all processes
+the OS must track block processes, when an I/O event completes, the OS should make sure to wake the process and ready it to run again
+
+the `register context` will hold, for a stopped process, the contents of its registers
+when a process is stopped, its registers will be saved into this memory location
+
+process has other state
+
+1. `initial state`
+   the process is in when it is being created
+
+2. `final state`
+   the process has exited but has not yet been cleaned up
+   this is called `zoombie` state
+   this final state allows other processes usually the parent that created the process
+   to examine the return code of the process and see if the just-finished process executed successfully
+   when finished, the parent will make one `final call(e.g. wait)` to wait for the completion of the child
+   and also indicate the OS that it can clean up any relevant data
+
+
+## Aside: Key Process Terms
+
+1. the `process` is the major abstraction of a running program
+   at any point in time, the process can be described by its state:
+   the contents of memory in its `address space`,
+   the contents of CPU registers(including `program counter` and `stack pointer`)
+   and information about I/O(such as open files which can be read or written)
+
+2. the `process API` consists of calls programs can make related to processes.
+   this includes creation, destruction, and other useful calls
+
+3. process exist in one of many different `process state`
+   including running, ready to run, and blocked
+   different events such as getting scheduled or descheduled, or waiting for an I/O
+   transition a process from one of these states to the other.
+
+4. a `process list` constains information about all processes in the system.
+   each entry is found in what is sometimes called a `process control block(PCB)`
+   which is really just a structure that contains information about a specific process.
