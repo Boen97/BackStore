@@ -188,3 +188,13 @@ via a special `return-from-trap` instruction
 which reverts to user mode while simultaneouly passing control back to where the application left off.
 
 3. The Era of Multiprogramming
+
+`multiprogramming` became commonplace due to the desire to make better use of machine resources.
+
+this switching was important because I/O devices were slow.
+having a program wait on the CPU while its I/O was a waste of CPU time.
+
+
+4. The Modern Era
+
+- the early operating system such as `DOS (the disk operating system)` didn't think memory protection was important
