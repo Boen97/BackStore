@@ -136,3 +136,24 @@ by loading the code and static data into memory，by creating and initializing a
 and by doing other work as related to I/O setup, the OS now set the stage for program execution
 jump to the `main()` routine, the OS transfer control of the CPU to the newly-created process
 thus the program begins its execution
+
+## Process States
+
+in a simplified view, a process can be in one of three states:
+
+1. Running
+   a process is running on a processor. this means it is executing instructions
+
+2. Ready
+   in ready state, a process is ready to run but for some reason the OS has chosen not to run it at this given moment
+
+3. Blocked
+   in the blocked state, a process has performed some kind of operation that makes it not ready to run
+   `until some other event takes place`
+   a common example, when a process `initiates an I/O request on disk`
+   it becomes blocked and thus some other process can use the processor
+
+`scheduled` - process from ready state to running state
+`descheduled` - process from running state to ready state
+
+when process `blocked`, the OS will keep it as such until some event occurs (such as I/O completion)
