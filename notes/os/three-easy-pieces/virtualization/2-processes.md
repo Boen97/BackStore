@@ -62,3 +62,33 @@ similary, a `stack pointer` and associated `frame pointer` are used to manage th
 3. persistent storage devices
 
 program often access persistent storage devices, such I/O information might include a list of the files the process has open.
+
+### TIP: Separate Policy and Mechanism
+
+in many operating systems, a common design paradigm is to separate `high-level policies` from their `low-level mechanisms`
+you can think mechanisms as `how does an OS perform a context switch`
+think policies as `which process should the OS run right now`
+
+separating the two allows one easily to change the policies without having to rethink the mechanism
+and is thus a form of `modularity`, a general software design principle
+
+## Process API
+
+1. Create
+   create a new process to run the program you have indicated
+
+2. Destory
+   systems also provide an interface to destroy processes forcefully
+   an interface to halt a runaway process is quite useful
+
+3. Wait
+   it is useful to wait for a process to stop running
+
+4. Miscellaneous control
+   other than killing or waiting for a process, there are other controls
+   for example, `suspend` a process (stop it from running for a while)
+   and then `resume` it (continue it running)
+
+5. Status
+   interfaces to get some status information about a process
+   such as how long it has run for, or what state it is in.
