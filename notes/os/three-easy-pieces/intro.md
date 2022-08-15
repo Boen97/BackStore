@@ -147,3 +147,44 @@ protection is at the heart of one of the main principles, which is that of `isol
 4. the OS must also run `non-stop`, OS needs to provide `high reliability`
 
 ## Some History
+
+> like any system built by humans, good ideas accumulated in operating system over time
+> as engineers learned what was important in their design
+
+1. early operating systems: just libraries of commonly-used functions
+   one program ran at a time, as controlled by a human operator
+
+- this mode of computing was known as `batch` processing
+- as a number of jobs were set up and then run a `batch` by the operator
+
+2. Beyond libraries: Protection
+
+- one important aspect of this was the realization that code run on behalf of the OS was special
+- it has control of devices and thus should be treated differently than normal application code.
+- because, if you allown any application to read from anywhere on the disk is dangerous
+- thus, implementing a `file system` as a library makes little sense, something else is needed
+
+- thus, the idea of `system call` was invented
+
+- instead of providing OS routines as a library (where you just make a `procedure call` to access them)
+- the idea here was to add a special pair of hardware instructions and hardware state
+- to make the transition into the `OS` a more formal, controlled process.
+
+> the key difference between a system call and a procedure call is that
+> a system call `transfers control into the OS` while simultaneouly raising the `hardware priviledge level`
+
+- `user mode`
+- user applications run in what is referred to as `user mode`
+- which means the hardware restricts what applications can do.
+- for example, an application running in user mode can't typically initiate an I/O request to the disk
+
+- when a system call is initiated (usually through a `trap` instruction)
+- the hardware transfers control to a pre-specified `trap handler`
+- simultaneouly raises the priviledge level to `kenel mode`
+- in kenel mode, the OS has full access to the hardware
+
+when the OS is done servicing the request, it passes control back to the user
+via a special `return-from-trap` instruction
+which reverts to user mode while simultaneouly passing control back to where the application left off.
+
+3. The Era of Multiprogramming
