@@ -23,6 +23,10 @@ this system call is useful when you want to run a progarm that is different from
 
 it does not create a new process, rather it transforms the currently running program into a different running program.
 
+after the `exec` in the child
+
+a successful call to `exec` never returns
+
 ## Tip: Getting it right(Lampson's law)
 
 Hints for computer systems design, "Get it right"
@@ -32,3 +36,22 @@ and when you do, it is way better than the alternatives.
 there are lots of ways to design APIs for process creation
 however, the combination of `fork()` and `exec()` are simple and powerful.
 Here, the UNIX designers simply got it right.
+
+## Why would we build such an odd interface to what should be simple act of creating a new process
+
+the separation of `fork` and `exec()` is essential in building a UNIX shell
+because it lets the shell run code `after` the call to `fork` but `before` the call to `exec()`
+call `fork` to create a new child process to run the command,
+calls some variant of `exec()` to run the command, and then waits for the command to complete by calling `wait()`
+
+## Process control and Users
+
+`kill()` system call is used to send `signals` to a process.
+`control-C` sends a `SIGINT(interrupt)` to the process(normally terminating it)
+`control-z`  sends a `SIGSTP(stop)` signals to `pausing` the process in mid-execution
+
+you can send signals to `process group`
+to use this form, a process should use the `signal()` system call to `catch` various signals
+
+it would be dangerous anyone can arbitraily send signals such as `SIGINT`
+`users` can only control their own processes
