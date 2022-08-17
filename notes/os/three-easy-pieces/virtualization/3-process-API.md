@@ -55,3 +55,9 @@ to use this form, a process should use the `signal()` system call to `catch` var
 
 it would be dangerous anyone can arbitraily send signals such as `SIGINT`
 `users` can only control their own processes
+
+## Useful tools
+
+1. `ps`
+2. `top`
+   it displays the processes of the system and how much CPU and other resources they are eating up.
