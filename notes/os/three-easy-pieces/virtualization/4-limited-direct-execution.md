@@ -115,3 +115,41 @@ the timer can also be `turned off`, will be discussed in `concurrency`
 
 note that the hardware has some responsibility when an interrupt occurs
 to save enough of the state of the program that was used to resume the program.
+
+## Saving and Restoring Context.
+
+- `scheduler`
+which decides whether to continue running the currently-running process
+or switch to a different one.
+
+if the decision is to made to switch, the OS then executes a low-level piece of code
+which we refer to as a `context switch`
+
+to save the context of the currently-running process,
+the OS will execute some low-level assembly code to save the general purpose registers, PC
+and the kernel stack pointer of the currently-running process
+
+One simple thing an OS might to do is `disable interrupts` during interrupt processing.
+doing so ensures that when one interrupt is being handled
+no other one will be delivered to the CPU
+disabling interrupts for too long lead to lost interrupts, which is bad.
+
+### How long context switches take
+
+sub-microsecond with 2- or 3-GHz processors.
+
+## Summary
+
+1. the CPU should support at least two modes of execution
+   a restricted `user mode` and a privileged `kenel mode`
+
+2. typical user applications run in user mode, and use a `system call` to `trap` into the kernel
+   to request operating system services.
+
+3. the trap instruction saves register state carefully, changes the hardware status to kernel mode.
+   and jumps into the OS to a pre-specified destination: the `trap table`
+
+4. when the OS finishes serving a system call.
+   it returns to the user program via another special `return-from-trap` instruction.
+   which reduces priviedge and returns control to the instruction after the trap that jumped into the OS.
+
