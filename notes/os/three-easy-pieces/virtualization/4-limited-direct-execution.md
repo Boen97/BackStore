@@ -76,3 +76,42 @@ once the hardware is informed, it remembers the location of these handlers until
 thus the hardware knows what to do when system calls and other events take place
 
 to specify the exact system call, a `system-call number` is usually assigned to each system call
+
+## Problem #2: Switching Between Processes
+
+> there is no way for the OS to take an action if it is not running on the CPU.
+
+if a process is running on the CPU, this means the OS is not running
+
+> How can the OS `regain control` of the CPU so that it can switch between processes.
+
+### A Cooperative Approach: wait for system calls
+
+in this style, the OS trusts the processes of the system to behave reasonably.
+processes that run for too long are assumed to periodically give up the CPU
+so that the OS can decide to run some other task.
+
+### A Non-Cooperative Approach: The OS takes control
+
+without some additional help from the `hardware`, the OS can't do much at all
+when a process refuses to make system calls and return control to the OS.
+
+> the solution: `a timer interrupt`
+
+a timer device can be programmed to raise an `interrupt` every so many milliseconds
+when the interrupt is raised, the currently running process is halted,
+and a pre-configured `interrupt handler` in the OS runs.
+at this point, the OS has regained control of the CPU
+and thus can do what it pleases: stop the current process, and start a different one.
+
+the OS must inform the hardware of which code to run when the timer interrupt occurs.
+thus, at boot time, the OS does exactly that.
+second, also during the boot sequence, the OS must start the timer,
+which is of course a privileged operation.
+
+once the timer begun, the OS can thus feel safe to run user programs.
+
+the timer can also be `turned off`, will be discussed in `concurrency`
+
+note that the hardware has some responsibility when an interrupt occurs
+to save enough of the state of the program that was used to resume the program.
