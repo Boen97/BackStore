@@ -96,3 +96,10 @@ $ git branch
 ```
 
 - different branches are separate projects, just like different project folders
+
+## create a CSS Branch
+
+```
+$ git branch css
+$ git checkout css
+```
