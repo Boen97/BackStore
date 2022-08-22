@@ -60,3 +60,17 @@ git commit --amend
 
 if you ever find yourself lost in the middle of a rebase and you're afraid to continue
 you can use the `--abort` flag to abandon it and start over from scratch
+
+## conclusion
+
+- rebase build a linear history
+- but on the other hand, we don't have the `slightest notion` of how we got to our current state.
+
+some believe that your history should `reflect exactly what you've done`, ensure that no information is ever lost.
+
+but others contend that merge commits should be `meaningful`
+
+linux typically advocate interactive rebasing to keep the repository as clean as possible
+
+- `git merge --no-ff <branch-name>`
+- to force a merge commit when Git would normally do a fast-forward merge.
