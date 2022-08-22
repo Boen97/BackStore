@@ -27,3 +27,52 @@
   it creates an extra `merge commit`
   it has `two` parent commits
   it's like saying `this commit comes from both the crazy branch and from master`
+
+## Emergency Update
+
+- `hotfix branch`
+  hotfix branch are used to quickly patch a production release.
+
+```
+git checkout master
+git branch news-hotfix
+git checkout news-hotfix
+```
+
+- `git commit -a -m "xxx"`
+  `-a` auto include `all tracked` files in the staged snapshot
+
+## publish the News Hotfix
+
+```
+$ git checkout master
+$ git merge news-hotfix
+$ git branch -d news-hotfix
+```
+
+## Merge Conflict
+
+```
+<<<<<<<<<<HEAD
+111
+=============
+222
+>>>>>>>>>>> crazy
+```
+
+- the `<<<<<<HEAD` shows us the version in the current branch
+  while the `==========` shows the version in the `crazy` branch
+
+- the `<<<<`, `====`, `>>>>` markers are only used to show us the conflict and should be deleted
+
+- next we need to tell Git that we're done resolving the conflict with `git add` command
+
+- `git commit`
+  we didn't use the `-m` flag, because Git gives us a default message for merge commits
+
+## cleanup the Feature Branches
+
+```
+$ git branch -d crazy
+$ git branch -D crazy-alt // force delete
+```
