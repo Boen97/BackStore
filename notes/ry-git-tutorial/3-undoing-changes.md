@@ -65,3 +65,21 @@ c711307 (tag: v1.0) modify test2.txt
 
 - when using `git revert`, remmber to sepecify the commit that want to undo-not the stable commit that you want to return to
 - think of this revert commit as saying `undo this commit` rather than `restore this revision`
+
+## Undo Uncommitted Changes
+
+support we have a `tracked and modified` change in `test1.txt` and `test2.txt`, and a new untracked file `test3.txt`
+
+- `git reset`
+  unstage all tracked files, but keep the modifys in your working directory
+
+- `git reset --hard`
+  update the modified tracked files to the most recent commit
+  `--hard` is what actually updates the file
+
+- `git reset` only operates on the working directory and the staging area
+
+- `git clean -f` remove all untracked files
+
+> be careful with `git reset` and `git clean` both operate on the working directory
+> not on the committed snapshots, they `permanently undo changes`
