@@ -118,3 +118,9 @@ $ git checkout master
 - `--stat` includes information about which files have been changed in each commit
 
 `git merge green-page`
+
+## Conclusion
+
+- Git uses the tip of a branch to represent the `entire branch`
+- that is a branch is actually a pointer to a single commit-not a container for a series of commits
+- the `history` is represented by the parent of each commit
