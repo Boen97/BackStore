@@ -103,3 +103,24 @@ $ git branch
 $ git branch css
 $ git checkout css
 ```
+
+## merge the CSS Branch
+
+```
+$ git checkout master
+$ git merge css
+```
+
+- `git merge` command take the snapshots from the `css` branch and add them to the `master` branch
+- the css branch unchanged
+
+- this kind of merge is called `fast-forward merge`, since Git is `fast-forwarding` through the new commits in the css branch
+
+## Delete the CSS branch
+
+```
+$ git branch -d css
+$ git branch
+```
+
+delete branches are relatively safe, Git will warn you if you're deleting an unmerged branh
