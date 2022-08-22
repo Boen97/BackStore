@@ -63,3 +63,11 @@ $ git commit -m "add yellow"
 ```
 
 then `git rebase --continue` to finish the rebase
+
+## Remove the Last Commit
+
+```
+$ git reset --hard HEAD~1
+```
+
+- `dangling commit` are those that cannot be reached from any branch
