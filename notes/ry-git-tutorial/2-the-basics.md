@@ -59,3 +59,8 @@ git config --global user.email 296430507@qq.com
 ```
 
 `--global` tells Git to use this configuration as a default for all of your repositories
+
+## working directory, staged snapshot, committed snapshots
+
+working directory <staged> will into staged snapshot
+stage snapshot -> committed into committed snapshots
