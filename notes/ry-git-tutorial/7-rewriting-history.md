@@ -81,3 +81,40 @@ Git uses `reflog` to record every change you make to your repository
 the reflog is a `chronological listing` of our history, without regard for the repository's branch structure
 this lets us find `dangling commits` that would otherwise be lost from the the project history
 
+## Revive the Lost Commit
+
+at the beginning of each `reflog entry`, you'll find a commit ID representing the `HEAD` after that action
+check out the commit at `HEAD@{2}`
+
+```
+$ git checkout 1f7ed37
+```
+
+this puts us in a `detached HEAD` state, which means our `HEAD` is no longer on the tip of a branch
+
+now we're looking at a commit `after` the tip of the branch, but we still a `detached HEAD`
+
+to turn out `dangling commit` into a full-fledged branch, we have to create one.
+`git checkout -b green-page`
+we now have a branch that can be merged back into the project.
+
+### Filter the Log History
+
+to view the differences between branches, we can use Git's `log-filtering` syntax.
+`git log new-pages..green-page`
+this will display all commits contained in `green-page` that aren't in the `new-pages` branch
+
+`git log HEAD~4..HEAD` limit the output of `git log`
+`git log -n 4` only show the last four commits
+
+### Merge in the Revived Branch
+
+```
+$ git checkout master
+```
+
+`git log HEAD..green-page --stat`
+
+- `--stat` includes information about which files have been changed in each commit
+
+`git merge green-page`
