@@ -36,3 +36,26 @@ a practice that makes it possible to track the `meaningful` progression of a sof
 - commited snapshots can be seen as a `safe` versions of the project.
 
 Git never changes committed snapshots, which means you can do almost anything you want to your project without losing those `safe` revisions.
+
+## view the Repository History
+
+`git status` shows nothing, means that our current state matches what is stored in the repository
+`git status` only show us `uncommitted changes`
+to view our repository history, we need `git log` command
+
+`SHA-1` checksum is the unique ID for the commit, which ensures that the commit will never be corrupted without Git knowing about it.
+
+we can only see `staged changes`  with `git status`
+`git log` only for commited changes
+
+- `git log --oneline`
+- `git log --oneline test1.txt`
+
+## Configue Git
+
+```
+git config --global user.name "JakeRess"
+git config --global user.email 296430507@qq.com
+```
+
+`--global` tells Git to use this configuration as a default for all of your repositories
