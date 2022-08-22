@@ -35,3 +35,33 @@ to retrieve our complete history, we just have to checkout out this branch.
 
 - `git checkout master`
   this makes Git update our working directory to reflect the state of the `master` branch's snapshot
+
+## Tag a Release
+
+- `git tag -a v1.0 -m "stable version 1"`
+- the `-a` flag tell Git to create an `annotated tag`, which let us record our name, the date, and a descriptive message
+
+## Undo committed Changes
+
+```
+$ git log --oneline
+
+c612088 (HEAD -> master) crazy experiment
+c711307 (tag: v1.0) modify test2.txt
+4db38de add test2.txt
+687a130 add test1.txt
+```
+
+```
+$ git revert c612088
+$ git log --oneline
+
+3cebb4d (HEAD -> master) Revert "crazy experiment"
+c612088 crazy experiment
+c711307 (tag: v1.0) modify test2.txt
+4db38de add test2.txt
+687a130 add test1.txt
+```
+
+- when using `git revert`, remmber to sepecify the commit that want to undo-not the stable commit that you want to return to
+- think of this revert commit as saying `undo this commit` rather than `restore this revision`
