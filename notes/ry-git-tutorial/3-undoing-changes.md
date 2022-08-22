@@ -27,3 +27,11 @@ $ git status
 
 HEAD detached at 4db38de
 ```
+
+all of our actions with previous commites took place on the `master` branch
+to retrieve our complete history, we just have to checkout out this branch.
+
+## return to current version
+
+- `git checkout master`
+  this makes Git update our working directory to reflect the state of the `master` branch's snapshot
