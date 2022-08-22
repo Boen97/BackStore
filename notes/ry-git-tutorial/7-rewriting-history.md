@@ -71,3 +71,13 @@ $ git reset --hard HEAD~1
 ```
 
 - `dangling commit` are those that cannot be reached from any branch
+
+## open the Reflog
+
+Git uses `reflog` to record every change you make to your repository
+
+- `git reflog`
+
+the reflog is a `chronological listing` of our history, without regard for the repository's branch structure
+this lets us find `dangling commits` that would otherwise be lost from the the project history
+
