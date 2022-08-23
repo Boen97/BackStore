@@ -88,3 +88,21 @@ checking out a remote branch takes out HEAD off the tip of a `local branch`
 - we can't continue developing if we're not on a local branch
 
 to build on `mary/master` we either need to merge it into our own `local master` or create another branch
+
+## find Mary's Changes
+
+- `git log master..mary/master --stat`
+
+this shows us what Mary has added to her master branch, but it's also a good idea to see if we've added any new changes
+that aren't in Mary's repository
+
+- `git log mary/master..master --stat`
+
+the output nothing, means out history hasn't `diverged`
+
+## Merge Mary's Changes
+
+```
+$ git checkout master
+$ git merge mary/master
+```
