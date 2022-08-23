@@ -45,3 +45,28 @@ origin  /Users/rhyme/Documents/Dev/Projects/Rhyme/my-git-repo (push)
 ```
 
 - `git remote -v` list remote verbose
+
+## Back to Our Repository, and Add Mary as a Remote
+
+```
+$ git remote add mary ../marys-repo
+```
+
+- so Mary has a `origin` remote pointing to us
+- we has a `mary` remote pointing to mary
+
+## Fetch Mary's Branches
+
+we can use `remote branches` to access snapshots from another repository
+
+```
+$ git fetch mary
+$ git branch -r
+
+mary/bio-page
+mary/green-page
+mary/master
+```
+
+- `git branch -r` list our remote branches
+- `git fetch` fetch branches from Mary's repository
