@@ -142,3 +142,9 @@ $ git push mary v2.0
 ```
 
 - we need to manually push the tag itself
+
+## Conclusion
+
+> remotes are for people, whereas branches are for `topics`
+
+branches should always be for project management, not user management
