@@ -70,3 +70,21 @@ mary/master
 
 - `git branch -r` list our remote branches
 - `git fetch` fetch branches from Mary's repository
+  this will go to the `fetch` location shown in `git remote -v` and download all of the branches it finds there into our repository
+
+- `remote branches` are always in the form `<remote-name>/<branch-name>`, so they will never be mistaken for local branches
+
+- the `git fetch mary` only download Mary's repository at that time, they will not auto update with Mary
+- our remote branches are not `direct links into` Mary's repository, they are read-only copies of her branches
+
+## Check out a remote branch
+
+- `git checkout mary/master`
+
+this puts us in a `detached HEAD` state
+our remotes branches are `copies` of Mary's branches
+checking out a remote branch takes out HEAD off the tip of a `local branch`
+
+- we can't continue developing if we're not on a local branch
+
+to build on `mary/master` we either need to merge it into our own `local master` or create another branch
