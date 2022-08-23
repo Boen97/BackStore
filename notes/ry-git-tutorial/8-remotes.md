@@ -106,3 +106,39 @@ the output nothing, means out history hasn't `diverged`
 $ git checkout master
 $ git merge mary/master
 ```
+
+## Push a Dummy Branch
+
+- `fetching` and `pushing` are almost `opposites`
+- `fetching` imports branches, while `pushing` exports branches to another repository
+
+```
+$ git branch dummy
+$ git push mary dummy
+```
+
+this creats a `dummy` branch, and sends it to mary
+and marys repository will find a new `dummy` branch
+
+- pushing creates a new local branch, while `fetching` imports commits into `remote branches`
+
+- Obviously, pushing branches into other's repository can make for a chaotic workflow
+- so, as a general rule, `you should never push into another developer's repository`
+
+> but why does `git push` even exist?
+
+`pushing` is a necessary tool for maintaining public repositories
+
+## Push a New Tag
+
+- an important property of `git push` is that it does not auto `push tags` with a paricular branch
+
+```
+$ git tag -a v2.0 -m "stabler version"
+
+$ git push mary master
+
+$ git push mary v2.0
+```
+
+- we need to manually push the tag itself
