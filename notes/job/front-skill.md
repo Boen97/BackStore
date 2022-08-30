@@ -1,7 +1,7 @@
 ## dynamic hover color
 
 ```js
-periodStyle(): any {
+periodStyleObj(): any {
     return {
         ...this.bgColorStyle,
         ...this.heightStyle,
@@ -9,7 +9,7 @@ periodStyle(): any {
         marginBottom: `${this.periodMarginBottom}px`,
         '--active-hover-bg-color': this.activeHoverBgColor,
         '--inactive-hover-bg-color': this.inactiveHoverBgColor,
-      };
+    };
 },
 ```
 
