@@ -13,7 +13,7 @@
 - expression
 a phrase of JavaScript that produce a value.
 
-- an expression is something that computes a value but doesn’t do anything: it doesn’t alter the program state in any way. 
+- an expression is something that computes a value but doesn’t do anything: it doesn’t alter the program state in any way.
 - Statements, on the other hand, don’t have a value, but they do alter the state.
 
 - expression 重在表达，computes a value
@@ -45,12 +45,12 @@ a phrase of JavaScript that produce a value.
    - RegExp
    - Error
    - functions and classes are a special kind of object
-   
+
 - The JavaScript interpreter **performs automatic garbage collection** for memory management.
 
 - In JavaScript, null and undefined are the only values that methods cannot be invoked on.
 
-- JavaScript’s object types are mutable and its primitive types are immutable. 
+- JavaScript’s object types are mutable and its primitive types are immutable.
 
 - **strict equality operator ===, which does no type conversions.**
 
@@ -60,10 +60,9 @@ a phrase of JavaScript that produce a value.
 
 - JavaScript Integer represent range
   2^-53 到 2^53
-  
+
 - array indexing and bitwise operator 采用 32-bit 整数
 
 
-     
 
 
