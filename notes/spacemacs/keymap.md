@@ -150,3 +150,8 @@ SPC + s + l
 ## search with file filter
 
 #keyword #scala
+
+## 忽略自动补全，自动确认
+例如先创建了 JoinSetting.scala，想再创建 Join.scala 的时候按 Option + Enter 即可
+
+option + enter
