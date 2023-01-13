@@ -155,3 +155,7 @@ SPC + s + l
 例如先创建了 JoinSetting.scala，想再创建 Join.scala 的时候按 Option + Enter 即可
 
 option + enter
+
+## last/next search inputs
+
+option + [p/n]
